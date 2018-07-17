@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-import java.sql.*;
+//import java.sql.*;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
 import javax.xml.parsers.DocumentBuilder;
@@ -19,8 +19,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
-
-
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 /**
  *
@@ -38,9 +41,13 @@ public String rptPath;
 public String server = "";
 public String tableUsed = "Users";
 public Connection conn;
-public String url;
+//public String Myurl = "jdbc:sqlserver://10.105.10.138\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;integratedSecurity=true";
+public String Myurl = "jdbc:sqlserver://ELEREC-PC02:1433;instanceName=SQLEXPRESSHDDDB;DatabaseName=HDD_Records;UserName=ESDTester;password=ESDTester";
+//public String Myurl = "sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
 public String classUser = "username";
 public String classPass = "password";
+public Statement stmt = null;
+public ResultSet rs = null;
 
 
     /**
@@ -686,6 +693,30 @@ public String classPass = "password";
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //Check user name and password.  if valid login and hide any screens not allowed
         //if not valid make person loggin and if cancel hide all tabs
+        System.out.println(Myurl);
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("woot!");
+            conn = DriverManager.getConnection(Myurl);
+            //conn = DriverManager.getConnection("jdbc:sqlserver://ELEREC-PC02;instanceName=SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester");
+            String SQL = "SELECT * FROM HDD_Records.dbo.Users";
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            try {  
+                //System.out.println(title);  
+                while (rs.next()) {  
+                System.out.println(rs.getString("Uname") + " : " + rs.getString("Lname") + ", " + rs.getString("Fname"));  
+                }  
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        
+        
+
+        //jdbc:sqlserver://dbHost\sqlexpress;user=sa;password=secret;
         classUser = LoginUserTxt.getText();
         classPass = LoginPswrdTxt.getText();
         UserLbl.setText(classUser);
