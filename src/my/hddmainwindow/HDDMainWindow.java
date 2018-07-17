@@ -42,7 +42,7 @@ public String server = "";
 public String tableUsed = "Users";
 public Connection conn;
 //public String Myurl = "jdbc:sqlserver://10.105.10.138\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;integratedSecurity=true";
-public String Myurl = "jdbc:sqlserver://ELEREC-PC02:1433;instanceName=SQLEXPRESSHDDDB;DatabaseName=HDD_Records;UserName=ESDTester;password=ESDTester";
+public String Myurl = "jdbc:sqlserver://;servername=ELEREC-PC02\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester";
 //public String Myurl = "sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
 public String classUser = "username";
 public String classPass = "password";
@@ -693,19 +693,20 @@ public ResultSet rs = null;
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //Check user name and password.  if valid login and hide any screens not allowed
         //if not valid make person loggin and if cancel hide all tabs
-        System.out.println(Myurl);
+        classUser = LoginUserTxt.getText();
+        classPass = LoginPswrdTxt.getText();
+        //System.out.println(Myurl);//debug test
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             System.out.println("woot!");
             conn = DriverManager.getConnection(Myurl);
-            //conn = DriverManager.getConnection("jdbc:sqlserver://ELEREC-PC02;instanceName=SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester");
-            String SQL = "SELECT * FROM HDD_Records.dbo.Users";
+            String SQL = "SELECT * FROM HDD_Records.dbo.Users WHERE Uname LIKE '" + classUser + "' AND Pword LIKE '" + classPass + "';";
             stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
             try {  
-                //System.out.println(title);  
                 while (rs.next()) {  
-                System.out.println(rs.getString("Uname") + " : " + rs.getString("Lname") + ", " + rs.getString("Fname"));  
+                    System.out.println(rs.getString("Uname") + " : " + rs.getString("Lname") + ", " + rs.getString("Fname"));
+                    UserLbl.setText(rs.getString("Fname")+ " " + rs.getString("Lname"));
                 }  
             } catch (Exception e) {  
                 e.printStackTrace();  
@@ -713,13 +714,6 @@ public ResultSet rs = null;
         } catch (Exception e){
             e.printStackTrace();
         }
-        
-        
-
-        //jdbc:sqlserver://dbHost\sqlexpress;user=sa;password=secret;
-        classUser = LoginUserTxt.getText();
-        classPass = LoginPswrdTxt.getText();
-        UserLbl.setText(classUser);
         LogInDialog.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
