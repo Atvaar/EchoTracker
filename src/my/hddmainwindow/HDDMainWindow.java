@@ -58,11 +58,14 @@ public ResultSet rs = null;
         initComponents();
         OpenUserChangeWindow();
         SetRecieveEmpty();
+        
+        /*
         JLabel Test = new JLabel("User Name", JLabel.LEFT);
         Test.setVisible(true);
         HeatAssignment.add(Test);
         HeatAssignment.revalidate();
         HeatAssignment.repaint();
+        */
     }
 
     /**
@@ -92,9 +95,12 @@ public ResultSet rs = null;
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jXDatePicker7 = new org.jdesktop.swingx.JXDatePicker();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         ToolBar = new javax.swing.JToolBar();
         UserLbl = new javax.swing.JLabel();
         TabPanel = new javax.swing.JTabbedPane();
@@ -117,7 +123,6 @@ public ResultSet rs = null;
         RcvVendorTxt = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
@@ -135,8 +140,16 @@ public ResultSet rs = null;
         RcvRdatePc = new org.jdesktop.swingx.JXDatePicker();
         jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
         jXDatePicker2 = new org.jdesktop.swingx.JXDatePicker();
+        jComboBox1 = new javax.swing.JComboBox<>();
         HeatAssignment = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jLabel42 = new javax.swing.JLabel();
         ProductionManager = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -185,27 +198,111 @@ public ResultSet rs = null;
         jButton18 = new javax.swing.JButton();
         HDDManager = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        RcvOrdrLbl1 = new javax.swing.JLabel();
+        RcvOrdrTxt1 = new javax.swing.JTextField();
+        RcvOrdrBtn1 = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        HDDManageSerialCompLbl = new javax.swing.JLabel();
+        HDDManageSerialCompDt = new org.jdesktop.swingx.JXDatePicker();
+        jLabel48 = new javax.swing.JLabel();
+        jXDatePicker9 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel49 = new javax.swing.JLabel();
+        jTextField25 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jXDatePicker10 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel51 = new javax.swing.JLabel();
+        jTextField26 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        RcvOrdrBtn2 = new javax.swing.JButton();
+        jTextField28 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jXDatePicker11 = new org.jdesktop.swingx.JXDatePicker();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel2 = new javax.swing.JPanel();
+        jTextField29 = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jButton20 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jTextField30 = new javax.swing.JTextField();
+        jLabel54 = new javax.swing.JLabel();
+        jXDatePicker12 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel55 = new javax.swing.JLabel();
+        RcvOrdrBtn3 = new javax.swing.JButton();
+        jTextField31 = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        jTextField32 = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
+        jLabel58 = new javax.swing.JLabel();
+        jXDatePicker13 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel59 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        RcvOrdrBtn4 = new javax.swing.JButton();
         RecordView = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jTextField34 = new javax.swing.JTextField();
+        jButton24 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
         AdminTb = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         WipeReports = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
+        WipeReportsLbl = new javax.swing.JLabel();
         ResaleTb = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
+        ResaleLbl = new javax.swing.JLabel();
         OpsDashTb = new javax.swing.JPanel();
+        DashboardLbl = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jTextField36 = new javax.swing.JTextField();
+        jTextField37 = new javax.swing.JTextField();
+        jTextField38 = new javax.swing.JTextField();
+        jTextField39 = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jXDatePicker8 = new org.jdesktop.swingx.JXDatePicker();
+        jXDatePicker14 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField35 = new javax.swing.JTextField();
+        jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
         jToolBar1 = new javax.swing.JToolBar();
         LogInOutBtn = new javax.swing.JButton();
         ExitBtn = new javax.swing.JButton();
 
+        LogInDialog.setTitle("Log In Credentials");
         LogInDialog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        LogInDialog.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         LogInDialog.setLocation(new java.awt.Point(200, 200));
-        LogInDialog.setMinimumSize(new java.awt.Dimension(400, 220));
+        LogInDialog.setMaximumSize(new java.awt.Dimension(409, 185));
+        LogInDialog.setMinimumSize(new java.awt.Dimension(409, 185));
         LogInDialog.setModal(true);
         LogInDialog.setName("Credentials"); // NOI18N
+        LogInDialog.setPreferredSize(new java.awt.Dimension(409, 185));
+        LogInDialog.setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setMaximumSize(new java.awt.Dimension(406, 155));
+        jPanel1.setMinimumSize(new java.awt.Dimension(406, 155));
+        jPanel1.setPreferredSize(new java.awt.Dimension(406, 155));
 
         jLabel21.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(200, 0, 0));
@@ -213,15 +310,18 @@ public ResultSet rs = null;
         jLabel21.setText("User Login");
 
         jLabel22.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel22.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(214, 217, 223));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel22.setText("User Name: ");
 
         jLabel23.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel23.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(214, 217, 223));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel23.setText("Password: ");
 
+        LoginOKBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         LoginOKBtn.setText("Login");
         LoginOKBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,10 +329,23 @@ public ResultSet rs = null;
             }
         });
 
+        LoginCancelBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         LoginCancelBtn.setText("Cancel");
         LoginCancelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginCancelBtnActionPerformed(evt);
+            }
+        });
+
+        LoginUserTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginUserTxtActionPerformed(evt);
+            }
+        });
+
+        LoginPswrdTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginPswrdTxtActionPerformed(evt);
             }
         });
 
@@ -276,7 +389,7 @@ public ResultSet rs = null;
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginOKBtn)
                     .addComponent(LoginCancelBtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout LogInDialogLayout = new javax.swing.GroupLayout(LogInDialog.getContentPane());
@@ -321,10 +434,17 @@ public ResultSet rs = null;
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jTextField1.setFocusable(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jComboBox2.setMaximumRowCount(1000);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout CreateOrderDialogLayout = new javax.swing.GroupLayout(CreateOrderDialog.getContentPane());
         CreateOrderDialog.getContentPane().setLayout(CreateOrderDialogLayout);
@@ -347,9 +467,9 @@ public ResultSet rs = null;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXDatePicker7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)))
+                            .addComponent(jXDatePicker7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -365,11 +485,11 @@ public ResultSet rs = null;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
@@ -381,6 +501,13 @@ public ResultSet rs = null;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jScrollPane9.setBackground(new java.awt.Color(0, 102, 102));
+        jScrollPane9.setForeground(new java.awt.Color(214, 214, 214));
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane9.setViewportView(jTextArea4);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Echo");
         setBackground(new java.awt.Color(0, 102, 102));
@@ -390,7 +517,7 @@ public ResultSet rs = null;
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(660, 699));
         setName("Echo"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 800));
+        setPreferredSize(new java.awt.Dimension(800, 1280));
         setSize(new java.awt.Dimension(800, 810));
         setType(java.awt.Window.Type.UTILITY);
 
@@ -410,7 +537,7 @@ public ResultSet rs = null;
         TabPanel.setMaximumSize(new java.awt.Dimension(640000, 640000));
         TabPanel.setMinimumSize(new java.awt.Dimension(800, 72));
         TabPanel.setName("WorkingTabs"); // NOI18N
-        TabPanel.setPreferredSize(new java.awt.Dimension(800, 800));
+        TabPanel.setPreferredSize(new java.awt.Dimension(800, 1280));
 
         ReceiveTb.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -524,6 +651,9 @@ public ResultSet rs = null;
         RcvAdateBtn.setText("Update");
         RcvAdateBtn.setActionCommand("UpdateDN");
 
+        jComboBox1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout ReceiveTbLayout = new javax.swing.GroupLayout(ReceiveTb);
         ReceiveTb.setLayout(ReceiveTbLayout);
         ReceiveTbLayout.setHorizontalGroup(
@@ -531,7 +661,8 @@ public ResultSet rs = null;
             .addGroup(ReceiveTbLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ReceiveTbLayout.createSequentialGroup()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createSequentialGroup()
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(RcvOrdrLbl)
                             .addComponent(RcvVendorLbl)
@@ -546,19 +677,19 @@ public ResultSet rs = null;
                             .addComponent(jLabel13)
                             .addComponent(RcvAdateLbl))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RcvSnotesScroll)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField4)
-                            .addComponent(RcvVendorTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RcvRdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jXDatePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RcvOrdrTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField11)
+                            .addComponent(RcvSnotesScroll, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField9)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(RcvVendorTxt)
+                            .addComponent(RcvRdatePc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXDatePicker1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvOrdrTxt)
+                            .addComponent(jXDatePicker2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -571,8 +702,7 @@ public ResultSet rs = null;
                                 .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(RcvOrdrBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(RcvAdateBtn, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE))
+                            .addComponent(RcvAdateBtn, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         ReceiveTbLayout.setVerticalGroup(
@@ -605,9 +735,9 @@ public ResultSet rs = null;
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton8)
@@ -643,31 +773,85 @@ public ResultSet rs = null;
                     .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(RcvAdateBtn)))
-                .addGap(268, 268, 268))
+                .addGap(478, 478, 478))
         );
 
         TabPanel.addTab("Receiveing", ReceiveTb);
 
         HeatAssignment.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel3.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
-        jLabel3.setText("Heat Assignment");
+        jLabel3.setText("     Heat Assignment");
         jLabel3.setToolTipText("");
+
+        jTable1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Order Number", "Sorting Heat", "Production Heat"
+            }
+        ));
+        jTable1.setCellSelectionEnabled(true);
+        jScrollPane3.setViewportView(jTable1);
+
+        jTextField7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField10.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton21.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton21.setText("Update Sort");
+
+        jButton22.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton22.setText("Update Production");
+
+        jLabel42.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("ORDER");
 
         javax.swing.GroupLayout HeatAssignmentLayout = new javax.swing.GroupLayout(HeatAssignment);
         HeatAssignment.setLayout(HeatAssignmentLayout);
         HeatAssignmentLayout.setHorizontalGroup(
             HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addGroup(HeatAssignmentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3)
+                    .addGroup(HeatAssignmentLayout.createSequentialGroup()
+                        .addComponent(jTextField7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton21)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton22))
+                    .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         HeatAssignmentLayout.setVerticalGroup(
             HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeatAssignmentLayout.createSequentialGroup()
                 .addComponent(jLabel3)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton21)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton22))
+                .addContainerGap(635, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Heat Assignment", HeatAssignment);
@@ -687,6 +871,9 @@ public ResultSet rs = null;
         jLabel16.setText("Order Number:");
         jLabel16.setFocusable(false);
 
+        jTextField12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton3.setText("Lookup");
 
         jLabel17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -706,8 +893,16 @@ public ResultSet rs = null;
         jLabel20.setForeground(new java.awt.Color(214, 214, 214));
         jLabel20.setText("Shipping Notes:");
 
+        jTextField13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField15.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        PMRdatePk.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton1.setText("Update");
 
+        jButton4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton4.setText("Update");
 
         jTextArea1.setColumns(20);
@@ -718,45 +913,67 @@ public ResultSet rs = null;
         jLabel29.setForeground(new java.awt.Color(214, 214, 214));
         jLabel29.setText("Sorting Heat Number:");
 
+        jTextField16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
         jLabel30.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(214, 214, 214));
         jLabel30.setText("Sort Complete Date:");
+
+        jXDatePicker3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jLabel31.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(214, 214, 214));
         jLabel31.setText("Box Scan HDD Count:");
 
+        jButton12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton12.setText("Update");
+
+        jTextField17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jLabel32.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(214, 214, 214));
         jLabel32.setText("Box Scan Complete Date:");
 
+        jXDatePicker4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton13.setText("Update");
 
         jLabel33.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(214, 214, 214));
         jLabel33.setText("Production Heat Number:");
 
+        jTextField18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton14.setText("Update");
 
         jLabel34.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(214, 214, 214));
         jLabel34.setText("Dismantle Complete Date:");
 
+        jXDatePicker5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton15.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton15.setText("Update");
 
         jLabel35.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(214, 214, 214));
         jLabel35.setText("HDD Sent to Reuse Count:");
 
+        jTextField19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton16.setText("Update");
 
         jLabel36.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(214, 214, 214));
         jLabel36.setText("HDD Sent Complete Date:");
 
+        jButton17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton17.setText("Update");
+
+        jXDatePicker6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jLabel37.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(214, 214, 214));
@@ -766,14 +983,20 @@ public ResultSet rs = null;
         jLabel38.setForeground(new java.awt.Color(214, 214, 214));
         jLabel38.setText("Reuse Scan Count:");
 
+        jTextField20.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField21.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
         jLabel39.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(214, 214, 214));
         jLabel39.setText("Order Notes:");
 
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
+        jButton18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton18.setText("Update");
 
         javax.swing.GroupLayout ProductionManagerLayout = new javax.swing.GroupLayout(ProductionManager);
@@ -820,9 +1043,9 @@ public ResultSet rs = null;
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -907,7 +1130,7 @@ public ResultSet rs = null;
                     .addComponent(jLabel38))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
                     .addGroup(ProductionManagerLayout.createSequentialGroup()
                         .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel39)
@@ -920,95 +1143,559 @@ public ResultSet rs = null;
 
         HDDManager.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel15.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(214, 214, 214));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel15.setText("     HDD Manager");
         jLabel15.setToolTipText("");
+
+        RcvOrdrLbl1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        RcvOrdrLbl1.setForeground(new java.awt.Color(214, 214, 214));
+        RcvOrdrLbl1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        RcvOrdrLbl1.setText("ORDER NUMBER:");
+
+        RcvOrdrTxt1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RcvOrdrTxt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvOrdrTxt1ActionPerformed(evt);
+            }
+        });
+
+        RcvOrdrBtn1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RcvOrdrBtn1.setText("Lookup");
+        RcvOrdrBtn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvOrdrBtn1ActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel43.setText("Vendor:  ");
+
+        jLabel44.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel44.setText("Box Scan HDD Count:  ");
+
+        jLabel45.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel45.setText("Box Scan Complete Date:  ");
+
+        jTextField14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField22.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField23.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField24.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jLabel46.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel46.setText("Serialization HDD Count:  ");
+
+        HDDManageSerialCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManageSerialCompLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManageSerialCompLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManageSerialCompLbl.setText("Serialization Completion Date:  ");
+
+        jLabel48.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel48.setText("Dismantle Complete Date:  ");
+
+        jLabel49.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel49.setText("HDD Count - Sent To Reuse:  ");
+
+        jTextField25.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jLabel50.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel50.setText("Completed Order HDD Delivery Date:  ");
+
+        jLabel51.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel51.setText("Reuse HDD Received:  ");
+
+        jTextField26.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField27.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        RcvOrdrBtn2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RcvOrdrBtn2.setText("Update");
+        RcvOrdrBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvOrdrBtn2ActionPerformed(evt);
+            }
+        });
+
+        jTextField28.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTextField28.setFocusable(false);
+
+        jLabel52.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel52.setText("Reuse HDD Received Complete Date:  ");
+
+        jTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "HDD Size", "HDD Count In", "HDD Count Out"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable2);
+
+        jTextField29.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTextField29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField29.setText("LANE");
+
+        jLabel53.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel53.setText("Pallet Count");
+
+        jButton20.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButton20.setText("+");
+
+        jButton23.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButton23.setText("-");
+
+        jTextField30.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField29)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField30)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton20, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton23, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(jButton20))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton23)
+                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jLabel54.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel54.setText("Reuse HDD Received Complete Date:  ");
+
+        jLabel55.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel55.setText("Scan Out Failed:  ");
+
+        RcvOrdrBtn3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RcvOrdrBtn3.setText("Update");
+        RcvOrdrBtn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvOrdrBtn3ActionPerformed(evt);
+            }
+        });
+
+        jTextField31.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jLabel56.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel56.setText("Scan Out Passed:  ");
+
+        jTextField32.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jLabel57.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel57.setText("Scan Out Delta:  ");
+
+        jTextField33.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jLabel58.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel58.setText("HDD Report Complete Date:  ");
+
+        jLabel59.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel59.setText("Order Notes:  ");
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane5.setViewportView(jTextArea3);
+
+        RcvOrdrBtn4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RcvOrdrBtn4.setText("Update");
+        RcvOrdrBtn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvOrdrBtn4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HDDManagerLayout = new javax.swing.GroupLayout(HDDManager);
         HDDManager.setLayout(HDDManagerLayout);
         HDDManagerLayout.setHorizontalGroup(
             HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(HDDManagerLayout.createSequentialGroup()
-                .addComponent(jLabel15)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(HDDManagerLayout.createSequentialGroup()
+                        .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RcvOrdrBtn4))
+                    .addGroup(HDDManagerLayout.createSequentialGroup()
+                        .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                            .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManageSerialCompLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel43, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvOrdrLbl1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField22)
+                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RcvOrdrTxt1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField23)
+                            .addComponent(jTextField24)
+                            .addComponent(HDDManageSerialCompDt, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                            .addComponent(jXDatePicker9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField25, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jXDatePicker10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXDatePicker12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jXDatePicker11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField26)
+                            .addComponent(jTextField31)
+                            .addComponent(jTextField32)
+                            .addComponent(jTextField33)
+                            .addComponent(jXDatePicker13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(HDDManagerLayout.createSequentialGroup()
+                                .addGap(0, 78, Short.MAX_VALUE)
+                                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(RcvOrdrBtn2))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvOrdrBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvOrdrBtn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         HDDManagerLayout.setVerticalGroup(
             HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HDDManagerLayout.createSequentialGroup()
                 .addComponent(jLabel15)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RcvOrdrLbl1)
+                    .addComponent(RcvOrdrBtn1)
+                    .addComponent(RcvOrdrTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel46)
+                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HDDManageSerialCompLbl)
+                    .addComponent(HDDManageSerialCompDt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel48)
+                    .addComponent(jXDatePicker9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel49)
+                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(jXDatePicker10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RcvOrdrBtn2)
+                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel52)
+                    .addComponent(jXDatePicker11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(jXDatePicker12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RcvOrdrBtn3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel55))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel56))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel58)
+                    .addComponent(jXDatePicker13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel59)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RcvOrdrBtn4))
+                .addContainerGap(458, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("HDD Manager", HDDManager);
 
         RecordView.setBackground(new java.awt.Color(0, 102, 102));
+        RecordView.setAutoscrolls(true);
 
-        jLabel24.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(214, 214, 214));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel24.setText("     Record Veiwer");
         jLabel24.setToolTipText("");
+
+        jLabel60.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel60.setText("Order Number:");
+        jLabel60.setFocusable(false);
+
+        jTextField34.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton24.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jButton24.setText("Lookup");
+
+        jScrollPane6.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jTable3.setBackground(new java.awt.Color(0, 102, 102));
+        jTable3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTable3.setForeground(new java.awt.Color(214, 214, 214));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "", "", "User/TimeStamp"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(jTable3);
+
+        jTable5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTable5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "HDD Size", "HDD Count In", "HDD Count Out"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable5);
 
         javax.swing.GroupLayout RecordViewLayout = new javax.swing.GroupLayout(RecordView);
         RecordView.setLayout(RecordViewLayout);
         RecordViewLayout.setHorizontalGroup(
             RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(RecordViewLayout.createSequentialGroup()
-                .addComponent(jLabel24)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6)
+                    .addGroup(RecordViewLayout.createSequentialGroup()
+                        .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         RecordViewLayout.setVerticalGroup(
             RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RecordViewLayout.createSequentialGroup()
                 .addComponent(jLabel24)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Record Veiwer", RecordView);
 
         AdminTb.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel25.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
+        jLabel25.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(214, 214, 214));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel25.setText("     Administration View");
         jLabel25.setToolTipText("");
 
         javax.swing.GroupLayout AdminTbLayout = new javax.swing.GroupLayout(AdminTb);
         AdminTb.setLayout(AdminTbLayout);
         AdminTbLayout.setHorizontalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AdminTbLayout.createSequentialGroup()
-                .addComponent(jLabel25)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         AdminTbLayout.setVerticalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminTbLayout.createSequentialGroup()
                 .addComponent(jLabel25)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(1139, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Administration View", AdminTb);
 
         WipeReports.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel26.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
-        jLabel26.setToolTipText("");
+        WipeReportsLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        WipeReportsLbl.setForeground(new java.awt.Color(214, 214, 214));
+        WipeReportsLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        WipeReportsLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        WipeReportsLbl.setText("    Wipe Reports");
+        WipeReportsLbl.setToolTipText("");
 
         javax.swing.GroupLayout WipeReportsLayout = new javax.swing.GroupLayout(WipeReports);
         WipeReports.setLayout(WipeReportsLayout);
         WipeReportsLayout.setHorizontalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(WipeReportsLayout.createSequentialGroup()
-                .addComponent(jLabel26)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         WipeReportsLayout.setVerticalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WipeReportsLayout.createSequentialGroup()
-                .addComponent(jLabel26)
+                .addComponent(WipeReportsLbl)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -1016,23 +1703,23 @@ public ResultSet rs = null;
 
         ResaleTb.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel27.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
-        jLabel27.setToolTipText("");
+        ResaleLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        ResaleLbl.setForeground(new java.awt.Color(214, 214, 214));
+        ResaleLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ResaleLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        ResaleLbl.setText("     Resale");
+        ResaleLbl.setToolTipText("");
 
         javax.swing.GroupLayout ResaleTbLayout = new javax.swing.GroupLayout(ResaleTb);
         ResaleTb.setLayout(ResaleTbLayout);
         ResaleTbLayout.setHorizontalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ResaleTbLayout.createSequentialGroup()
-                .addComponent(jLabel27)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         ResaleTbLayout.setVerticalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ResaleTbLayout.createSequentialGroup()
-                .addComponent(jLabel27)
+                .addComponent(ResaleLbl)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -1040,24 +1727,185 @@ public ResultSet rs = null;
 
         OpsDashTb.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel28.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
-        jLabel28.setToolTipText("");
+        DashboardLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        DashboardLbl.setForeground(new java.awt.Color(214, 214, 214));
+        DashboardLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DashboardLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        DashboardLbl.setText("     Dashboard");
+        DashboardLbl.setToolTipText("");
+
+        jLabel27.setText("Orders Inbound");
+
+        jLabel28.setText("Orders Not Processed");
+
+        jLabel47.setText("Tobe Dismantled (lbs)");
+
+        jLabel61.setText("HDD To Be Removed");
+
+        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField36ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField39, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField38, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField37)
+                    .addComponent(jTextField36, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel47)
+                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel61)
+                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Orders", "Recieved", "Weight", "Box Scan Completed", "Box Scan HDD Count", "Dismantle Completed", "Production HDD Count", "Reuse Scan HDD Count"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(jTable4);
+
+        jLabel26.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(214, 214, 214));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("<From----TO>");
+
+        jTextField35.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jButton25.setText("Export");
+
+        jButton26.setText("Print");
+
+        jToggleButton1.setText("Filter");
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Cage Backlog", null, null, null, null},
+                {"Wipe Passed", null, null, null, null},
+                {"Wipe Failed", null, null, null, null},
+                {"Fail Percentage", null, null, null, null},
+                {null, null, null, null, null},
+                {"For Sale", null, null, null, null},
+                {"Sale Price", null, null, null, null}
+            },
+            new String [] {
+                "", "160 GB", "320 GB", "500 GB", "Totals"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane10.setViewportView(jTable6);
 
         javax.swing.GroupLayout OpsDashTbLayout = new javax.swing.GroupLayout(OpsDashTb);
         OpsDashTb.setLayout(OpsDashTbLayout);
         OpsDashTbLayout.setHorizontalGroup(
             OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(DashboardLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(OpsDashTbLayout.createSequentialGroup()
-                .addComponent(jLabel28)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OpsDashTbLayout.createSequentialGroup()
+                        .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(OpsDashTbLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(jXDatePicker8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(OpsDashTbLayout.createSequentialGroup()
+                                .addComponent(jXDatePicker14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane7))
+                .addContainerGap())
         );
         OpsDashTbLayout.setVerticalGroup(
             OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(OpsDashTbLayout.createSequentialGroup()
-                .addComponent(jLabel28)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(DashboardLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jXDatePicker8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jXDatePicker14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton25)
+                        .addComponent(jButton26)
+                        .addComponent(jToggleButton1))
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         TabPanel.addTab("Dashboard", OpsDashTb);
@@ -1112,7 +1960,7 @@ public ResultSet rs = null;
                     .addComponent(ToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE))
+                .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1249, Short.MAX_VALUE))
         );
 
         pack();
@@ -1134,6 +1982,8 @@ public ResultSet rs = null;
         LoginUserTxt.setText(classUser);
         LoginPswrdTxt.setText(classPass);
         LogInDialog.setVisible((true));
+        LoginUserTxt.requestFocus();
+        LoginUserTxt.selectAll();
     }
     
     private void RcvOrdrTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrTxtActionPerformed
@@ -1158,23 +2008,28 @@ public ResultSet rs = null;
         //System.out.println(Myurl);//debug test
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("woot!");
+            //System.out.println("woot!");
             conn = DriverManager.getConnection(Myurl);
             String SQL = "SELECT * FROM HDD_Records.dbo.Users WHERE Uname LIKE '" + classUser + "' AND Pword LIKE '" + classPass + "';";
             stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
             try {  
-                while (rs.next()) {  
+                if (rs.next()) {  
                     System.out.println(rs.getString("Uname") + " : " + rs.getString("Lname") + ", " + rs.getString("Fname"));
                     UserLbl.setText(rs.getString("Fname")+ " " + rs.getString("Lname"));
-                }  
+                    LogInDialog.dispose();
+                }
+                else {
+                    LoginUserTxt.setText("");
+                    LoginPswrdTxt.setText("");
+                    LoginUserTxt.requestFocus();
+                }
             } catch (Exception e) {  
                 e.printStackTrace();  
             }
         } catch (Exception e){
             e.printStackTrace();
         }
-        LogInDialog.dispose();
     }//GEN-LAST:event_LoginOKBtnActionPerformed
 
     private void RcvOrdrBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtnActionPerformed
@@ -1215,6 +2070,42 @@ public ResultSet rs = null;
         }
         }
     }//GEN-LAST:event_RcvOrdrBtnActionPerformed
+
+    private void RcvOrdrTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrTxt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RcvOrdrTxt1ActionPerformed
+
+    private void RcvOrdrBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RcvOrdrBtn1ActionPerformed
+
+    private void RcvOrdrBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RcvOrdrBtn2ActionPerformed
+
+    private void RcvOrdrBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RcvOrdrBtn3ActionPerformed
+
+    private void RcvOrdrBtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RcvOrdrBtn4ActionPerformed
+
+    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField36ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void LoginUserTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginUserTxtActionPerformed
+        LoginUserTxt.selectAll();
+    }//GEN-LAST:event_LoginUserTxtActionPerformed
+
+    private void LoginPswrdTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginPswrdTxtActionPerformed
+        LoginPswrdTxt.selectAll();
+    }//GEN-LAST:event_LoginPswrdTxtActionPerformed
    
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
         RcvOrdrTxt.setText("");
@@ -1235,8 +2126,6 @@ public ResultSet rs = null;
         jTextField4.setText("");
         jTextField5.setEnabled(false);
         jTextField5.setText("");
-        jTextField6.setEnabled(false);
-        jTextField6.setText("");
         jXDatePicker1.setEnabled(false);
         jXDatePicker1.setDate(null);
         jTextField8.setEnabled(false);
@@ -1292,7 +2181,10 @@ public ResultSet rs = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminTb;
     private javax.swing.JDialog CreateOrderDialog;
+    private javax.swing.JLabel DashboardLbl;
     private javax.swing.JButton ExitBtn;
+    private org.jdesktop.swingx.JXDatePicker HDDManageSerialCompDt;
+    private javax.swing.JLabel HDDManageSerialCompLbl;
     private javax.swing.JPanel HDDManager;
     private javax.swing.JPanel HeatAssignment;
     private javax.swing.JDialog LogInDialog;
@@ -1307,8 +2199,14 @@ public ResultSet rs = null;
     private javax.swing.JButton RcvAdateBtn;
     private javax.swing.JLabel RcvAdateLbl;
     private javax.swing.JButton RcvOrdrBtn;
+    private javax.swing.JButton RcvOrdrBtn1;
+    private javax.swing.JButton RcvOrdrBtn2;
+    private javax.swing.JButton RcvOrdrBtn3;
+    private javax.swing.JButton RcvOrdrBtn4;
     private javax.swing.JLabel RcvOrdrLbl;
+    private javax.swing.JLabel RcvOrdrLbl1;
     private javax.swing.JTextField RcvOrdrTxt;
+    private javax.swing.JTextField RcvOrdrTxt1;
     private org.jdesktop.swingx.JXDatePicker RcvRdatePc;
     private javax.swing.JButton RcvSnotesBtn;
     private javax.swing.JLabel RcvSnotesLbl;
@@ -1318,11 +2216,13 @@ public ResultSet rs = null;
     private javax.swing.JTextField RcvVendorTxt;
     private javax.swing.JPanel ReceiveTb;
     private javax.swing.JPanel RecordView;
+    private javax.swing.JLabel ResaleLbl;
     private javax.swing.JPanel ResaleTb;
     private javax.swing.JTabbedPane TabPanel;
     private javax.swing.JToolBar ToolBar;
     private javax.swing.JLabel UserLbl;
     private javax.swing.JPanel WipeReports;
+    private javax.swing.JLabel WipeReportsLbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1335,6 +2235,13 @@ public ResultSet rs = null;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1342,6 +2249,9 @@ public ResultSet rs = null;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1378,41 +2288,106 @@ public ResultSet rs = null;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
+    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField38;
+    private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker10;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker11;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker12;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker13;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker14;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker3;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker4;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker5;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker6;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker7;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker8;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker9;
     // End of variables declaration//GEN-END:variables
 }
