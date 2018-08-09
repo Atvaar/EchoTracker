@@ -31,7 +31,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+              <Component id="jPanel1" alignment="0" pref="409" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -196,7 +196,19 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="0" type="rgb"/>
         </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="SansSerif" size="12" style="1"/>
+        </Property>
+        <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
+          <Point value="[200, 200]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[420, 255]"/>
+        </Property>
         <Property name="name" type="java.lang.String" value="CrtOrdrDialog" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[420, 255]"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -206,27 +218,27 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton10" max="32767" attributes="0"/>
+                          <Component id="CreateNewBtn" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton19" min="-2" pref="177" max="-2" attributes="0"/>
+                          <Component id="CreateCancel" min="-2" pref="177" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel40" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel41" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel14" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateShipLocLbl" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateRdateLbl" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateVendorNumLbl" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateOrdNumLbl" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jXDatePicker7" alignment="0" pref="258" max="32767" attributes="0"/>
-                              <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jComboBox3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateOrdNumTxt" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateRdatePc" alignment="0" pref="258" max="32767" attributes="0"/>
+                              <Component id="CreateVendCmbBx" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateShipLocCmbBx" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jLabel4" max="32767" attributes="0"/>
+                      <Component id="CreateOrderNotExistLbl" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -236,31 +248,31 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="CreateOrderNotExistLbl" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateOrdNumLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateOrdNumTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateVendorNumLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateVendCmbBx" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateShipLocLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateShipLocCmbBx" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jXDatePicker7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateRdateLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateRdatePc" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateNewBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CreateCancel" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -268,7 +280,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="CreateOrderNotExistLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="SansSerif" size="18" style="1"/>
@@ -277,23 +289,7 @@
             <Property name="text" type="java.lang.String" value="Order Does Not Exist"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton10">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Create New Order"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton19">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Cancel"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="CreateOrdNumLbl">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="SansSerif" size="12" style="1"/>
@@ -302,34 +298,7 @@
             <Property name="text" type="java.lang.String" value="Order Number:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="11"/>
-            <Property name="text" type="java.lang.String" value="Vendor Number:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel40">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="11"/>
-            <Property name="text" type="java.lang.String" value="Ship From Location:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel41">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="11"/>
-            <Property name="text" type="java.lang.String" value="Request Date:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="CreateOrdNumTxt">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -338,12 +307,19 @@
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateOrdNumTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker7">
+        <Component class="javax.swing.JLabel" name="CreateVendorNumLbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Vendor Number:"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="CreateVendCmbBx">
           <Properties>
             <Property name="maximumRowCount" type="int" value="1000"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -359,7 +335,16 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox3">
+        <Component class="javax.swing.JLabel" name="CreateShipLocLbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Ship From Location:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="CreateShipLocCmbBx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -374,33 +359,37 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane9">
-      <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="0" type="rgb"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="d6" green="d6" red="d6" type="rgb"/>
-        </Property>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea4">
+        <Component class="javax.swing.JLabel" name="CreateRdateLbl">
           <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="text" type="java.lang.String" value="Request Date:"/>
           </Properties>
         </Component>
+        <Component class="org.jdesktop.swingx.JXDatePicker" name="CreateRdatePc">
+        </Component>
+        <Component class="javax.swing.JButton" name="CreateNewBtn">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Create New Order"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="CreateCancel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreateCancelActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPopupMenu" name="jPopupMenu1">
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-        <Property name="useNullLayout" type="boolean" value="true"/>
-      </Layout>
     </Container>
   </NonVisualComponents>
   <Properties>
@@ -423,9 +412,6 @@
       <Dimension value="[660, 699]"/>
     </Property>
     <Property name="name" type="java.lang.String" value="Echo" noResource="true"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[800, 1280]"/>
-    </Property>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[800, 810]"/>
     </Property>
@@ -483,7 +469,7 @@
         <Property name="floatable" type="boolean" value="false"/>
         <Property name="rollover" type="boolean" value="true"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial" size="12" style="1"/>
+          <Font name="SansSerif" size="12" style="1"/>
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[32767, 32]"/>
@@ -543,49 +529,47 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" alignment="0" pref="775" max="32767" attributes="0"/>
+                          <Component id="RcvTabTitleLbl" alignment="0" pref="775" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="RcvOrdrLbl" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="RcvVendorLbl" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="RcvSnotesLbl" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="0" max="-2" attributes="0"/>
-                                  <Component id="RcvAdateLbl" alignment="0" max="-2" attributes="0"/>
+                                  <Component id="RcvOrdrLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvSdateLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvLocLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvFPdateLBL" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvFcostLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvRdateLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvVendorLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvDnumLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvSnotesLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvGrossLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvAdateLbl" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField11" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvGrossTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="RcvSnotesScroll" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jTextField9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField8" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jTextField5" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jTextField4" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="RcvDnumTxt" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="RcvFcostTxt" alignment="1" max="32767" attributes="0"/>
                                   <Component id="RcvVendorTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="RcvRdatePc" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="RcvSdatePc" alignment="1" max="32767" attributes="0"/>
                                   <Component id="RcvOrdrTxt" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker2" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvAdatePc" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="RcvLocCmbBx" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="RcvFPdatePc" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="RcvSnotesBtn" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton9" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton8" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton7" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton6" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton5" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton2" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvDnumBtn" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvSdateBtn" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvLocBtn" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvFPdateBtn" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvFcostBtn" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvRdateBtn" alignment="1" max="32767" attributes="0"/>
                                       <Component id="RcvOrdrBtn" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="jButton11" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="RcvGrossBtn" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="RcvAdateBtn" alignment="1" max="-2" attributes="0"/>
                               </Group>
@@ -598,7 +582,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="RcvTabTitleLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="RcvOrdrLbl" alignment="3" max="-2" attributes="0"/>
@@ -612,46 +596,41 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvRdateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvRdateLbl" alignment="3" max="-2" attributes="0"/>
                           <Component id="RcvRdatePc" alignment="3" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField4" alignment="3" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvFcostTxt" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvFcostBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvFcostLbl" alignment="3" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField5" alignment="3" max="-2" attributes="0"/>
-                          <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel7" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvFPdateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvFPdateLBL" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvFPdatePc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel8" alignment="3" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvLocBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvLocLbl" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvLocCmbBx" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel9" alignment="3" max="-2" attributes="0"/>
-                          <Component id="jXDatePicker1" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvSdateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvSdateLbl" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvSdatePc" alignment="3" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField8" alignment="3" max="-2" attributes="0"/>
-                          <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel10" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvDnumTxt" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvDnumBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RcvDnumLbl" alignment="3" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel11" alignment="3" max="-2" attributes="0"/>
-                          <Component id="jTextField9" alignment="3" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="RcvSnotesLbl" max="-2" attributes="0"/>
@@ -664,28 +643,26 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jTextField11" alignment="3" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="3" max="-2" attributes="0"/>
-                                  <Component id="jButton11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="RcvGrossTxt" alignment="3" max="-2" attributes="0"/>
+                                  <Component id="RcvGrossLbl" alignment="3" max="-2" attributes="0"/>
+                                  <Component id="RcvGrossBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RcvAdateLbl" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jXDatePicker2" alignment="3" max="-2" attributes="0"/>
-                              <Component id="RcvAdateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RcvAdateLbl" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvAdatePc" alignment="3" max="-2" attributes="0"/>
+                          <Component id="RcvAdateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="478" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="718" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="RcvTabTitleLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="sansserif" size="24" style="1"/>
@@ -700,127 +677,6 @@
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="4"/>
                 <Property name="iconTextGap" type="int" value="40"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="RcvVendorLbl">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Vendor:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Request Date:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Freight Cost:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Freight Paid Date:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ship Location:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ship Date"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Delivery #(ADR):"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Inbound Number:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="RcvSnotesLbl">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Shipe Notes:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Gross Weight:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="RcvAdateLbl">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="sansserif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Recieve Date:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="RcvOrdrLbl">
@@ -847,26 +703,114 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvOrdrBtnActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JLabel" name="RcvVendorLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Vendor:"/>
+              </Properties>
+            </Component>
             <Component class="javax.swing.JTextField" name="RcvVendorTxt">
               <Properties>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField5">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField8">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField9">
+            <Component class="javax.swing.JLabel" name="RcvRdateLbl">
               <Properties>
-                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Request Date:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField11">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="RcvRdatePc">
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvRdateBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateRD"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvFcostLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Freight Cost:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvFPdateLBL">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Freight Paid Date:"/>
+              </Properties>
+            </Component>
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="RcvFPdatePc">
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvFPdateBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateFP"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvLocLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ship Location:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvSdateLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Ship Date:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvDnumLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Delivery #(ADR):"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvSnotesLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Shipe Notes:"/>
+              </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="RcvSnotesScroll">
               <AuxValues>
@@ -883,49 +827,70 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateRD"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateFC"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateFP"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateSL"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton8">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateSD"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton9">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateDN"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="RcvSnotesBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update"/>
                 <Property name="actionCommand" type="java.lang.String" value="UpdateDN"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton11">
+            <Component class="javax.swing.JLabel" name="RcvGrossLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Gross Weight:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="RcvGrossTxt">
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvGrossBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateDN"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RcvAdateLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="sansserif" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Recieve Date:"/>
+              </Properties>
+            </Component>
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="RcvAdatePc">
+            </Component>
+            <Component class="javax.swing.JTextField" name="RcvFcostTxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvFcostTxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="RcvDnumTxt">
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvFcostBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateFC"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvLocBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateSL"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvSdateBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateSD"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvDnumBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update"/>
                 <Property name="actionCommand" type="java.lang.String" value="UpdateDN"/>
@@ -937,17 +902,14 @@
                 <Property name="actionCommand" type="java.lang.String" value="UpdateDN"/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="RcvRdatePc">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="RcvSdatePc">
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker1">
-            </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker2">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JComboBox" name="RcvLocCmbBx">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
+                <Property name="maximumRowCount" type="int" value="25"/>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
                     <StringItem index="0" value="Default"/>
@@ -2745,7 +2707,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jToggleButton1" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane10" pref="490" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane10" pref="488" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>

@@ -5,26 +5,11 @@
  */
 package my.hddmainwindow;
 
-import java.io.File;
-import java.util.Calendar;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
-//import java.sql.*;
-import org.xml.sax.InputSource;
-import java.io.StringReader;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.Element;
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import javax.swing.JLabel;
 
 /**
  *
@@ -42,15 +27,14 @@ public String rptPath;
 public String server = "";
 public String tableUsed = "Users";
 public Connection conn;
-//public String Myurl = "jdbc:sqlserver://10.105.10.138\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;integratedSecurity=true";
 public String Myurl = "jdbc:sqlserver://;servername=ELEREC-PC02\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester";
-//public String Myurl = "sqlserver://localhost:1433;databaseName=tutorialDb;integratedSecurity=true";
-public String classUser = "username";
-public String classPass = "password";
 public Statement stmt = null;
 public ResultSet rs = null;
 
 
+private String classUser = "";
+private String classPass = "";
+private byte userAccess[] = new byte[4];
     /**
      * Creates new form HDDMainWindow
      */
@@ -58,14 +42,6 @@ public ResultSet rs = null;
         initComponents();
         OpenUserChangeWindow();
         SetRecieveEmpty();
-        
-        /*
-        JLabel Test = new JLabel("User Name", JLabel.LEFT);
-        Test.setVisible(true);
-        HeatAssignment.add(Test);
-        HeatAssignment.revalidate();
-        HeatAssignment.repaint();
-        */
     }
 
     /**
@@ -87,60 +63,55 @@ public ResultSet rs = null;
         LoginUserTxt = new javax.swing.JTextField();
         LoginPswrdTxt = new javax.swing.JPasswordField();
         CreateOrderDialog = new javax.swing.JDialog();
-        jLabel4 = new javax.swing.JLabel();
-        jButton10 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jXDatePicker7 = new org.jdesktop.swingx.JXDatePicker();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
+        CreateOrderNotExistLbl = new javax.swing.JLabel();
+        CreateOrdNumLbl = new javax.swing.JLabel();
+        CreateOrdNumTxt = new javax.swing.JTextField();
+        CreateVendorNumLbl = new javax.swing.JLabel();
+        CreateVendCmbBx = new javax.swing.JComboBox<>();
+        CreateShipLocLbl = new javax.swing.JLabel();
+        CreateShipLocCmbBx = new javax.swing.JComboBox<>();
+        CreateRdateLbl = new javax.swing.JLabel();
+        CreateRdatePc = new org.jdesktop.swingx.JXDatePicker();
+        CreateNewBtn = new javax.swing.JButton();
+        CreateCancel = new javax.swing.JButton();
         ToolBar = new javax.swing.JToolBar();
         UserLbl = new javax.swing.JLabel();
         TabPanel = new javax.swing.JTabbedPane();
         ReceiveTb = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        RcvVendorLbl = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        RcvSnotesLbl = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        RcvAdateLbl = new javax.swing.JLabel();
+        RcvTabTitleLbl = new javax.swing.JLabel();
         RcvOrdrLbl = new javax.swing.JLabel();
         RcvOrdrTxt = new javax.swing.JTextField();
         RcvOrdrBtn = new javax.swing.JButton();
+        RcvVendorLbl = new javax.swing.JLabel();
         RcvVendorTxt = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        RcvRdateLbl = new javax.swing.JLabel();
+        RcvRdatePc = new org.jdesktop.swingx.JXDatePicker();
+        RcvRdateBtn = new javax.swing.JButton();
+        RcvFcostLbl = new javax.swing.JLabel();
+        RcvFPdateLBL = new javax.swing.JLabel();
+        RcvFPdatePc = new org.jdesktop.swingx.JXDatePicker();
+        RcvFPdateBtn = new javax.swing.JButton();
+        RcvLocLbl = new javax.swing.JLabel();
+        RcvSdateLbl = new javax.swing.JLabel();
+        RcvDnumLbl = new javax.swing.JLabel();
+        RcvSnotesLbl = new javax.swing.JLabel();
         RcvSnotesScroll = new javax.swing.JScrollPane();
         RcvSnotesTxtA = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
         RcvSnotesBtn = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        RcvGrossLbl = new javax.swing.JLabel();
+        RcvGrossTxt = new javax.swing.JTextField();
+        RcvGrossBtn = new javax.swing.JButton();
+        RcvAdateLbl = new javax.swing.JLabel();
+        RcvAdatePc = new org.jdesktop.swingx.JXDatePicker();
+        RcvFcostTxt = new javax.swing.JTextField();
+        RcvDnumTxt = new javax.swing.JTextField();
+        RcvFcostBtn = new javax.swing.JButton();
+        RcvLocBtn = new javax.swing.JButton();
+        RcvSdateBtn = new javax.swing.JButton();
+        RcvDnumBtn = new javax.swing.JButton();
         RcvAdateBtn = new javax.swing.JButton();
-        RcvRdatePc = new org.jdesktop.swingx.JXDatePicker();
-        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
-        jXDatePicker2 = new org.jdesktop.swingx.JXDatePicker();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        RcvSdatePc = new org.jdesktop.swingx.JXDatePicker();
+        RcvLocCmbBx = new javax.swing.JComboBox<>();
         HeatAssignment = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -396,7 +367,7 @@ public ResultSet rs = null;
         LogInDialog.getContentPane().setLayout(LogInDialogLayout);
         LogInDialogLayout.setHorizontalGroup(
             LogInDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
         );
         LogInDialogLayout.setVerticalGroup(
             LogInDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,47 +375,56 @@ public ResultSet rs = null;
         );
 
         CreateOrderDialog.setBackground(new java.awt.Color(0, 102, 102));
+        CreateOrderDialog.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateOrderDialog.setLocation(new java.awt.Point(200, 200));
+        CreateOrderDialog.setMinimumSize(new java.awt.Dimension(420, 255));
         CreateOrderDialog.setName("CrtOrdrDialog"); // NOI18N
+        CreateOrderDialog.setPreferredSize(new java.awt.Dimension(420, 255));
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Order Does Not Exist");
+        CreateOrderNotExistLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        CreateOrderNotExistLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CreateOrderNotExistLbl.setText("Order Does Not Exist");
 
-        jButton10.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton10.setText("Create New Order");
+        CreateOrdNumLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateOrdNumLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        CreateOrdNumLbl.setText("Order Number:");
 
-        jButton19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton19.setText("Cancel");
-
-        jLabel12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel12.setText("Order Number:");
-
-        jLabel14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel14.setText("Vendor Number:");
-
-        jLabel40.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel40.setText("Ship From Location:");
-
-        jLabel41.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel41.setText("Request Date:");
-
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jTextField1.setFocusable(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        CreateOrdNumTxt.setEditable(false);
+        CreateOrdNumTxt.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        CreateOrdNumTxt.setFocusable(false);
+        CreateOrdNumTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                CreateOrdNumTxtActionPerformed(evt);
             }
         });
 
-        jComboBox2.setMaximumRowCount(1000);
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CreateVendorNumLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateVendorNumLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        CreateVendorNumLbl.setText("Vendor Number:");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CreateVendCmbBx.setMaximumRowCount(1000);
+        CreateVendCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        CreateShipLocLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateShipLocLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        CreateShipLocLbl.setText("Ship From Location:");
+
+        CreateShipLocCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        CreateRdateLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateRdateLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        CreateRdateLbl.setText("Request Date:");
+
+        CreateNewBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateNewBtn.setText("Create New Order");
+
+        CreateCancel.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        CreateCancel.setText("Cancel");
+        CreateCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout CreateOrderDialogLayout = new javax.swing.GroupLayout(CreateOrderDialog.getContentPane());
         CreateOrderDialog.getContentPane().setLayout(CreateOrderDialogLayout);
@@ -454,59 +434,52 @@ public ResultSet rs = null;
                 .addContainerGap()
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreateOrderDialogLayout.createSequentialGroup()
-                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CreateNewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CreateCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CreateOrderDialogLayout.createSequentialGroup()
                         .addGap(0, 10, Short.MAX_VALUE)
                         .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(CreateShipLocLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CreateRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CreateVendorNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CreateOrdNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXDatePicker7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(CreateOrdNumTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CreateRdatePc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                            .addComponent(CreateVendCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CreateShipLocCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(CreateOrderNotExistLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         CreateOrderDialogLayout.setVerticalGroup(
             CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreateOrderDialogLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
+                .addComponent(CreateOrderNotExistLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CreateOrdNumLbl)
+                    .addComponent(CreateOrdNumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CreateVendorNumLbl)
+                    .addComponent(CreateVendCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CreateShipLocLbl)
+                    .addComponent(CreateShipLocCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(jXDatePicker7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CreateRdateLbl)
+                    .addComponent(CreateRdatePc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10)
-                    .addComponent(jButton19))
+                    .addComponent(CreateNewBtn)
+                    .addComponent(CreateCancel))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jScrollPane9.setBackground(new java.awt.Color(0, 102, 102));
-        jScrollPane9.setForeground(new java.awt.Color(214, 214, 214));
-
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane9.setViewportView(jTextArea4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Echo");
@@ -517,14 +490,13 @@ public ResultSet rs = null;
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(660, 699));
         setName("Echo"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 1280));
         setSize(new java.awt.Dimension(800, 810));
         setType(java.awt.Window.Type.UTILITY);
 
         ToolBar.setBackground(new java.awt.Color(214, 214, 214));
         ToolBar.setFloatable(false);
         ToolBar.setRollover(true);
-        ToolBar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ToolBar.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         ToolBar.setMaximumSize(new java.awt.Dimension(32767, 32));
         ToolBar.setName("UserTag"); // NOI18N
 
@@ -541,57 +513,13 @@ public ResultSet rs = null;
 
         ReceiveTb.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
-        jLabel1.setText("Inbound View");
-        jLabel1.setFocusable(false);
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setIconTextGap(40);
-
-        RcvVendorLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        RcvVendorLbl.setForeground(new java.awt.Color(214, 214, 214));
-        RcvVendorLbl.setText("Vendor:");
-
-        jLabel5.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel5.setText("Request Date:");
-
-        jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel6.setText("Freight Cost:");
-
-        jLabel7.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel7.setText("Freight Paid Date:");
-
-        jLabel8.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel8.setText("Ship Location:");
-
-        jLabel9.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel9.setText("Ship Date");
-
-        jLabel10.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel10.setText("Delivery #(ADR):");
-
-        jLabel11.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel11.setText("Inbound Number:");
-
-        RcvSnotesLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        RcvSnotesLbl.setForeground(new java.awt.Color(214, 214, 214));
-        RcvSnotesLbl.setText("Shipe Notes:");
-
-        jLabel13.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel13.setText("Gross Weight:");
-
-        RcvAdateLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        RcvAdateLbl.setForeground(new java.awt.Color(214, 214, 214));
-        RcvAdateLbl.setText("Recieve Date:");
+        RcvTabTitleLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        RcvTabTitleLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvTabTitleLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        RcvTabTitleLbl.setText("Inbound View");
+        RcvTabTitleLbl.setFocusable(false);
+        RcvTabTitleLbl.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        RcvTabTitleLbl.setIconTextGap(40);
 
         RcvOrdrLbl.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         RcvOrdrLbl.setForeground(new java.awt.Color(214, 214, 214));
@@ -610,49 +538,88 @@ public ResultSet rs = null;
             }
         });
 
+        RcvVendorLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvVendorLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvVendorLbl.setText("Vendor:");
+
         RcvVendorTxt.setFocusable(false);
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
+        RcvRdateLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvRdateLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvRdateLbl.setText("Request Date:");
 
-        jTextField9.setFocusable(false);
+        RcvRdateBtn.setText("Update");
+        RcvRdateBtn.setActionCommand("UpdateRD");
+
+        RcvFcostLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvFcostLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvFcostLbl.setText("Freight Cost:");
+
+        RcvFPdateLBL.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvFPdateLBL.setForeground(new java.awt.Color(214, 214, 214));
+        RcvFPdateLBL.setText("Freight Paid Date:");
+
+        RcvFPdateBtn.setText("Update");
+        RcvFPdateBtn.setActionCommand("UpdateFP");
+
+        RcvLocLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvLocLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvLocLbl.setText("Ship Location:");
+
+        RcvSdateLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvSdateLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvSdateLbl.setText("Ship Date:");
+
+        RcvDnumLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvDnumLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvDnumLbl.setText("Delivery #(ADR):");
+
+        RcvSnotesLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvSnotesLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvSnotesLbl.setText("Shipe Notes:");
 
         RcvSnotesTxtA.setColumns(20);
         RcvSnotesTxtA.setRows(5);
         RcvSnotesScroll.setViewportView(RcvSnotesTxtA);
 
-        jButton2.setText("Update");
-        jButton2.setActionCommand("UpdateRD");
-
-        jButton5.setText("Update");
-        jButton5.setActionCommand("UpdateFC");
-
-        jButton6.setText("Update");
-        jButton6.setActionCommand("UpdateFP");
-
-        jButton7.setText("Update");
-        jButton7.setActionCommand("UpdateSL");
-
-        jButton8.setText("Update");
-        jButton8.setActionCommand("UpdateSD");
-
-        jButton9.setText("Update");
-        jButton9.setActionCommand("UpdateDN");
-
         RcvSnotesBtn.setText("Update");
         RcvSnotesBtn.setActionCommand("UpdateDN");
 
-        jButton11.setText("Update");
-        jButton11.setActionCommand("UpdateDN");
+        RcvGrossLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvGrossLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvGrossLbl.setText("Gross Weight:");
+
+        RcvGrossBtn.setText("Update");
+        RcvGrossBtn.setActionCommand("UpdateDN");
+
+        RcvAdateLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        RcvAdateLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RcvAdateLbl.setText("Recieve Date:");
+
+        RcvFcostTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvFcostTxtActionPerformed(evt);
+            }
+        });
+
+        RcvFcostBtn.setText("Update");
+        RcvFcostBtn.setActionCommand("UpdateFC");
+
+        RcvLocBtn.setText("Update");
+        RcvLocBtn.setActionCommand("UpdateSL");
+
+        RcvSdateBtn.setText("Update");
+        RcvSdateBtn.setActionCommand("UpdateSD");
+
+        RcvDnumBtn.setText("Update");
+        RcvDnumBtn.setActionCommand("UpdateDN");
 
         RcvAdateBtn.setText("Update");
         RcvAdateBtn.setActionCommand("UpdateDN");
 
-        jComboBox1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Item 2", "Item 3", "Item 4" }));
+        RcvLocCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RcvLocCmbBx.setMaximumRowCount(25);
+        RcvLocCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout ReceiveTbLayout = new javax.swing.GroupLayout(ReceiveTb);
         ReceiveTb.setLayout(ReceiveTbLayout);
@@ -661,54 +628,52 @@ public ResultSet rs = null;
             .addGroup(ReceiveTbLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createSequentialGroup()
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(RcvOrdrLbl)
-                            .addComponent(RcvVendorLbl)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(RcvSnotesLbl)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel13)
-                            .addComponent(RcvAdateLbl))
+                            .addComponent(RcvOrdrLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvSdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvLocLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvFPdateLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvFcostLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvVendorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvDnumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvSnotesLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvGrossLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvAdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField11)
+                            .addComponent(RcvGrossTxt)
                             .addComponent(RcvSnotesScroll, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField9)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(RcvDnumTxt, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(RcvFcostTxt, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(RcvVendorTxt)
                             .addComponent(RcvRdatePc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jXDatePicker1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvSdatePc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(RcvOrdrTxt)
-                            .addComponent(jXDatePicker2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(RcvAdatePc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvLocCmbBx, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RcvFPdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(RcvSnotesBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RcvDnumBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RcvSdateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RcvLocBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RcvFPdateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RcvFcostBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(RcvRdateBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(RcvOrdrBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(RcvGrossBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(RcvAdateBtn, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
         ReceiveTbLayout.setVerticalGroup(
             ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ReceiveTbLayout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(RcvTabTitleLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RcvOrdrLbl)
@@ -720,39 +685,35 @@ public ResultSet rs = null;
                     .addComponent(RcvVendorLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jLabel5)
+                    .addComponent(RcvRdateBtn)
+                    .addComponent(RcvRdateLbl)
                     .addComponent(RcvRdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5)
-                    .addComponent(jLabel6))
+                    .addComponent(RcvFcostTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RcvFcostBtn)
+                    .addComponent(RcvFcostLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6)
-                    .addComponent(jLabel7))
+                    .addComponent(RcvFPdateBtn)
+                    .addComponent(RcvFPdateLBL)
+                    .addComponent(RcvFPdatePc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jLabel8)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RcvLocBtn)
+                    .addComponent(RcvLocLbl)
+                    .addComponent(RcvLocCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jLabel9)
-                    .addComponent(jXDatePicker1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RcvSdateBtn)
+                    .addComponent(RcvSdateLbl)
+                    .addComponent(RcvSdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(RcvDnumTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RcvDnumBtn)
+                    .addComponent(RcvDnumLbl))
+                .addGap(32, 32, 32)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ReceiveTbLayout.createSequentialGroup()
                         .addComponent(RcvSnotesLbl)
@@ -763,17 +724,16 @@ public ResultSet rs = null;
                             .addComponent(RcvSnotesBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
-                            .addComponent(jButton11))
+                            .addComponent(RcvGrossTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RcvGrossLbl)
+                            .addComponent(RcvGrossBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RcvAdateLbl)
-                    .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jXDatePicker2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(RcvAdateBtn)))
-                .addGap(478, 478, 478))
+                    .addComponent(RcvAdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RcvAdateBtn))
+                .addGap(718, 718, 718))
         );
 
         TabPanel.addTab("Receiveing", ReceiveTb);
@@ -1881,7 +1841,7 @@ public ResultSet rs = null;
                                 .addComponent(jButton26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -1990,9 +1950,9 @@ public ResultSet rs = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_RcvOrdrTxtActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void RcvFcostTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvFcostTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_RcvFcostTxtActionPerformed
 
     private void LoginCancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginCancelBtnActionPerformed
         //if valid login then
@@ -2017,6 +1977,10 @@ public ResultSet rs = null;
                 if (rs.next()) {  
                     System.out.println(rs.getString("Uname") + " : " + rs.getString("Lname") + ", " + rs.getString("Fname"));
                     UserLbl.setText(rs.getString("Fname")+ " " + rs.getString("Lname"));
+                    userAccess[0] = rs.getByte("TAB1");
+                    userAccess[1] = rs.getByte("TAB2");
+                    userAccess[2] = rs.getByte("TAB3");
+                    userAccess[3] = rs.getByte("TAB4");
                     LogInDialog.dispose();
                 }
                 else {
@@ -2048,20 +2012,37 @@ public ResultSet rs = null;
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             System.out.println("looking for order!");
             conn = DriverManager.getConnection(Myurl);
-            String SQL = "Select O.OID, O.InOrdNum, V.Vendor, R.Rdate, R.Fcost, V.Vname, A.LocName, N.Snotes, R.Gross, R.Adate from [HDD_Records].[dbo].[Orders] AS O\n" +
-                "INNER JOIN [HDD_Records].[dbo].[Vendors] AS V ON V.VID = O.VID\n" +
-                "INNER JOIN [HDD_Records].[dbo].[Recieving] AS R ON O.OID = R.OID\n" +
-                "INNER JOIN [HDD_Records].[dbo].[Addresses] AS A ON A.LID = R.LID\n" +
-                "INNER JOIN [HDD_Records].[dbo].[Notes] AS N ON N.OID = O.OID\n" +
+            String SQL = "Select O.OID, O.InOrdNum,R.Sdate, R.DNum, V.Vendor, R.Rdate, R.Fcost, R.FPdate, V.Vname, A.LocName, N.Snotes, R.Gross, R.Adate from [HDD_Records].[dbo].[Orders] AS O\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON V.VID = O.VID\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Recieving] AS R ON O.OID = R.OID\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Addresses] AS A ON A.LID = R.LID\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON N.OID = O.OID\n" +
                 "WHERE O.InOrdNum LIKE '"+ OrderNum +"'";
+            System.out.println(SQL);
             stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
             try {  
-                while (rs.next()) {
-                    //Place a if nothing found creat order?
-                    System.out.println(rs.getString("OID") + " , " + rs.getString("InOrdNum") + ", " + rs.getString("Vendor") + rs.getString("Rdate") + rs.getString("Rdate"));
-                    //UserLbl.setText(rs.getString("Fname")+ " " + rs.getString("Lname"));
-                }  
+                if (rs.next()) {
+                    //If order found do as follows
+                    RcvVendorTxt.setText(rs.getString("Vendor"));//enable if user of privilage
+                    RcvRdatePc.setDate(rs.getDate("Rdate"));
+                    RcvFcostTxt.setText(rs.getString("Fcost"));
+                    RcvFPdatePc.setDate(rs.getDate("FPdate"));
+                    //add second query to add all the locations for the vendor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    //then set the one on file as the one picked.
+                    RcvSdatePc.setDate(rs.getDate("Sdate"));
+                    RcvDnumTxt.setText(rs.getString("DNum"));
+                    RcvSnotesTxtA.setText(rs.getString("Snotes"));
+                    RcvGrossTxt.setText(rs.getString("Gross"));
+                    RcvAdatePc.setDate(rs.getDate("Adate"));
+                }
+                else {
+                    CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
+                    SetRecieveEmpty();
+                    // if of privilage do this
+                    CreateOrderDialog.setVisible((true));
+                    //open create order window.
+                }
             } catch (Exception e) {  
                 e.printStackTrace();  
             }
@@ -2095,9 +2076,9 @@ public ResultSet rs = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField36ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void CreateOrdNumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateOrdNumTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_CreateOrdNumTxtActionPerformed
 
     private void LoginUserTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginUserTxtActionPerformed
         LoginUserTxt.selectAll();
@@ -2106,36 +2087,42 @@ public ResultSet rs = null;
     private void LoginPswrdTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginPswrdTxtActionPerformed
         LoginPswrdTxt.selectAll();
     }//GEN-LAST:event_LoginPswrdTxtActionPerformed
+
+    private void CreateCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateCancelActionPerformed
+        // TODO add your handling code here:
+        ClearRecievingTab();
+        CreateOrderDialog.dispose();
+    }//GEN-LAST:event_CreateCancelActionPerformed
    
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
         RcvOrdrTxt.setText("");
-        jButton2.setEnabled(false);
-        jButton5.setEnabled(false);
-        jButton6.setEnabled(false);
-        jButton7.setEnabled(false);
-        jButton8.setEnabled(false);
-        jButton9.setEnabled(false);
+        RcvOrdrTxt.requestFocus();
+        RcvLocCmbBx.removeAllItems();
+        RcvLocCmbBx.setEnabled(false);
+        RcvRdateBtn.setEnabled(false);
+        RcvFcostBtn.setEnabled(false);
+        RcvFPdateBtn.setEnabled(false);
+        RcvFPdatePc.setEnabled(false);
+        RcvLocBtn.setEnabled(false);
+        RcvSdateBtn.setEnabled(false);
+        RcvDnumBtn.setEnabled(false);
         RcvSnotesBtn.setEnabled(false);
-        jButton11.setEnabled(false);
+        RcvGrossBtn.setEnabled(false);
         RcvAdateBtn.setEnabled(false);
         RcvVendorTxt.setEnabled(false);
         RcvVendorTxt.setText("");
         RcvRdatePc.setEnabled(false);
         RcvRdatePc.setDate(null);
-        jTextField4.setEnabled(false);
-        jTextField4.setText("");
-        jTextField5.setEnabled(false);
-        jTextField5.setText("");
-        jXDatePicker1.setEnabled(false);
-        jXDatePicker1.setDate(null);
-        jTextField8.setEnabled(false);
-        jTextField8.setText("");
-        jTextField9.setEnabled(false);
-        jTextField9.setText("");
-        jXDatePicker2.setEnabled(false);
-        jXDatePicker2.setDate(null);
-        jTextField11.setEnabled(false);
-        jTextField11.setText("");
+        RcvFcostTxt.setEnabled(false);
+        RcvFcostTxt.setText("");
+        RcvSdatePc.setEnabled(false);
+        RcvSdatePc.setDate(null);
+        RcvDnumTxt.setEnabled(false);
+        RcvDnumTxt.setText("");
+        RcvAdatePc.setEnabled(false);
+        RcvAdatePc.setDate(null);
+        RcvGrossTxt.setEnabled(false);
+        RcvGrossTxt.setText("");
         RcvSnotesTxtA.setText("");
         RcvSnotesTxtA.setEnabled(false);
     }
@@ -2180,7 +2167,18 @@ public ResultSet rs = null;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminTb;
+    private javax.swing.JButton CreateCancel;
+    private javax.swing.JButton CreateNewBtn;
+    private javax.swing.JLabel CreateOrdNumLbl;
+    private javax.swing.JTextField CreateOrdNumTxt;
     private javax.swing.JDialog CreateOrderDialog;
+    private javax.swing.JLabel CreateOrderNotExistLbl;
+    private javax.swing.JLabel CreateRdateLbl;
+    private org.jdesktop.swingx.JXDatePicker CreateRdatePc;
+    private javax.swing.JComboBox<String> CreateShipLocCmbBx;
+    private javax.swing.JLabel CreateShipLocLbl;
+    private javax.swing.JComboBox<String> CreateVendCmbBx;
+    private javax.swing.JLabel CreateVendorNumLbl;
     private javax.swing.JLabel DashboardLbl;
     private javax.swing.JButton ExitBtn;
     private org.jdesktop.swingx.JXDatePicker HDDManageSerialCompDt;
@@ -2198,6 +2196,22 @@ public ResultSet rs = null;
     private javax.swing.JPanel ProductionManager;
     private javax.swing.JButton RcvAdateBtn;
     private javax.swing.JLabel RcvAdateLbl;
+    private org.jdesktop.swingx.JXDatePicker RcvAdatePc;
+    private javax.swing.JButton RcvDnumBtn;
+    private javax.swing.JLabel RcvDnumLbl;
+    private javax.swing.JTextField RcvDnumTxt;
+    private javax.swing.JButton RcvFPdateBtn;
+    private javax.swing.JLabel RcvFPdateLBL;
+    private org.jdesktop.swingx.JXDatePicker RcvFPdatePc;
+    private javax.swing.JButton RcvFcostBtn;
+    private javax.swing.JLabel RcvFcostLbl;
+    private javax.swing.JTextField RcvFcostTxt;
+    private javax.swing.JButton RcvGrossBtn;
+    private javax.swing.JLabel RcvGrossLbl;
+    private javax.swing.JTextField RcvGrossTxt;
+    private javax.swing.JButton RcvLocBtn;
+    private javax.swing.JComboBox<String> RcvLocCmbBx;
+    private javax.swing.JLabel RcvLocLbl;
     private javax.swing.JButton RcvOrdrBtn;
     private javax.swing.JButton RcvOrdrBtn1;
     private javax.swing.JButton RcvOrdrBtn2;
@@ -2207,11 +2221,17 @@ public ResultSet rs = null;
     private javax.swing.JLabel RcvOrdrLbl1;
     private javax.swing.JTextField RcvOrdrTxt;
     private javax.swing.JTextField RcvOrdrTxt1;
+    private javax.swing.JButton RcvRdateBtn;
+    private javax.swing.JLabel RcvRdateLbl;
     private org.jdesktop.swingx.JXDatePicker RcvRdatePc;
+    private javax.swing.JButton RcvSdateBtn;
+    private javax.swing.JLabel RcvSdateLbl;
+    private org.jdesktop.swingx.JXDatePicker RcvSdatePc;
     private javax.swing.JButton RcvSnotesBtn;
     private javax.swing.JLabel RcvSnotesLbl;
     private javax.swing.JScrollPane RcvSnotesScroll;
     private javax.swing.JTextArea RcvSnotesTxtA;
+    private javax.swing.JLabel RcvTabTitleLbl;
     private javax.swing.JLabel RcvVendorLbl;
     private javax.swing.JTextField RcvVendorTxt;
     private javax.swing.JPanel ReceiveTb;
@@ -2224,8 +2244,6 @@ public ResultSet rs = null;
     private javax.swing.JPanel WipeReports;
     private javax.swing.JLabel WipeReportsLbl;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -2233,8 +2251,6 @@ public ResultSet rs = null;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
@@ -2244,20 +2260,6 @@ public ResultSet rs = null;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -2285,9 +2287,6 @@ public ResultSet rs = null;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -2296,7 +2295,6 @@ public ResultSet rs = null;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -2307,16 +2305,11 @@ public ResultSet rs = null;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
@@ -2326,7 +2319,6 @@ public ResultSet rs = null;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
@@ -2336,10 +2328,7 @@ public ResultSet rs = null;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
@@ -2368,25 +2357,18 @@ public ResultSet rs = null;
     private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker10;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker11;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker12;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker13;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker14;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker3;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker4;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker5;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker6;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker7;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker8;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker9;
     // End of variables declaration//GEN-END:variables
