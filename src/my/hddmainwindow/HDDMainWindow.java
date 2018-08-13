@@ -5,11 +5,11 @@
  */
 package my.hddmainwindow;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -34,7 +34,8 @@ public ResultSet rs = null;
 
 private String classUser = "";
 private String classPass = "";
-private byte userAccess[] = new byte[4];
+private byte userAccess[] = new byte[9];
+private LocalDateTime myTimeStamp;
     /**
      * Creates new form HDDMainWindow
      */
@@ -255,6 +256,10 @@ private byte userAccess[] = new byte[4];
         jToggleButton1 = new javax.swing.JToggleButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
+        About = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        DashboardLbl1 = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         LogInOutBtn = new javax.swing.JButton();
         ExitBtn = new javax.swing.JButton();
@@ -417,6 +422,11 @@ private byte userAccess[] = new byte[4];
 
         CreateNewBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateNewBtn.setText("Create New Order");
+        CreateNewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateNewBtnActionPerformed(evt);
+            }
+        });
 
         CreateCancel.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateCancel.setText("Cancel");
@@ -438,7 +448,7 @@ private byte userAccess[] = new byte[4];
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CreateCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CreateOrderDialogLayout.createSequentialGroup()
-                        .addGap(0, 10, Short.MAX_VALUE)
+                        .addGap(0, 20, Short.MAX_VALUE)
                         .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CreateShipLocLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(CreateRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -488,9 +498,10 @@ private byte userAccess[] = new byte[4];
         setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         setIconImages(null);
         setLocation(new java.awt.Point(0, 0));
-        setMinimumSize(new java.awt.Dimension(660, 699));
+        setMinimumSize(new java.awt.Dimension(800, 1280));
         setName("Echo"); // NOI18N
-        setSize(new java.awt.Dimension(800, 810));
+        setPreferredSize(new java.awt.Dimension(800, 1280));
+        setSize(new java.awt.Dimension(800, 1280));
         setType(java.awt.Window.Type.UTILITY);
 
         ToolBar.setBackground(new java.awt.Color(214, 214, 214));
@@ -506,8 +517,9 @@ private byte userAccess[] = new byte[4];
         ToolBar.add(UserLbl);
 
         TabPanel.setBackground(new java.awt.Color(0, 102, 102));
+        TabPanel.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         TabPanel.setMaximumSize(new java.awt.Dimension(640000, 640000));
-        TabPanel.setMinimumSize(new java.awt.Dimension(800, 72));
+        TabPanel.setMinimumSize(new java.awt.Dimension(800, 1280));
         TabPanel.setName("WorkingTabs"); // NOI18N
         TabPanel.setPreferredSize(new java.awt.Dimension(800, 1280));
 
@@ -542,6 +554,7 @@ private byte userAccess[] = new byte[4];
         RcvVendorLbl.setForeground(new java.awt.Color(214, 214, 214));
         RcvVendorLbl.setText("Vendor:");
 
+        RcvVendorTxt.setEditable(false);
         RcvVendorTxt.setFocusable(false);
 
         RcvRdateLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
@@ -811,7 +824,7 @@ private byte userAccess[] = new byte[4];
                     .addComponent(jButton21)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton22))
-                .addContainerGap(635, Short.MAX_VALUE))
+                .addContainerGap(646, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Heat Assignment", HeatAssignment);
@@ -1090,7 +1103,7 @@ private byte userAccess[] = new byte[4];
                     .addComponent(jLabel38))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 599, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
                     .addGroup(ProductionManagerLayout.createSequentialGroup()
                         .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel39)
@@ -1479,7 +1492,7 @@ private byte userAccess[] = new byte[4];
                     .addComponent(jLabel59)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RcvOrdrBtn4))
-                .addContainerGap(458, Short.MAX_VALUE))
+                .addContainerGap(469, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("HDD Manager", HDDManager);
@@ -1608,7 +1621,7 @@ private byte userAccess[] = new byte[4];
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(411, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Record Veiwer", RecordView);
@@ -1632,7 +1645,7 @@ private byte userAccess[] = new byte[4];
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminTbLayout.createSequentialGroup()
                 .addComponent(jLabel25)
-                .addContainerGap(1139, Short.MAX_VALUE))
+                .addContainerGap(1150, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Administration View", AdminTb);
@@ -1864,11 +1877,48 @@ private byte userAccess[] = new byte[4];
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 916, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         TabPanel.addTab("Dashboard", OpsDashTb);
+
+        About.setBackground(new java.awt.Color(0, 102, 102));
+        About.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextPane1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jTextPane1.setText("Welcome to Echo Environmental's Tracking Tool\n\nThis tool is intended to allow registered users to track loads of serialized material from begining of our process to the end for full reporting and easy tracability.\n\nIf you have not logged in please do so or none of the other tabs will be accessable to you.");
+        jScrollPane9.setViewportView(jTextPane1);
+
+        DashboardLbl1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        DashboardLbl1.setForeground(new java.awt.Color(214, 214, 214));
+        DashboardLbl1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        DashboardLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        DashboardLbl1.setText("     About");
+        DashboardLbl1.setToolTipText("");
+
+        javax.swing.GroupLayout AboutLayout = new javax.swing.GroupLayout(About);
+        About.setLayout(AboutLayout);
+        AboutLayout.setHorizontalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        AboutLayout.setVerticalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(DashboardLbl1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(695, Short.MAX_VALUE))
+        );
+
+        TabPanel.addTab("About Echo Tracking Tool", About);
 
         jToolBar1.setRollover(true);
 
@@ -1920,7 +1970,7 @@ private byte userAccess[] = new byte[4];
                     .addComponent(ToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1249, Short.MAX_VALUE))
+                .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1957,6 +2007,19 @@ private byte userAccess[] = new byte[4];
     private void LoginCancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginCancelBtnActionPerformed
         //if valid login then
         LogInDialog.dispose();
+        if (classUser.equals("")){
+        TabPanel.setEnabledAt(0,false);
+        TabPanel.setEnabledAt(1,false);
+        TabPanel.setEnabledAt(2,false);
+        TabPanel.setEnabledAt(3,false);
+        TabPanel.setEnabledAt(4,false);
+        TabPanel.setEnabledAt(5,false);
+        TabPanel.setEnabledAt(6,false);
+        TabPanel.setEnabledAt(7,false);
+        TabPanel.setEnabledAt(8,false);
+        TabPanel.setSelectedIndex(9);
+        }
+        
         //else say not a valid login and you must log in to condinue unless you would like to close the application
     }//GEN-LAST:event_LoginCancelBtnActionPerformed
 
@@ -1981,11 +2044,38 @@ private byte userAccess[] = new byte[4];
                     userAccess[1] = rs.getByte("TAB2");
                     userAccess[2] = rs.getByte("TAB3");
                     userAccess[3] = rs.getByte("TAB4");
+                    userAccess[4] = rs.getByte("TAB5");
+                    userAccess[5] = rs.getByte("TAB6");
+                    userAccess[6] = rs.getByte("TAB7");
+                    userAccess[7] = rs.getByte("TAB8");
+                    userAccess[8] = rs.getByte("TAB9");
+                    
+                    if (classUser.equals("")){
+                        TabPanel.setEnabledAt(0,false);
+                        TabPanel.setEnabledAt(1,false);
+                        TabPanel.setEnabledAt(2,false);
+                        TabPanel.setEnabledAt(3,false);
+                        TabPanel.setEnabledAt(4,false);
+                        TabPanel.setEnabledAt(5,false);
+                        TabPanel.setEnabledAt(6,false);
+                        TabPanel.setEnabledAt(7,false);
+                        TabPanel.setEnabledAt(8,false);
+                        TabPanel.setSelectedIndex(9);
+                    }
                     LogInDialog.dispose();
                 }
                 else {
                     LoginUserTxt.setText("");
                     LoginPswrdTxt.setText("");
+                    userAccess[0] = 0;
+                    userAccess[1] = 0;
+                    userAccess[2] = 0;
+                    userAccess[3] = 0;
+                    userAccess[4] = 0;
+                    userAccess[5] = 0;
+                    userAccess[6] = 0;
+                    userAccess[7] = 0;
+                    userAccess[8] = 0;
                     LoginUserTxt.requestFocus();
                 }
             } catch (Exception e) {  
@@ -2018,23 +2108,48 @@ private byte userAccess[] = new byte[4];
                 "LEFT JOIN [HDD_Records].[dbo].[Addresses] AS A ON A.LID = R.LID\n" +
                 "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON N.OID = O.OID\n" +
                 "WHERE O.InOrdNum LIKE '"+ OrderNum +"'";
-            System.out.println(SQL);
+            //System.out.println(SQL);
             stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
             try {  
                 if (rs.next()) {
                     //If order found do as follows
-                    RcvVendorTxt.setText(rs.getString("Vendor"));//enable if user of privilage
-                    RcvRdatePc.setDate(rs.getDate("Rdate"));
+                    RcvVendorTxt.setText(rs.getString("Vendor"));
+                    RcvRdatePc.setDate(rs.getDate("Rdate"));//enable if user of privilage
                     RcvFcostTxt.setText(rs.getString("Fcost"));
                     RcvFPdatePc.setDate(rs.getDate("FPdate"));
                     //add second query to add all the locations for the vendor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                     //then set the one on file as the one picked.
+                    RcvLocCmbBx.removeAll();
+                    RcvLocCmbBx.addItem(rs.getString("LocName"));
+                    
+                                        
                     RcvSdatePc.setDate(rs.getDate("Sdate"));
                     RcvDnumTxt.setText(rs.getString("DNum"));
                     RcvSnotesTxtA.setText(rs.getString("Snotes"));
                     RcvGrossTxt.setText(rs.getString("Gross"));
                     RcvAdatePc.setDate(rs.getDate("Adate"));
+                    
+                    //switch for setting user access
+                    switch (userAccess[0]){
+                        case 0://no access
+                            ReceiveTb.setVisible(false);
+                            break;
+                            
+                        case 1://view only
+                            break;
+                            
+                        case 2://limited access
+                            break;
+                        
+                        case 3://full access
+                            SetRecieveFull();
+                            break;
+                            
+                        default://unknow clear it and burn the evidence
+                            SetRecieveEmpty();
+                            break;
+                    }
                 }
                 else {
                     CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
@@ -2090,9 +2205,56 @@ private byte userAccess[] = new byte[4];
 
     private void CreateCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateCancelActionPerformed
         // TODO add your handling code here:
-        ClearRecievingTab();
+        SetRecieveEmpty();
         CreateOrderDialog.dispose();
     }//GEN-LAST:event_CreateCancelActionPerformed
+
+    private void CreateNewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewBtnActionPerformed
+        // TODO add your handling code here:
+        //verify order number and vendor are entered and that vendor is in the database.
+        String DisOrder = CreateOrdNumTxt.getText();
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("Inserting New Order!");
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "IF (NOT EXISTS(SELECT * FROM [HDD_Records].[dbo].[Orders] WHERE OID = '" + DisOrder + "')"
+                    + "BEGIN INSERT INTO [HDD_Records].[dbo].[Orders] ('InOrdNum',VID)  VALUES ('" + DisOrder + "', " + CreateVendCmbBx.getSelectedItem();
+            //System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            try {  
+                if (rs.next()) {
+                    //If order found do as follows
+                    RcvVendorTxt.setText(rs.getString("Vendor"));
+                    RcvRdatePc.setDate(rs.getDate("Rdate"));//enable if user of privilage
+                    RcvFcostTxt.setText(rs.getString("Fcost"));
+                    RcvFPdatePc.setDate(rs.getDate("FPdate"));
+                    //add second query to add all the locations for the vendor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                    //then set the one on file as the one picked.
+                    RcvSdatePc.setDate(rs.getDate("Sdate"));
+                    RcvDnumTxt.setText(rs.getString("DNum"));
+                    RcvSnotesTxtA.setText(rs.getString("Snotes"));
+                    RcvGrossTxt.setText(rs.getString("Gross"));
+                    RcvAdatePc.setDate(rs.getDate("Adate"));
+                    RcvLocCmbBx.removeAll();
+                }
+                else {
+                    CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
+                    SetRecieveEmpty();
+                    // if of privilage do this
+                    CreateOrderDialog.setVisible((true));
+                    //open create order window.
+                }
+            } catch (Exception e) {  
+                e.printStackTrace();  
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+                    myTimeStamp = LocalDateTime.now();
+                    System.out.println(classUser);
+                    System.out.println(myTimeStamp);
+    }//GEN-LAST:event_CreateNewBtnActionPerformed
    
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
         RcvOrdrTxt.setText("");
@@ -2126,12 +2288,39 @@ private byte userAccess[] = new byte[4];
         RcvSnotesTxtA.setText("");
         RcvSnotesTxtA.setEnabled(false);
     }
-    private void ClearRecievingTab(){
-        //clear labels and disable buttons
+    
+    private void SetRecieveFull(){/*This is for setting full access on the Recieving tab*/
+        //RcvOrdrTxt.setText("");
+        RcvOrdrTxt.requestFocus();
+        RcvLocCmbBx.setEnabled(true);
+        RcvRdateBtn.setEnabled(true);
+        RcvFcostBtn.setEnabled(true);
+        RcvFPdateBtn.setEnabled(true);
+        RcvFPdatePc.setEnabled(true);
+        RcvLocBtn.setEnabled(true);
+        RcvSdateBtn.setEnabled(true);
+        RcvDnumBtn.setEnabled(true);
+        RcvSnotesBtn.setEnabled(true);
+        RcvGrossBtn.setEnabled(true);
+        RcvAdateBtn.setEnabled(true);
+        RcvVendorTxt.setEnabled(true);
+        RcvRdatePc.setEnabled(true);
+        RcvFcostTxt.setEnabled(true);
+        RcvSdatePc.setEnabled(true);
+        RcvDnumTxt.setEnabled(true);
+        RcvAdatePc.setEnabled(true);
+        RcvGrossTxt.setEnabled(true);
+        RcvSnotesTxtA.setEnabled(true);
     }
-    /**
+    
+    
+    
+    
+    /***************************************************************************
+     *              MAIN
+     * 
      * @param args the command line arguments
-     */
+     **************************************************************************/
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2166,6 +2355,7 @@ private byte userAccess[] = new byte[4];
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel About;
     private javax.swing.JPanel AdminTb;
     private javax.swing.JButton CreateCancel;
     private javax.swing.JButton CreateNewBtn;
@@ -2180,6 +2370,7 @@ private byte userAccess[] = new byte[4];
     private javax.swing.JComboBox<String> CreateVendCmbBx;
     private javax.swing.JLabel CreateVendorNumLbl;
     private javax.swing.JLabel DashboardLbl;
+    private javax.swing.JLabel DashboardLbl1;
     private javax.swing.JButton ExitBtn;
     private org.jdesktop.swingx.JXDatePicker HDDManageSerialCompDt;
     private javax.swing.JLabel HDDManageSerialCompLbl;
@@ -2319,6 +2510,7 @@ private byte userAccess[] = new byte[4];
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
@@ -2358,6 +2550,7 @@ private byte userAccess[] = new byte[4];
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker10;
