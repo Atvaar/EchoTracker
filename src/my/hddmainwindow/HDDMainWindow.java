@@ -11,16 +11,17 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
 
-/**
- *
+/*
  * @author aross
  */
+
 public class HDDMainWindow extends javax.swing.JFrame {
     
 /*
 *this block is for comms variables for the passing of user name and password 
 *as well as communicating with the server
 */
+
 public String user = "ESDTester";
 public String pass = "ESDTester";
 public String rptPath;
@@ -395,7 +396,7 @@ private LocalDateTime myTimeStamp;
         CreateOrdNumLbl.setText("Order Number:");
 
         CreateOrdNumTxt.setEditable(false);
-        CreateOrdNumTxt.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        CreateOrdNumTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateOrdNumTxt.setFocusable(false);
         CreateOrdNumTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -407,18 +408,32 @@ private LocalDateTime myTimeStamp;
         CreateVendorNumLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         CreateVendorNumLbl.setText("Vendor Number:");
 
+        CreateVendCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateVendCmbBx.setMaximumRowCount(1000);
         CreateVendCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CreateVendCmbBx.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                CreateVendCmbBxFocusLost(evt);
+            }
+        });
+        CreateVendCmbBx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateVendCmbBxActionPerformed(evt);
+            }
+        });
 
         CreateShipLocLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateShipLocLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         CreateShipLocLbl.setText("Ship From Location:");
 
+        CreateShipLocCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateShipLocCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         CreateRdateLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateRdateLbl.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         CreateRdateLbl.setText("Request Date:");
+
+        CreateRdatePc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         CreateNewBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateNewBtn.setText("Create New Order");
@@ -2062,6 +2077,189 @@ private LocalDateTime myTimeStamp;
                         TabPanel.setEnabledAt(8,false);
                         TabPanel.setSelectedIndex(9);
                     }
+                    else {
+                        switch (userAccess[0]){////////////////////////////////////////////////////switch for Recieving tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(0,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(0,true);
+                                SetRecieveEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(0,true);
+                                SetRecieveLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(0,true);
+                                SetRecieveFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(0,true);
+                                SetRecieveEmpty();
+                                break;
+                        }
+                        switch (userAccess[1]){////////////////////////////////////////////////switch for Heat Assignment tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(1,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(1,true);
+                                SetHeatEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(1,true);
+                                SetHeatLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(1,true);
+                                SetHeatFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(1,true);
+                                SetHeatEmpty();
+                                break;
+                        }
+                        switch (userAccess[2]){//////////////////////////////////////////////switch for Production Manager tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(2,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(2,true);
+                                SetProductionManagerEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(2,true);
+                                SetProductionManagerLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(2,true);
+                                SetProductionManagerFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(2,true);
+                                SetProductionManagerEmpty();
+                                break;
+                        }
+                        switch (userAccess[3]){/////////////////////////////////////////////////switch for HDD Manager tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(3,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(3,true);
+                                SetHDDManagerEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(3,true);
+                                SetHDDManagerLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(3,true);
+                                SetHDDManagerFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(3,true);
+                                SetHDDManagerEmpty();
+                                break;
+                        }
+                        switch (userAccess[4]){/////////////////////////////////////////////////switch for Record View tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(4,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(4,true);
+                                SetRecordViewEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(4,true);
+                                SetRecordViewLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(4,true);
+                                SetRecordViewFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(4,true);
+                                SetRecordViewEmpty();
+                                break;
+                        }
+                        switch (userAccess[5]){/////////////////////////////////////////////////switch for Admin View tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(5,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(5,true);
+                                SetAdminEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(5,true);
+                                SetAdminLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(5,true);
+                                SetAdminFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(4,true);
+                                SetAdminEmpty();
+                                break;
+                        }
+                        switch (userAccess[6]){/////////////////////////////////////////////////switch for Wipe View tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(6,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(6,true);
+                                SetWipeEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(6,true);
+                                SetWipeLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(6,true);
+                                SetWipeFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(6,true);
+                                SetWipeEmpty();
+                                break;
+                        }
+                        switch (userAccess[7]){/////////////////////////////////////////////////switch for Resale tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(7,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(7,true);
+                                SetResaleEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(7,true);
+                                SetResaleLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(7,true);
+                                SetResaleFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(7,true);
+                                SetResaleEmpty();
+                                break;
+                        }
+                        switch (userAccess[8]){/////////////////////////////////////////////////switch for Ops Dashboard tab
+                            case 0://no access
+                                TabPanel.setEnabledAt(8,false);
+                                break;
+                            case 1://view only
+                                TabPanel.setEnabledAt(8,true);
+                                SetOpsDashEmpty();
+                                break;
+                            case 2://limited access for now is view only
+                                TabPanel.setEnabledAt(8,true);
+                                SetOpsDashLimited();
+                                break;
+                            case 3://full access
+                                TabPanel.setEnabledAt(8,true);
+                                SetOpsDashFull();
+                            default://all others are view only for now
+                                TabPanel.setEnabledAt(8,true);
+                                SetOpsDashEmpty();
+                                break;
+                        }
+                    }
+                    TabPanel.setSelectedIndex(9);
                     LogInDialog.dispose();
                 }
                 else {
@@ -2135,17 +2333,13 @@ private LocalDateTime myTimeStamp;
                         case 0://no access
                             ReceiveTb.setVisible(false);
                             break;
-                            
                         case 1://view only
                             break;
-                            
                         case 2://limited access
                             break;
-                        
                         case 3://full access
                             SetRecieveFull();
                             break;
-                            
                         default://unknow clear it and burn the evidence
                             SetRecieveEmpty();
                             break;
@@ -2156,7 +2350,21 @@ private LocalDateTime myTimeStamp;
                     SetRecieveEmpty();
                     // if of privilage do this
                     CreateOrderDialog.setVisible((true));
+                    //load vendors in the vendor drop down
+                    SQL = "SELECT [Vendor],[Vname] FROM [HDD_Records].[dbo].[Vendors]";
+                    stmt = conn.createStatement();
+                    rs = stmt.executeQuery(SQL);
+                    try {  
+                        CreateVendCmbBx.removeAllItems();
+                        while (rs.next()) {
+                            CreateVendCmbBx.addItem(rs.getString("Vendor"));
+                        }
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
                     //open create order window.
+                    CreateVendCmbBx.repaint();
                 }
             } catch (Exception e) {  
                 e.printStackTrace();  
@@ -2224,19 +2432,7 @@ private LocalDateTime myTimeStamp;
             rs = stmt.executeQuery(SQL);
             try {  
                 if (rs.next()) {
-                    //If order found do as follows
-                    RcvVendorTxt.setText(rs.getString("Vendor"));
-                    RcvRdatePc.setDate(rs.getDate("Rdate"));//enable if user of privilage
-                    RcvFcostTxt.setText(rs.getString("Fcost"));
-                    RcvFPdatePc.setDate(rs.getDate("FPdate"));
-                    //add second query to add all the locations for the vendor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                    //then set the one on file as the one picked.
-                    RcvSdatePc.setDate(rs.getDate("Sdate"));
-                    RcvDnumTxt.setText(rs.getString("DNum"));
-                    RcvSnotesTxtA.setText(rs.getString("Snotes"));
-                    RcvGrossTxt.setText(rs.getString("Gross"));
-                    RcvAdatePc.setDate(rs.getDate("Adate"));
-                    RcvLocCmbBx.removeAll();
+                    //WORK HERE GUS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 }
                 else {
                     CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
@@ -2255,8 +2451,42 @@ private LocalDateTime myTimeStamp;
                     System.out.println(classUser);
                     System.out.println(myTimeStamp);
     }//GEN-LAST:event_CreateNewBtnActionPerformed
+
+    private void CreateVendCmbBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateVendCmbBxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreateVendCmbBxActionPerformed
+
+    private void CreateVendCmbBxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CreateVendCmbBxFocusLost
+        // TODO add your handling code here:
+        //look up locations for each vendor and pop CreateShipLocCmbBx
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("looking up Addresses!");
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "Select A.[LocName] FROM [HDD_Records].[dbo].[Addresses] AS A\n"
+                    + "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON A.VID = V.VID\n"
+                    + "WHERE V.Vendor LIKE '" + CreateVendCmbBx.getSelectedItem().toString() + "'" ;
+            //System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            try {  
+                        CreateShipLocCmbBx.removeAllItems();
+                        while (rs.next()) {
+                            CreateShipLocCmbBx.addItem(rs.getString("LocName"));
+                        }
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_CreateVendCmbBxFocusLost
    
+    //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
+        TabPanel.setEnabledAt(0,true);
         RcvOrdrTxt.setText("");
         RcvOrdrTxt.requestFocus();
         RcvLocCmbBx.removeAllItems();
@@ -2289,8 +2519,12 @@ private LocalDateTime myTimeStamp;
         RcvSnotesTxtA.setEnabled(false);
     }
     
+    private void SetRecieveLimited(){
+        SetRecieveEmpty();
+    }
+    
     private void SetRecieveFull(){/*This is for setting full access on the Recieving tab*/
-        //RcvOrdrTxt.setText("");
+        TabPanel.setEnabledAt(0,true);
         RcvOrdrTxt.requestFocus();
         RcvLocCmbBx.setEnabled(true);
         RcvRdateBtn.setEnabled(true);
@@ -2311,6 +2545,102 @@ private LocalDateTime myTimeStamp;
         RcvAdatePc.setEnabled(true);
         RcvGrossTxt.setEnabled(true);
         RcvSnotesTxtA.setEnabled(true);
+    }
+    //****************Heat Assignment***************************************TAB1
+    private void SetHeatEmpty(){
+        //stub to clear and set empty HeatAssignment Tab
+    }
+    
+    private void SetHeatLimited(){
+        //stub to clear and set limited access HeatAssignment Tab
+    }
+    
+    private void SetHeatFull(){
+        //stub to clear and set full access HeatAssignment Tab
+    }
+    //**************Production Manager**************************************TAB2
+    private void SetProductionManagerEmpty(){
+        //stub to clear and set empty ProductionManager Tab
+    }
+    
+    private void SetProductionManagerLimited(){
+        //stub to clear and set limited access ProductionManager Tab
+    }
+    
+    private void SetProductionManagerFull(){
+        //stub to clear and set full access ProductionManager Tab
+    }
+    //**************HDD Manager*********************************************TAB3
+    private void SetHDDManagerEmpty(){
+        //stub to clear and set empty HDDManager Tab
+    }
+    
+    private void SetHDDManagerLimited(){
+        //stub to clear and set limited access HDDManager Tab
+    }
+    
+    private void SetHDDManagerFull(){
+        //stub to clear and set full access HDDManager Tab
+    }
+    //**************Record View*********************************************TAB4
+    private void SetRecordViewEmpty(){
+        //stub to clear and set empty Record View Tab
+    }
+    
+    private void SetRecordViewLimited(){
+        //stub to clear and set limited access Record View Tab
+    }
+    
+    private void SetRecordViewFull(){
+        //stub to clear and set full access Record View Tab
+    }
+    //**************Admin Tab***********************************************TAB5
+    private void SetAdminEmpty(){
+        //stub to clear and set empty Admin Tab
+    }
+    
+    private void SetAdminLimited(){
+        //stub to clear and set limited access Admin Tab
+    }
+    
+    private void SetAdminFull(){
+        //stub to clear and set full access Admin Tab
+    }
+    //**************Wipe Tab************************************************TAB6
+    private void SetWipeEmpty(){
+        //stub to clear and set empty Wipe Report Tab
+    }
+    
+    private void SetWipeLimited(){
+        //stub to clear and set limited access Wipe Report Tab
+    }
+    
+    private void SetWipeFull(){
+        //stub to clear and set full access Wipe Report Tab
+    }
+    //**************Resale Tab**********************************************TAB7
+    private void SetResaleEmpty(){
+        //stub to clear and set empty Resale Tab
+    }
+    
+    private void SetResaleLimited(){
+        //stub to clear and set limited access Resale Tab
+    }
+    
+    private void SetResaleFull(){
+        //stub to clear and set full access Resale Tab
+    }
+    //**************OpsDash Tab*********************************************TAB8
+    private void SetOpsDashEmpty(){
+        //stub to clear and set empty Ops Dashboard Tab
+    }
+    
+    private void SetOpsDashLimited(){
+        //stub to clear and set limited access Ops Dashboard Tab
+    }
+    
+    private void SetOpsDashFull(){
+        //stub to clear and set full access Ops Dashboard Tab
     }
     
     
