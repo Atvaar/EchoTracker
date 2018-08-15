@@ -269,11 +269,9 @@ private LocalDateTime myTimeStamp;
         LogInDialog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         LogInDialog.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         LogInDialog.setLocation(new java.awt.Point(200, 200));
-        LogInDialog.setMaximumSize(new java.awt.Dimension(409, 185));
         LogInDialog.setMinimumSize(new java.awt.Dimension(409, 185));
         LogInDialog.setModal(true);
         LogInDialog.setName("Credentials"); // NOI18N
-        LogInDialog.setPreferredSize(new java.awt.Dimension(409, 185));
         LogInDialog.setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
@@ -756,7 +754,6 @@ private LocalDateTime myTimeStamp;
                             .addComponent(RcvGrossLbl)
                             .addComponent(RcvGrossBtn))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RcvAdateLbl)
                     .addComponent(RcvAdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2423,26 +2420,54 @@ private LocalDateTime myTimeStamp;
         String DisOrder = CreateOrdNumTxt.getText();
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("Inserting New Order!");
+            System.out.println("Making sure new order does not already exist!");
             conn = DriverManager.getConnection(Myurl);
-            String SQL = "IF (NOT EXISTS(SELECT * FROM [HDD_Records].[dbo].[Orders] WHERE OID = '" + DisOrder + "')"
-                    + "BEGIN INSERT INTO [HDD_Records].[dbo].[Orders] ('InOrdNum',VID)  VALUES ('" + DisOrder + "', " + CreateVendCmbBx.getSelectedItem();
-            //System.out.println(SQL);
+            String SQL = "SELECT * FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum = '" + DisOrder + "'";
+            System.out.println(SQL);
             stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
+            
             try {  
                 if (rs.next()) {
-                    //WORK HERE GUS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    System.out.println("Already Exists");
                 }
                 else {
-                    CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
-                    SetRecieveEmpty();
-                    // if of privilage do this
-                    CreateOrderDialog.setVisible((true));
-                    //open create order window.
+                    SQL = "INSERT INTO [HDD_Records].[dbo].[Orders] (InOrdNum,VID)  VALUES ('" + DisOrder + "', (SELECT VID FROM [HDD_Records].[dbo].[Vendors] WHERE Vendor LIKE '" + CreateVendCmbBx.getSelectedItem() + "'))";
+                    System.out.println("Inserting new Order:  " + SQL);
+                    stmt = conn.createStatement();
+                    stmt.executeUpdate(SQL);
+                    
+                    try {
+                        SQL = "SELECT O.OID, L.LID FROM [HDD_Records].[dbo].[Orders] AS O"
+                                + " INNER JOIN [HDD_Records].[dbo].[Addresses] AS L ON O.VID = L.VID"
+                                + " WHERE InOrdNum LIKE '" + DisOrder +"' AND LocName LIKE '" + CreateShipLocCmbBx.getSelectedItem() + "'";
+                        System.out.println("Looking Up OID and LID!\n" + SQL);
+                        stmt = conn.createStatement();
+                        rs = stmt.executeQuery(SQL);
+                        String thisOID;
+                        String thisLID;
+                        try {  
+                            if (rs.next()) {
+                            System.out.println("Setting OID and LID!");
+                            thisOID = rs.getString("OID");
+                            thisLID = rs.getString("LID");
+                            
+                            //WORK HERE GUS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  Convert to SQL DateTime!!!!!!!!!!!!!
+                            SQL = "INSERT INTO [HDD_Records].[dbo].[Recieving] (OID,LID,Rdate)VALUES ('" + thisOID + "','"+ thisLID + "', '"+ CreateRdatePc.getDate() +"')";
+                            System.out.println("Inserting into receiving" + SQL);
+                            stmt = conn.createStatement();
+                            stmt.executeUpdate(SQL);
+                            }
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    } catch (Exception e){
+                        e.printStackTrace();
+                    }
                 }
             } catch (Exception e) {  
-                e.printStackTrace();  
+                e.printStackTrace();
+                System.out.println("trying to insert new order");
             }
         } catch (Exception e){
             e.printStackTrace();
