@@ -211,28 +211,29 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="CreateNewBtn" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="CreateCancel" min="-2" pref="177" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="CreateShipLocLbl" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CreateRdateLbl" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CreateVendorNumLbl" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CreateOrdNumLbl" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CreateOrderNotExistLbl" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="CreateNewBtn" pref="151" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="CreateShipLocLbl" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="CreateRdateLbl" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="CreateVendorNumLbl" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="CreateOrdNumLbl" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="CreateOrdNumTxt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="CreateRdatePc" alignment="0" pref="258" max="32767" attributes="0"/>
+                              <Component id="CreateRdatePc" alignment="0" max="32767" attributes="0"/>
                               <Component id="CreateVendCmbBx" alignment="0" max="32767" attributes="0"/>
                               <Component id="CreateShipLocCmbBx" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateCancel" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="CreateOrderNotExistLbl" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -320,12 +321,7 @@
             </Property>
             <Property name="maximumRowCount" type="int" value="1000"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
@@ -755,6 +751,9 @@
                 <Property name="text" type="java.lang.String" value="Update"/>
                 <Property name="actionCommand" type="java.lang.String" value="UpdateRD"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvRdateBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="RcvFcostLbl">
               <Properties>
@@ -766,6 +765,20 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Freight Cost:"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="RcvFcostTxt">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvFcostTxtActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="RcvFcostBtn">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Update"/>
+                <Property name="actionCommand" type="java.lang.String" value="UpdateFC"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvFcostBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="RcvFPdateLBL">
               <Properties>
@@ -785,6 +798,9 @@
                 <Property name="text" type="java.lang.String" value="Update"/>
                 <Property name="actionCommand" type="java.lang.String" value="UpdateFP"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvFPdateBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="RcvLocLbl">
               <Properties>
@@ -883,24 +899,16 @@
             </Component>
             <Component class="org.jdesktop.swingx.JXDatePicker" name="RcvAdatePc">
             </Component>
-            <Component class="javax.swing.JTextField" name="RcvFcostTxt">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvFcostTxtActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="RcvDnumTxt">
-            </Component>
-            <Component class="javax.swing.JButton" name="RcvFcostBtn">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Update"/>
-                <Property name="actionCommand" type="java.lang.String" value="UpdateFC"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="RcvLocBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Update"/>
                 <Property name="actionCommand" type="java.lang.String" value="UpdateSL"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvLocBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="RcvSdateBtn">
               <Properties>

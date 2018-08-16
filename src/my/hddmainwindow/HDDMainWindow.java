@@ -10,6 +10,11 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.time.LocalDateTime;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /*
  * @author aross
@@ -28,7 +33,7 @@ public String rptPath;
 public String server = "";
 public String tableUsed = "Users";
 public Connection conn;
-public String Myurl = "jdbc:sqlserver://;servername=ELEREC-PC02\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester";
+public String Myurl = "jdbc:sqlserver://;servername=10.105.10.138\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester";
 public Statement stmt = null;
 public ResultSet rs = null;
 
@@ -90,6 +95,8 @@ private LocalDateTime myTimeStamp;
         RcvRdatePc = new org.jdesktop.swingx.JXDatePicker();
         RcvRdateBtn = new javax.swing.JButton();
         RcvFcostLbl = new javax.swing.JLabel();
+        RcvFcostTxt = new javax.swing.JTextField();
+        RcvFcostBtn = new javax.swing.JButton();
         RcvFPdateLBL = new javax.swing.JLabel();
         RcvFPdatePc = new org.jdesktop.swingx.JXDatePicker();
         RcvFPdateBtn = new javax.swing.JButton();
@@ -105,9 +112,7 @@ private LocalDateTime myTimeStamp;
         RcvGrossBtn = new javax.swing.JButton();
         RcvAdateLbl = new javax.swing.JLabel();
         RcvAdatePc = new org.jdesktop.swingx.JXDatePicker();
-        RcvFcostTxt = new javax.swing.JTextField();
         RcvDnumTxt = new javax.swing.JTextField();
-        RcvFcostBtn = new javax.swing.JButton();
         RcvLocBtn = new javax.swing.JButton();
         RcvSdateBtn = new javax.swing.JButton();
         RcvDnumBtn = new javax.swing.JButton();
@@ -408,7 +413,6 @@ private LocalDateTime myTimeStamp;
 
         CreateVendCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         CreateVendCmbBx.setMaximumRowCount(1000);
-        CreateVendCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CreateVendCmbBx.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 CreateVendCmbBxFocusLost(evt);
@@ -456,24 +460,24 @@ private LocalDateTime myTimeStamp;
             .addGroup(CreateOrderDialogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CreateOrderDialogLayout.createSequentialGroup()
-                        .addComponent(CreateNewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CreateCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreateOrderDialogLayout.createSequentialGroup()
-                        .addGap(0, 20, Short.MAX_VALUE)
-                        .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(CreateShipLocLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CreateRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CreateVendorNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CreateOrdNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(CreateOrderNotExistLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateOrderDialogLayout.createSequentialGroup()
+                        .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(CreateNewBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                            .addGroup(CreateOrderDialogLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CreateShipLocLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CreateRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CreateVendorNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CreateOrdNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(64, 64, 64)
                         .addGroup(CreateOrderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(CreateOrdNumTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CreateRdatePc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                            .addComponent(CreateRdatePc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(CreateVendCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CreateShipLocCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(CreateOrderNotExistLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(CreateShipLocCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CreateCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         CreateOrderDialogLayout.setVerticalGroup(
@@ -576,10 +580,29 @@ private LocalDateTime myTimeStamp;
 
         RcvRdateBtn.setText("Update");
         RcvRdateBtn.setActionCommand("UpdateRD");
+        RcvRdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvRdateBtnActionPerformed(evt);
+            }
+        });
 
         RcvFcostLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         RcvFcostLbl.setForeground(new java.awt.Color(214, 214, 214));
         RcvFcostLbl.setText("Freight Cost:");
+
+        RcvFcostTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvFcostTxtActionPerformed(evt);
+            }
+        });
+
+        RcvFcostBtn.setText("Update");
+        RcvFcostBtn.setActionCommand("UpdateFC");
+        RcvFcostBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvFcostBtnActionPerformed(evt);
+            }
+        });
 
         RcvFPdateLBL.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         RcvFPdateLBL.setForeground(new java.awt.Color(214, 214, 214));
@@ -587,6 +610,11 @@ private LocalDateTime myTimeStamp;
 
         RcvFPdateBtn.setText("Update");
         RcvFPdateBtn.setActionCommand("UpdateFP");
+        RcvFPdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvFPdateBtnActionPerformed(evt);
+            }
+        });
 
         RcvLocLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         RcvLocLbl.setForeground(new java.awt.Color(214, 214, 214));
@@ -622,17 +650,13 @@ private LocalDateTime myTimeStamp;
         RcvAdateLbl.setForeground(new java.awt.Color(214, 214, 214));
         RcvAdateLbl.setText("Recieve Date:");
 
-        RcvFcostTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RcvFcostTxtActionPerformed(evt);
-            }
-        });
-
-        RcvFcostBtn.setText("Update");
-        RcvFcostBtn.setActionCommand("UpdateFC");
-
         RcvLocBtn.setText("Update");
         RcvLocBtn.setActionCommand("UpdateSL");
+        RcvLocBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvLocBtnActionPerformed(evt);
+            }
+        });
 
         RcvSdateBtn.setText("Update");
         RcvSdateBtn.setActionCommand("UpdateSD");
@@ -2288,88 +2312,69 @@ private LocalDateTime myTimeStamp;
         //IF BLANK DISABLE EVERYTHING ON THE TAB
         if (OrderNum.equals("")){
         SetRecieveEmpty();
-        }
-        else {
-        //lookup order
-        //if order entered populate tab per user level
-        //if not ask if you would like to create order
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("looking for order!");
-            conn = DriverManager.getConnection(Myurl);
-            String SQL = "Select O.OID, O.InOrdNum,R.Sdate, R.DNum, V.Vendor, R.Rdate, R.Fcost, R.FPdate, V.Vname, A.LocName, N.Snotes, R.Gross, R.Adate from [HDD_Records].[dbo].[Orders] AS O\n" +
-                "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON V.VID = O.VID\n" +
-                "LEFT JOIN [HDD_Records].[dbo].[Recieving] AS R ON O.OID = R.OID\n" +
-                "LEFT JOIN [HDD_Records].[dbo].[Addresses] AS A ON A.LID = R.LID\n" +
-                "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON N.OID = O.OID\n" +
-                "WHERE O.InOrdNum LIKE '"+ OrderNum +"'";
-            //System.out.println(SQL);
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(SQL);
-            try {  
-                if (rs.next()) {
-                    //If order found do as follows
-                    RcvVendorTxt.setText(rs.getString("Vendor"));
-                    RcvRdatePc.setDate(rs.getDate("Rdate"));//enable if user of privilage
-                    RcvFcostTxt.setText(rs.getString("Fcost"));
-                    RcvFPdatePc.setDate(rs.getDate("FPdate"));
-                    //add second query to add all the locations for the vendor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                    //then set the one on file as the one picked.
-                    RcvLocCmbBx.removeAll();
-                    RcvLocCmbBx.addItem(rs.getString("LocName"));
-                    
-                                        
-                    RcvSdatePc.setDate(rs.getDate("Sdate"));
-                    RcvDnumTxt.setText(rs.getString("DNum"));
-                    RcvSnotesTxtA.setText(rs.getString("Snotes"));
-                    RcvGrossTxt.setText(rs.getString("Gross"));
-                    RcvAdatePc.setDate(rs.getDate("Adate"));
-                    
-                    //switch for setting user access
-                    switch (userAccess[0]){
-                        case 0://no access
-                            ReceiveTb.setVisible(false);
-                            break;
-                        case 1://view only
-                            break;
-                        case 2://limited access
-                            break;
-                        case 3://full access
-                            SetRecieveFull();
-                            break;
-                        default://unknow clear it and burn the evidence
-                            SetRecieveEmpty();
-                            break;
-                    }
-                }
-                else {
-                    CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
-                    SetRecieveEmpty();
-                    // if of privilage do this
-                    CreateOrderDialog.setVisible((true));
-                    //load vendors in the vendor drop down
-                    SQL = "SELECT [Vendor],[Vname] FROM [HDD_Records].[dbo].[Vendors]";
-                    stmt = conn.createStatement();
-                    rs = stmt.executeQuery(SQL);
-                    try {  
-                        CreateVendCmbBx.removeAllItems();
-                        while (rs.next()) {
-                            CreateVendCmbBx.addItem(rs.getString("Vendor"));
+        }else {
+            //lookup order
+            //if order entered populate tab per user level
+            //if not ask if you would like to create order
+            try {
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                System.out.println("looking for order!");
+                conn = DriverManager.getConnection(Myurl);
+                String SQL = "Select O.OID, O.InOrdNum,R.Sdate, R.DNum, V.Vendor, R.Rdate, R.Fcost, R.FPdate, V.Vname, A.LocName, N.Snotes, R.Gross, R.Adate from [HDD_Records].[dbo].[Orders] AS O\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON V.VID = O.VID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Recieving] AS R ON O.OID = R.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Addresses] AS A ON A.LID = R.LID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON N.OID = O.OID\n" +
+                    "WHERE O.InOrdNum LIKE '"+ OrderNum +"'";
+                //System.out.println(SQL);
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(SQL);
+                try {  
+                    if (rs.next()) {
+                        //If order found do as follows
+                        RcvVendorTxt.setText(rs.getString("Vendor"));
+                        RcvRdatePc.setDate(rs.getDate("Rdate"));//enable if user of privilage
+                        RcvFcostTxt.setText(rs.getString("Fcost"));
+                        RcvFPdatePc.setDate(rs.getDate("FPdate"));
+                        //clear locations
+                        RcvLocCmbBx.removeAll();
+                         //get all locations and load all locations
+                        RcvLocCmbBx.setModel(new DefaultComboBoxModel(getLox4vendor(rs.getString("Vendor")).toArray()));
+                        //set current location
+                        RcvLocCmbBx.setSelectedItem(rs.getString("LocName"));
+                        RcvSdatePc.setDate(rs.getDate("Sdate"));
+                        RcvDnumTxt.setText(rs.getString("DNum"));
+                        RcvSnotesTxtA.setText(rs.getString("Snotes"));
+                        RcvGrossTxt.setText(rs.getString("Gross"));
+                        RcvAdatePc.setDate(rs.getDate("Adate"));
+
+                        //switch for setting user access
+                        switch (userAccess[0]){
+                            case 0://no access
+                                ReceiveTb.setVisible(false);
+                                break;
+                            case 1://view only
+                                break;
+                            case 2://limited access
+                                break;
+                            case 3://full access
+                                SetRecieveFull();
+                                break;
+                            default://unknow clear it and burn the evidence
+                                SetRecieveEmpty();
+                                break;
                         }
+                    }else {
+                        CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
+                        SetRecieveEmpty(); 
+                        CreateVendCmbBx.removeAllItems();
+                        CreateVendCmbBx.addItem("");
+                        CreateVendCmbBx.setModel(new DefaultComboBoxModel(getAllVendorNums().toArray()));
+                        CreateOrderDialog.setVisible((true));
                     }
-                    catch(Exception e){
-                        e.printStackTrace();
-                    }
-                    //open create order window.
-                    CreateVendCmbBx.repaint();
-                }
-            } catch (Exception e) {  
-                e.printStackTrace();  
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        }
+                } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e){e.printStackTrace();}
+         }
     }//GEN-LAST:event_RcvOrdrBtnActionPerformed
 
     private void RcvOrdrTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrTxt1ActionPerformed
@@ -2417,97 +2422,128 @@ private LocalDateTime myTimeStamp;
     private void CreateNewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewBtnActionPerformed
         // TODO add your handling code here:
         //verify order number and vendor are entered and that vendor is in the database.
+        
+        //Need to ensure that if location and request date are not entered then omit issert into recieving table
+        
         String DisOrder = CreateOrdNumTxt.getText();
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("Making sure new order does not already exist!");
-            conn = DriverManager.getConnection(Myurl);
-            String SQL = "SELECT * FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum = '" + DisOrder + "'";
-            System.out.println(SQL);
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(SQL);
-            
-            try {  
-                if (rs.next()) {
-                    System.out.println("Already Exists");
-                }
-                else {
-                    SQL = "INSERT INTO [HDD_Records].[dbo].[Orders] (InOrdNum,VID)  VALUES ('" + DisOrder + "', (SELECT VID FROM [HDD_Records].[dbo].[Vendors] WHERE Vendor LIKE '" + CreateVendCmbBx.getSelectedItem() + "'))";
-                    System.out.println("Inserting new Order:  " + SQL);
-                    stmt = conn.createStatement();
-                    stmt.executeUpdate(SQL);
-                    
-                    try {
-                        SQL = "SELECT O.OID, L.LID FROM [HDD_Records].[dbo].[Orders] AS O"
-                                + " INNER JOIN [HDD_Records].[dbo].[Addresses] AS L ON O.VID = L.VID"
-                                + " WHERE InOrdNum LIKE '" + DisOrder +"' AND LocName LIKE '" + CreateShipLocCmbBx.getSelectedItem() + "'";
-                        System.out.println("Looking Up OID and LID!\n" + SQL);
+        if (!CreateVendCmbBx.getSelectedItem().equals("")){
+            try {
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                System.out.println("Making sure new order does not already exist!");
+                conn = DriverManager.getConnection(Myurl);
+                String SQL = "SELECT * FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum = '" + DisOrder + "'";
+                System.out.println(SQL);
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(SQL);
+                try {  
+                    if (rs.next()) {System.out.println("Already Exists");}
+                    else {
+                        SQL = "INSERT INTO [HDD_Records].[dbo].[Orders] (InOrdNum,VID)  VALUES ('" + DisOrder + "', (SELECT VID FROM [HDD_Records].[dbo].[Vendors] WHERE Vendor LIKE '" + CreateVendCmbBx.getSelectedItem() + "'))";
+                        System.out.println("Inserting new Order:  " + SQL);
                         stmt = conn.createStatement();
-                        rs = stmt.executeQuery(SQL);
-                        String thisOID;
-                        String thisLID;
-                        try {  
-                            if (rs.next()) {
-                            System.out.println("Setting OID and LID!");
-                            thisOID = rs.getString("OID");
-                            thisLID = rs.getString("LID");
-                            
-                            //WORK HERE GUS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  Convert to SQL DateTime!!!!!!!!!!!!!
-                            SQL = "INSERT INTO [HDD_Records].[dbo].[Recieving] (OID,LID,Rdate)VALUES ('" + thisOID + "','"+ thisLID + "', '"+ CreateRdatePc.getDate() +"')";
-                            System.out.println("Inserting into receiving" + SQL);
+                        stmt.executeUpdate(SQL);
+                        try {
+                            SQL = "SELECT O.OID, L.LID FROM [HDD_Records].[dbo].[Orders] AS O"
+                                    + " INNER JOIN [HDD_Records].[dbo].[Addresses] AS L ON O.VID = L.VID"
+                                    + " WHERE InOrdNum LIKE '" + DisOrder +"' AND LocName LIKE '" + CreateShipLocCmbBx.getSelectedItem() + "'";
+                            System.out.println("Looking Up OID and LID!\n" + SQL);
                             stmt = conn.createStatement();
-                            stmt.executeUpdate(SQL);
-                            }
-                        } catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    } catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }
-            } catch (Exception e) {  
-                e.printStackTrace();
-                System.out.println("trying to insert new order");
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-                    myTimeStamp = LocalDateTime.now();
-                    System.out.println(classUser);
-                    System.out.println(myTimeStamp);
+                            rs = stmt.executeQuery(SQL);
+                            String thisOID;
+                            String thisLID;
+                            try {  
+                                if (rs.next()) {
+                                System.out.println("Setting OID and LID!");
+                                thisOID = rs.getString("OID");
+                                thisLID = rs.getString("LID");
+                                //format date for SQL from the picker
+                                Date mynowDate = CreateRdatePc.getDate();
+                                DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                String szDate = oDateFormat.format(mynowDate);
+                                SQL = "INSERT INTO [HDD_Records].[dbo].[Recieving] (OID,LID,Rdate)VALUES ('" + thisOID + "','"+ thisLID + "', '"+ szDate +"')";
+                                System.out.println("Inserting into receiving" + SQL);
+                                stmt = conn.createStatement();
+                                stmt.executeUpdate(SQL);
+                                //close window when finished
+                                CreateOrderDialog.dispose();
+                                String thisOrder = DisOrder;
+                                SetRecieveEmpty();
+                                RcvOrdrTxt.setText(thisOrder);
+                                }//end if
+                            } catch (Exception e){e.printStackTrace();}
+                        } catch (Exception e){e.printStackTrace();}
+                    }//end else
+                } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e){e.printStackTrace();}
+//            //Data block for user logging later
+//            myTimeStamp = LocalDateTime.now();
+//            System.out.println(classUser);
+//            System.out.println(myTimeStamp);
+        }else {CreateVendCmbBx.requestFocus();}
     }//GEN-LAST:event_CreateNewBtnActionPerformed
 
     private void CreateVendCmbBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateVendCmbBxActionPerformed
-        // TODO add your handling code here:
+                    CreateShipLocCmbBx.removeAllItems();
+                     //get all locations and load all locations
+                    CreateShipLocCmbBx.setModel(new DefaultComboBoxModel(getLox4vendor(CreateVendCmbBx.getSelectedItem().toString()).toArray()));
     }//GEN-LAST:event_CreateVendCmbBxActionPerformed
 
     private void CreateVendCmbBxFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_CreateVendCmbBxFocusLost
-        // TODO add your handling code here:
-        //look up locations for each vendor and pop CreateShipLocCmbBx
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("looking up Addresses!");
-            conn = DriverManager.getConnection(Myurl);
-            String SQL = "Select A.[LocName] FROM [HDD_Records].[dbo].[Addresses] AS A\n"
-                    + "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON A.VID = V.VID\n"
-                    + "WHERE V.Vendor LIKE '" + CreateVendCmbBx.getSelectedItem().toString() + "'" ;
-            //System.out.println(SQL);
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(SQL);
-            try {  
-                        CreateShipLocCmbBx.removeAllItems();
-                        while (rs.next()) {
-                            CreateShipLocCmbBx.addItem(rs.getString("LocName"));
-                        }
-                    }
-                    catch(Exception e){
-                        e.printStackTrace();
-                    }
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
     }//GEN-LAST:event_CreateVendCmbBxFocusLost
+
+    private void RcvRdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvRdateBtnActionPerformed
+        // SQL update Rdate from RcvRdatePc
+        try{//TESTED
+            System.out.println("Updating Rdate");
+            Date mynowDate = RcvRdatePc.getDate();
+            DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String szDate = oDateFormat.format(mynowDate);
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Rdate = '" + szDate + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            System.out.println("Updating Rdate with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvRdateBtnActionPerformed
+
+    private void RcvFcostBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvFcostBtnActionPerformed
+        // UPDATE FCost Button
+        try{//TESTED
+            System.out.println("Updating FCost");
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Fcost = '" + RcvFcostTxt.getText() + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            System.out.println("Updating Fcost with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvFcostBtnActionPerformed
+
+    private void RcvFPdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvFPdateBtnActionPerformed
+        //Update/Change FPdate
+        try{
+            System.out.println("Updating FPdate");
+            Date mynowDate = RcvFPdatePc.getDate();
+            DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String szDate = oDateFormat.format(mynowDate);
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET FPdate = '" + szDate + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            System.out.println("Updating FPdate with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvFPdateBtnActionPerformed
+
+    private void RcvLocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvLocBtnActionPerformed
+        // Update the ship location
+        try{//Not Finished Gus!!!!!!!!!!!!    WORK HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+            System.out.println("Updating Ship Location");
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Fcost = '" + RcvFcostTxt.getText() + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            System.out.println("Updating Fcost with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}        
+    }//GEN-LAST:event_RcvLocBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -2668,7 +2704,50 @@ private LocalDateTime myTimeStamp;
         //stub to clear and set full access Ops Dashboard Tab
     }
     
+    //##########################################################################
+    //  PUBLIC UTILITY FUNCTIONS################################################
+    //##########################################################################
     
+    //fix this so you can give an order number and return an array of location names.
+    public ArrayList<String> getLox4vendor(String x){
+        ArrayList<String> vendorString = new ArrayList();
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //System.out.println("looking up Addresses!");
+            Connection myConn = DriverManager.getConnection(Myurl);
+            String SQL = "Select A.[LocName] FROM [HDD_Records].[dbo].[Addresses] AS A\n"
+                    + "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON A.VID = V.VID\n"
+                    + "WHERE V.Vendor LIKE '" + x + "'" ;
+            //System.out.println(SQL);
+            Statement wordYo = myConn.createStatement();
+            ResultSet ms = wordYo.executeQuery(SQL);
+            try {
+                while (ms.next()) {
+                    vendorString.add(ms.getString("LocName"));
+                }
+            }catch(Exception e){e.printStackTrace();}
+        }catch (Exception e){e.printStackTrace();}
+        return vendorString;
+    }
+    
+    public ArrayList<String> getAllVendorNums(){
+        ArrayList<String> vendorString = new ArrayList();
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //System.out.println("looking up Addresses!");
+            Connection myConn = DriverManager.getConnection(Myurl);
+            String SQL = "SELECT Vendor FROM [HDD_Records].[dbo].[Vendors]" ;
+            //System.out.println(SQL);
+            Statement wordYo = myConn.createStatement();
+            ResultSet ms = wordYo.executeQuery(SQL);
+            try {
+                while (ms.next()) {
+                    vendorString.add(ms.getString("Vendor"));
+                 }
+            }catch(Exception e){e.printStackTrace();}
+        }catch (Exception e){e.printStackTrace();}
+        return vendorString;
+    }
     
     
     /***************************************************************************
@@ -2704,7 +2783,6 @@ private LocalDateTime myTimeStamp;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new HDDMainWindow().setVisible(true);
-                //open popup window and require log in
             }
         });
     }
