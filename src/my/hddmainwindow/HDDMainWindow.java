@@ -1,4 +1,4 @@
-/*
+/* @author aross
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,9 +16,6 @@ import java.util.Date;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 
-/*
- * @author aross
- */
 
 public class HDDMainWindow extends javax.swing.JFrame {
     
@@ -36,7 +33,6 @@ public Connection conn;
 public String Myurl = "jdbc:sqlserver://;servername=10.105.10.138\\SQLEXPRESSHDDDB;DatabaseName=HDD_Records;user=ESDTester;password=ESDTester";
 public Statement stmt = null;
 public ResultSet rs = null;
-
 
 private String classUser = "";
 private String classPass = "";
@@ -121,12 +117,12 @@ private LocalDateTime myTimeStamp;
         RcvLocCmbBx = new javax.swing.JComboBox<>();
         HeatAssignment = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
+        HeatOrderScroll = new javax.swing.JScrollPane();
+        HeatOrdersTbl = new javax.swing.JTable();
+        HeatSortTxt = new javax.swing.JTextField();
+        HeatProdTxt = new javax.swing.JTextField();
+        HeatSortBtn = new javax.swing.JButton();
+        HeatProdBtn = new javax.swing.JButton();
         jLabel42 = new javax.swing.JLabel();
         ProductionManager = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -388,7 +384,6 @@ private LocalDateTime myTimeStamp;
         CreateOrderDialog.setLocation(new java.awt.Point(200, 200));
         CreateOrderDialog.setMinimumSize(new java.awt.Dimension(420, 255));
         CreateOrderDialog.setName("CrtOrdrDialog"); // NOI18N
-        CreateOrderDialog.setPreferredSize(new java.awt.Dimension(420, 255));
 
         CreateOrderNotExistLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         CreateOrderNotExistLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -638,6 +633,11 @@ private LocalDateTime myTimeStamp;
 
         RcvSnotesBtn.setText("Update");
         RcvSnotesBtn.setActionCommand("UpdateDN");
+        RcvSnotesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvSnotesBtnActionPerformed(evt);
+            }
+        });
 
         RcvGrossLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         RcvGrossLbl.setForeground(new java.awt.Color(214, 214, 214));
@@ -645,6 +645,11 @@ private LocalDateTime myTimeStamp;
 
         RcvGrossBtn.setText("Update");
         RcvGrossBtn.setActionCommand("UpdateDN");
+        RcvGrossBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvGrossBtnActionPerformed(evt);
+            }
+        });
 
         RcvAdateLbl.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         RcvAdateLbl.setForeground(new java.awt.Color(214, 214, 214));
@@ -660,12 +665,27 @@ private LocalDateTime myTimeStamp;
 
         RcvSdateBtn.setText("Update");
         RcvSdateBtn.setActionCommand("UpdateSD");
+        RcvSdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvSdateBtnActionPerformed(evt);
+            }
+        });
 
         RcvDnumBtn.setText("Update");
         RcvDnumBtn.setActionCommand("UpdateDN");
+        RcvDnumBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvDnumBtnActionPerformed(evt);
+            }
+        });
 
         RcvAdateBtn.setText("Update");
         RcvAdateBtn.setActionCommand("UpdateDN");
+        RcvAdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RcvAdateBtnActionPerformed(evt);
+            }
+        });
 
         RcvLocCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         RcvLocCmbBx.setMaximumRowCount(25);
@@ -788,6 +808,11 @@ private LocalDateTime myTimeStamp;
         TabPanel.addTab("Receiveing", ReceiveTb);
 
         HeatAssignment.setBackground(new java.awt.Color(0, 102, 102));
+        HeatAssignment.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                HeatAssignmentFocusGained(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(214, 214, 214));
@@ -795,31 +820,49 @@ private LocalDateTime myTimeStamp;
         jLabel3.setText("     Heat Assignment");
         jLabel3.setToolTipText("");
 
-        jTable1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        HeatOrdersTbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HeatOrdersTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Order Number", "Sorting Heat", "Production Heat"
+                "OID", "Order Number", "Sorting Heat", "Production Heat"
             }
-        ));
-        jTable1.setCellSelectionEnabled(true);
-        jScrollPane3.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        jTextField7.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        HeatOrdersTbl.setCellSelectionEnabled(true);
+        HeatOrderScroll.setViewportView(HeatOrdersTbl);
 
-        jTextField10.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HeatSortTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton21.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton21.setText("Update Sort");
+        HeatProdTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton22.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton22.setText("Update Production");
+        HeatSortBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HeatSortBtn.setText("Update Sort");
+        HeatSortBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HeatSortBtnActionPerformed(evt);
+            }
+        });
+
+        HeatProdBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HeatProdBtn.setText("Update Production");
+        HeatProdBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HeatProdBtnActionPerformed(evt);
+            }
+        });
 
         jLabel42.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(214, 214, 214));
@@ -834,15 +877,15 @@ private LocalDateTime myTimeStamp;
             .addGroup(HeatAssignmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
+                    .addComponent(HeatOrderScroll)
                     .addGroup(HeatAssignmentLayout.createSequentialGroup()
-                        .addComponent(jTextField7)
+                        .addComponent(HeatSortTxt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton21)
+                        .addComponent(HeatSortBtn)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HeatProdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton22))
+                        .addComponent(HeatProdBtn))
                     .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -851,15 +894,15 @@ private LocalDateTime myTimeStamp;
             .addGroup(HeatAssignmentLayout.createSequentialGroup()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HeatOrderScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton21)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton22))
+                    .addComponent(HeatSortTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HeatSortBtn)
+                    .addComponent(HeatProdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HeatProdBtn))
                 .addContainerGap(646, Short.MAX_VALUE))
         );
 
@@ -2313,9 +2356,7 @@ private LocalDateTime myTimeStamp;
         if (OrderNum.equals("")){
         SetRecieveEmpty();
         }else {
-            //lookup order
-            //if order entered populate tab per user level
-            //if not ask if you would like to create order
+            //lookup order, if order entered populate tab per user level if not ask if you would like to create order
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 System.out.println("looking for order!");
@@ -2422,7 +2463,6 @@ private LocalDateTime myTimeStamp;
     private void CreateNewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateNewBtnActionPerformed
         // TODO add your handling code here:
         //verify order number and vendor are entered and that vendor is in the database.
-        
         //Need to ensure that if location and request date are not entered then omit issert into recieving table
         
         String DisOrder = CreateOrdNumTxt.getText();
@@ -2494,12 +2534,12 @@ private LocalDateTime myTimeStamp;
     private void RcvRdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvRdateBtnActionPerformed
         // SQL update Rdate from RcvRdatePc
         try{//TESTED
-            System.out.println("Updating Rdate");
+            //System.out.println("Updating Rdate");
             Date mynowDate = RcvRdatePc.getDate();
             DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String szDate = oDateFormat.format(mynowDate);
             String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Rdate = '" + szDate + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
-            System.out.println("Updating Rdate with: " + SQL);
+            //System.out.println("Updating Rdate with: " + SQL);
             Connection conny = DriverManager.getConnection(Myurl);
             Statement stater =  conny.createStatement();
             stater.executeUpdate(SQL);
@@ -2509,9 +2549,9 @@ private LocalDateTime myTimeStamp;
     private void RcvFcostBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvFcostBtnActionPerformed
         // UPDATE FCost Button
         try{//TESTED
-            System.out.println("Updating FCost");
+            //System.out.println("Updating FCost");
             String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Fcost = '" + RcvFcostTxt.getText() + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
-            System.out.println("Updating Fcost with: " + SQL);
+            //System.out.println("Updating Fcost with: " + SQL);
             Connection conny = DriverManager.getConnection(Myurl);
             Statement stater =  conny.createStatement();
             stater.executeUpdate(SQL);
@@ -2520,13 +2560,13 @@ private LocalDateTime myTimeStamp;
 
     private void RcvFPdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvFPdateBtnActionPerformed
         //Update/Change FPdate
-        try{
-            System.out.println("Updating FPdate");
+        try{//Tested
+            //System.out.println("Updating FPdate");
             Date mynowDate = RcvFPdatePc.getDate();
             DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String szDate = oDateFormat.format(mynowDate);
             String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET FPdate = '" + szDate + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
-            System.out.println("Updating FPdate with: " + SQL);
+            //System.out.println("Updating FPdate with: " + SQL);
             Connection conny = DriverManager.getConnection(Myurl);
             Statement stater =  conny.createStatement();
             stater.executeUpdate(SQL);
@@ -2535,15 +2575,101 @@ private LocalDateTime myTimeStamp;
 
     private void RcvLocBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvLocBtnActionPerformed
         // Update the ship location
-        try{//Not Finished Gus!!!!!!!!!!!!    WORK HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-            System.out.println("Updating Ship Location");
-            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Fcost = '" + RcvFcostTxt.getText() + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
-            System.out.println("Updating Fcost with: " + SQL);
+        try{//Tested
+            //System.out.println("Updating Ship Location");
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET LID = (SELECT LID FROM [HDD_Records].[dbo].[Addresses] WHERE LocName LIKE '" + RcvLocCmbBx.getSelectedItem().toString() + "') WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            //System.out.println("Updating Fcost with: " + SQL);
             Connection conny = DriverManager.getConnection(Myurl);
             Statement stater =  conny.createStatement();
             stater.executeUpdate(SQL);
         }catch (Exception e) {e.printStackTrace();}        
     }//GEN-LAST:event_RcvLocBtnActionPerformed
+
+    private void RcvSdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvSdateBtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            //System.out.println("Updating Sdate");
+            Date mynowDate = RcvSdatePc.getDate();
+            DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String szDate = oDateFormat.format(mynowDate);
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Sdate = '" + szDate + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            //System.out.println("Updating Sdate with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvSdateBtnActionPerformed
+
+    private void RcvDnumBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvDnumBtnActionPerformed
+        // TODO add your handling code here:
+        try{//TESTED
+            System.out.println("Updating DNum");
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET DNum = '" + RcvDnumTxt.getText() + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            System.out.println("Updating Dnum with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvDnumBtnActionPerformed
+
+    private void RcvSnotesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvSnotesBtnActionPerformed
+        //Update Snotes or create table entry if one does not exist
+        try{//TESTED
+            System.out.println("Updating Snotes");
+            //needs to be update or insert if not in.
+            String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].[Notes] "
+                    + "WHERE OID = (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')) "
+                    + "UPDATE [HDD_Records].[dbo].[Notes] SET Snotes ='"+ RcvSnotesTxtA.getText() +"' "
+                    + "WHERE OID = (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '"+RcvOrdrTxt.getText()+"') "
+                    + "ELSE INSERT INTO [HDD_Records].[dbo].[Notes](OID,Snotes) VALUES((SELECT OID FROM [HDD_Records].[dbo].[Orders] "
+                    + "WHERE InOrdNum LIKE '"+RcvOrdrTxt.getText()+"'),'"+RcvSnotesTxtA.getText()+"');";
+            System.out.println("Updating Snotes with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvSnotesBtnActionPerformed
+
+    private void RcvGrossBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvGrossBtnActionPerformed
+        // Update Gross
+        try{
+            System.out.println("Updating Gross Weight");
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Gross = '" + RcvGrossTxt.getText() + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            System.out.println("Updating Gross with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvGrossBtnActionPerformed
+
+    private void RcvAdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvAdateBtnActionPerformed
+        // TODO add your handling code here:
+        try{
+            //System.out.println("Updating Sdate");
+            Date mynowDate = RcvAdatePc.getDate();
+            DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String szDate = oDateFormat.format(mynowDate);
+            String SQL = "UPDATE [HDD_Records].[dbo].[Recieving] SET Adate = '" + szDate + "' WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + RcvOrdrTxt.getText() + "')";
+            //System.out.println("Updating Sdate with: " + SQL);
+            Connection conny = DriverManager.getConnection(Myurl);
+            Statement stater =  conny.createStatement();
+            stater.executeUpdate(SQL);
+        }catch (Exception e) {e.printStackTrace();}
+    }//GEN-LAST:event_RcvAdateBtnActionPerformed
+
+    private void HeatAssignmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HeatAssignmentFocusGained
+        // TODO make when focused run query to find all recieved orders that have not been dismantled and hdds sent to hdd room load into the table
+        // TODO make order line selected load data into the Order Label and Txt boxes
+        // TODO make buttons update the heat #'s or insert production table and insert heat nums
+    }//GEN-LAST:event_HeatAssignmentFocusGained
+
+    private void HeatSortBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeatSortBtnActionPerformed
+        // TODO Make selected order's Sort heat number update or insert from OID and HeatSortTxt.getText()
+    }//GEN-LAST:event_HeatSortBtnActionPerformed
+
+    private void HeatProdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeatProdBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HeatProdBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -2809,6 +2935,12 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel HDDManageSerialCompLbl;
     private javax.swing.JPanel HDDManager;
     private javax.swing.JPanel HeatAssignment;
+    private javax.swing.JScrollPane HeatOrderScroll;
+    private javax.swing.JTable HeatOrdersTbl;
+    private javax.swing.JButton HeatProdBtn;
+    private javax.swing.JTextField HeatProdTxt;
+    private javax.swing.JButton HeatSortBtn;
+    private javax.swing.JTextField HeatSortTxt;
     private javax.swing.JDialog LogInDialog;
     private javax.swing.JButton LogInOutBtn;
     private javax.swing.JButton LoginCancelBtn;
@@ -2876,8 +3008,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
@@ -2937,14 +3067,12 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
@@ -2953,7 +3081,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
@@ -2982,7 +3109,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField38;
     private javax.swing.JTextField jTextField39;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
