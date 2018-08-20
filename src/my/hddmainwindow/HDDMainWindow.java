@@ -15,6 +15,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.*;
+
+//for jtabbedpanel
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
 
 
 public class HDDMainWindow extends javax.swing.JFrame {
@@ -123,7 +133,7 @@ private LocalDateTime myTimeStamp;
         HeatProdTxt = new javax.swing.JTextField();
         HeatSortBtn = new javax.swing.JButton();
         HeatProdBtn = new javax.swing.JButton();
-        jLabel42 = new javax.swing.JLabel();
+        HeatOrdLbl = new javax.swing.JLabel();
         ProductionManager = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -534,6 +544,11 @@ private LocalDateTime myTimeStamp;
         TabPanel.setMinimumSize(new java.awt.Dimension(800, 1280));
         TabPanel.setName("WorkingTabs"); // NOI18N
         TabPanel.setPreferredSize(new java.awt.Dimension(800, 1280));
+        TabPanel.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                TabPanelStateChanged(evt);
+            }
+        });
 
         ReceiveTb.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -841,7 +856,14 @@ private LocalDateTime myTimeStamp;
                 return canEdit [columnIndex];
             }
         });
-        HeatOrdersTbl.setCellSelectionEnabled(true);
+        HeatOrdersTbl.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        HeatOrdersTbl.setGridColor(new java.awt.Color(0, 153, 153));
+        HeatOrdersTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        HeatOrdersTbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HeatOrdersTblMouseClicked(evt);
+            }
+        });
         HeatOrderScroll.setViewportView(HeatOrdersTbl);
 
         HeatSortTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -864,10 +886,10 @@ private LocalDateTime myTimeStamp;
             }
         });
 
-        jLabel42.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel42.setText("ORDER");
+        HeatOrdLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        HeatOrdLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HeatOrdLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HeatOrdLbl.setText("ORDER");
 
         javax.swing.GroupLayout HeatAssignmentLayout = new javax.swing.GroupLayout(HeatAssignment);
         HeatAssignment.setLayout(HeatAssignmentLayout);
@@ -881,12 +903,12 @@ private LocalDateTime myTimeStamp;
                     .addGroup(HeatAssignmentLayout.createSequentialGroup()
                         .addComponent(HeatSortTxt)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(HeatSortBtn)
-                        .addGap(18, 18, 18)
-                        .addComponent(HeatProdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HeatSortBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(HeatProdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(HeatProdBtn))
-                    .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(HeatOrdLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         HeatAssignmentLayout.setVerticalGroup(
@@ -896,7 +918,7 @@ private LocalDateTime myTimeStamp;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(HeatOrderScroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HeatOrdLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(HeatSortTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2586,7 +2608,6 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_RcvLocBtnActionPerformed
 
     private void RcvSdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvSdateBtnActionPerformed
-        // TODO add your handling code here:
         try{
             //System.out.println("Updating Sdate");
             Date mynowDate = RcvSdatePc.getDate();
@@ -2659,17 +2680,77 @@ private LocalDateTime myTimeStamp;
 
     private void HeatAssignmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HeatAssignmentFocusGained
         // TODO make when focused run query to find all recieved orders that have not been dismantled and hdds sent to hdd room load into the table
-        // TODO make order line selected load data into the Order Label and Txt boxes
+        // TODO make order line selected load data into the Order Label and Txt boxes                   RIGHT HERE GUS!!!!!!!!!!!!!!!!!!!!!!!!!!
         // TODO make buttons update the heat #'s or insert production table and insert heat nums
+        refreshHeatsTbl();
     }//GEN-LAST:event_HeatAssignmentFocusGained
 
     private void HeatSortBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeatSortBtnActionPerformed
         // TODO Make selected order's Sort heat number update or insert from OID and HeatSortTxt.getText()
+        if(!HeatOrdLbl.getText().equals("Order")){
+            String thisOID = HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),0).toString();
+            //int disRow = HeatOrdersTbl.getSelectedRow();
+            //Now Insert or update data
+            try{//TESTED
+                System.out.println("Updating SortScan");
+                //needs to be update or insert if not in.
+                String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].[SortScan] "
+                        + "WHERE OID LIKE '" + thisOID + "') "
+                        + "UPDATE [HDD_Records].[dbo].[SortScan] SET Sheat ='"+ HeatSortTxt.getText() +"' "
+                        + "WHERE OID LIKE '" + thisOID+"' "
+                        + "ELSE INSERT INTO [HDD_Records].[dbo].[SortScan](OID,Sheat) VALUES('"+ thisOID +"','"+HeatSortTxt.getText()+"');";
+                System.out.println("Updating Sort Heat with: " + SQL);
+                Connection conny = DriverManager.getConnection(Myurl);
+                Statement stater =  conny.createStatement();
+                stater.executeUpdate(SQL);
+            }catch (Exception e) {e.printStackTrace();}
+        }
+        // then refresh table
+        refreshHeatsTbl();
+        
     }//GEN-LAST:event_HeatSortBtnActionPerformed
 
     private void HeatProdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeatProdBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_HeatProdBtnActionPerformed
+
+    private void TabPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabPanelStateChanged
+        // THIS IS WHERE TAB FOCUS IS DETECTED AND COMPLETED
+    JTabbedPane tabSource = (JTabbedPane) evt.getSource();
+    int tab = tabSource.getSelectedIndex();
+        
+        switch (tab){
+            case 0:
+                SetRecieveEmpty();
+                break;
+            case 1:
+                refreshHeatsTbl();
+                HeatOrdLbl.setText("Order");
+                break;
+        }
+    }//GEN-LAST:event_TabPanelStateChanged
+
+    private void HeatOrdersTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HeatOrdersTblMouseClicked
+        // TODO add your handling code here:
+        //System.out.println("Row Selected: " + HeatOrdersTbl.getSelectedRow());
+        HeatOrdLbl.setText((HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),1).toString()));
+        try{
+            HeatSortTxt.setText((HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),2).toString()));
+            HeatSortTxt.setEnabled(true);
+            HeatSortBtn.setEnabled(true);
+        }catch (Exception e){
+            HeatSortTxt.setText("");
+            HeatSortTxt.setEnabled(true);
+            HeatSortBtn.setEnabled(true);
+        }
+        try{
+            HeatProdTxt.setText((HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),3).toString()));
+        }catch (Exception e){
+            HeatProdTxt.setText("");
+            HeatProdTxt.setEnabled(true);
+            HeatProdBtn.setEnabled(true);
+        }
+    }//GEN-LAST:event_HeatOrdersTblMouseClicked
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -2875,6 +2956,41 @@ private LocalDateTime myTimeStamp;
         return vendorString;
     }
     
+    public void refreshHeatsTbl () {
+        //this refreshes or loads the table on the heat assignment tab
+                try {
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                System.out.println("Loading open orders into Heat Table!");
+                conn = DriverManager.getConnection(Myurl);
+                String SQL = "SELECT O.OID,O.InOrdNum,R.Adate,P.Ddate,S.Sheat,P.Pheat FROM [HDD_Records].[dbo].[Recieving] AS R "+
+                    "FULL JOIN  [HDD_Records].[dbo].[Orders] AS O ON R.OID = O.OID "+
+                    "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON R.OID = P.OID "+
+                    "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON R.OID = S.OID "+
+                    "WHERE R.OID IN (SELECT R.OID FROM [dbo].Recieving  "+
+                    "WHERE R.Adate IS NOT NULL) AND P.OID NOT IN (SELECT P.OID FROM [dbo].[Production]  "+
+                    "WHERE P.Ddate IS NOT NULL)";//create sql statment to pull all the orders recieved without being completed.
+                System.out.println(SQL);
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(SQL);
+                //clear the jTable before we start
+                DefaultTableModel model = (DefaultTableModel)HeatOrdersTbl.getModel();
+                model.setRowCount(0);
+                while (rs.next()){
+                    //fill table with result
+                    Object RowData[] = {rs.getString("OID"),rs.getString("InOrdNum"),rs.getString("Sheat"),rs.getString("Pheat")};
+                    model.addRow(RowData);
+                }
+                HeatOrdersTbl.setModel(model);
+                HeatSortTxt.setText("");
+                HeatSortTxt.setEnabled(false);
+                HeatSortBtn.setEnabled(false);
+                HeatProdTxt.setText("");
+                HeatProdTxt.setEnabled(false);
+                HeatProdBtn.setEnabled(false);
+                HeatOrdLbl.setText("Order");
+        } catch (Exception e){e.printStackTrace();}
+    }
+    
     
     /***************************************************************************
      *              MAIN
@@ -2935,6 +3051,7 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel HDDManageSerialCompLbl;
     private javax.swing.JPanel HDDManager;
     private javax.swing.JPanel HeatAssignment;
+    private javax.swing.JLabel HeatOrdLbl;
     private javax.swing.JScrollPane HeatOrderScroll;
     private javax.swing.JTable HeatOrdersTbl;
     private javax.swing.JButton HeatProdBtn;
@@ -3041,7 +3158,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
