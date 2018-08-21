@@ -54,7 +54,6 @@ private LocalDateTime myTimeStamp;
     public HDDMainWindow() {
         initComponents();
         OpenUserChangeWindow();
-        SetRecieveEmpty();
     }
 
     /**
@@ -135,51 +134,51 @@ private LocalDateTime myTimeStamp;
         HeatProdBtn = new javax.swing.JButton();
         HeatOrdLbl = new javax.swing.JLabel();
         ProductionManager = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        PMRdatePk = new org.jdesktop.swingx.JXDatePicker();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        PMTabLbl = new javax.swing.JLabel();
+        PMOrderLbl = new javax.swing.JLabel();
+        PMOrderTxt = new javax.swing.JTextField();
+        PMOrderBtn = new javax.swing.JButton();
+        PMVendorLbl = new javax.swing.JLabel();
+        PMVendorTxt = new javax.swing.JTextField();
+        PMRdateLbl = new javax.swing.JLabel();
+        PMRdatePc = new org.jdesktop.swingx.JXDatePicker();
+        PMGrossLbl = new javax.swing.JLabel();
+        PMSnotesLbl = new javax.swing.JLabel();
+        PMGrossTxt = new javax.swing.JTextField();
+        PMSheatBtn = new javax.swing.JButton();
+        PMSCompBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel29 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
-        jXDatePicker3 = new org.jdesktop.swingx.JXDatePicker();
-        jLabel31 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jTextField17 = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        jXDatePicker4 = new org.jdesktop.swingx.JXDatePicker();
-        jButton13 = new javax.swing.JButton();
-        jLabel33 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        jButton14 = new javax.swing.JButton();
-        jLabel34 = new javax.swing.JLabel();
-        jXDatePicker5 = new org.jdesktop.swingx.JXDatePicker();
-        jButton15 = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
-        jButton16 = new javax.swing.JButton();
-        jLabel36 = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
-        jXDatePicker6 = new org.jdesktop.swingx.JXDatePicker();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jTextField20 = new javax.swing.JTextField();
-        jTextField21 = new javax.swing.JTextField();
-        jLabel39 = new javax.swing.JLabel();
+        PMSnotesTxtA = new javax.swing.JTextArea();
+        PMSheatLbl = new javax.swing.JLabel();
+        PMBScanTxt = new javax.swing.JTextField();
+        PMSCompLbl = new javax.swing.JLabel();
+        PMSCompPc = new org.jdesktop.swingx.JXDatePicker();
+        PMBScanLbl = new javax.swing.JLabel();
+        PMBScanBtn = new javax.swing.JButton();
+        PMSheatTxt = new javax.swing.JTextField();
+        PMScanCompLbl = new javax.swing.JLabel();
+        PMScanCompPc = new org.jdesktop.swingx.JXDatePicker();
+        PMScanCompBtn = new javax.swing.JButton();
+        PMPheatLbl = new javax.swing.JLabel();
+        PMPheatTxt = new javax.swing.JTextField();
+        PMPheatBtn = new javax.swing.JButton();
+        PMDmanLbl = new javax.swing.JLabel();
+        PMDmanPc = new org.jdesktop.swingx.JXDatePicker();
+        PMDmanBtn = new javax.swing.JButton();
+        PMSentLbl = new javax.swing.JLabel();
+        PMSentTxt = new javax.swing.JTextField();
+        PMSentBtn = new javax.swing.JButton();
+        PMSentDtLbl = new javax.swing.JLabel();
+        PMSentDtBtn = new javax.swing.JButton();
+        PMSentDtPc = new org.jdesktop.swingx.JXDatePicker();
+        PMHDRecieveLbl = new javax.swing.JLabel();
+        PMHDScanLbl = new javax.swing.JLabel();
+        PMHDRecieveTxt = new javax.swing.JTextField();
+        PMHDScanTxt = new javax.swing.JTextField();
+        PMOnotesLbl = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jButton18 = new javax.swing.JButton();
+        PMOnotesTxtA = new javax.swing.JTextArea();
+        PMOnotesBtn = new javax.swing.JButton();
         HDDManager = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         RcvOrdrLbl1 = new javax.swing.JLabel();
@@ -933,284 +932,286 @@ private LocalDateTime myTimeStamp;
         ProductionManager.setBackground(new java.awt.Color(0, 102, 102));
         ProductionManager.setPreferredSize(new java.awt.Dimension(800, 598));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
-        jLabel2.setText("Producion Manager View");
-        jLabel2.setIconTextGap(30);
+        PMTabLbl.setBackground(new java.awt.Color(0, 0, 0));
+        PMTabLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        PMTabLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMTabLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        PMTabLbl.setText("Producion Manager View");
+        PMTabLbl.setIconTextGap(30);
 
-        jLabel16.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel16.setText("Order Number:");
-        jLabel16.setFocusable(false);
+        PMOrderLbl.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        PMOrderLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMOrderLbl.setText("Order Number:");
+        PMOrderLbl.setFocusable(false);
 
-        jTextField12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMOrderTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton3.setText("Lookup");
+        PMOrderBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMOrderBtn.setText("Lookup");
 
-        jLabel17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel17.setText("Vendor:");
-        jLabel17.setFocusable(false);
+        PMVendorLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMVendorLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMVendorLbl.setText("Vendor:");
+        PMVendorLbl.setFocusable(false);
 
-        jLabel18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel18.setText("Recieve Date:");
+        PMVendorTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel19.setText("Gross Weight:");
+        PMRdateLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMRdateLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMRdateLbl.setText("Recieve Date:");
 
-        jLabel20.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel20.setText("Shipping Notes:");
+        PMRdatePc.setEditable(false);
+        PMRdatePc.setFocusable(false);
+        PMRdatePc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jTextField13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMGrossLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMGrossLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMGrossLbl.setText("Gross Weight:");
 
-        jTextField15.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSnotesLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSnotesLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMSnotesLbl.setText("Shipping Notes:");
 
-        PMRdatePk.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMGrossTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMGrossTxt.setFocusable(false);
 
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton1.setText("Update");
+        PMSheatBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSheatBtn.setText("Update");
 
-        jButton4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton4.setText("Update");
+        PMSCompBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSCompBtn.setText("Update");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        PMSnotesTxtA.setColumns(20);
+        PMSnotesTxtA.setRows(5);
+        PMSnotesTxtA.setEnabled(false);
+        PMSnotesTxtA.setFocusable(false);
+        jScrollPane1.setViewportView(PMSnotesTxtA);
 
-        jLabel29.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel29.setText("Sorting Heat Number:");
+        PMSheatLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSheatLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMSheatLbl.setText("Sorting Heat Number:");
 
-        jTextField16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMBScanTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel30.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel30.setText("Sort Complete Date:");
+        PMSCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSCompLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMSCompLbl.setText("Sort Complete Date:");
 
-        jXDatePicker3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSCompPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel31.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel31.setText("Box Scan HDD Count:");
+        PMBScanLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMBScanLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMBScanLbl.setText("Box Scan HDD Count:");
 
-        jButton12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton12.setText("Update");
+        PMBScanBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMBScanBtn.setText("Update");
 
-        jTextField17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSheatTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel32.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel32.setText("Box Scan Complete Date:");
+        PMScanCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMScanCompLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMScanCompLbl.setText("Box Scan Complete Date:");
 
-        jXDatePicker4.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMScanCompPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton13.setText("Update");
+        PMScanCompBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMScanCompBtn.setText("Update");
 
-        jLabel33.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel33.setText("Production Heat Number:");
+        PMPheatLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMPheatLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMPheatLbl.setText("Production Heat Number:");
 
-        jTextField18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMPheatTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton14.setText("Update");
+        PMPheatBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMPheatBtn.setText("Update");
 
-        jLabel34.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel34.setText("Dismantle Complete Date:");
+        PMDmanLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMDmanLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMDmanLbl.setText("Dismantle Complete Date:");
 
-        jXDatePicker5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMDmanPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton15.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton15.setText("Update");
+        PMDmanBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMDmanBtn.setText("Update");
 
-        jLabel35.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel35.setText("HDD Sent to Reuse Count:");
+        PMSentLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSentLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMSentLbl.setText("HDD Sent to Reuse Count:");
 
-        jTextField19.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSentTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton16.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton16.setText("Update");
+        PMSentBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSentBtn.setText("Update");
 
-        jLabel36.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel36.setText("HDD Sent Complete Date:");
+        PMSentDtLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSentDtLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMSentDtLbl.setText("HDD Sent Complete Date:");
 
-        jButton17.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton17.setText("Update");
+        PMSentDtBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSentDtBtn.setText("Update");
 
-        jXDatePicker6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMSentDtPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel37.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel37.setText("Reuse Received Count:");
+        PMHDRecieveLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMHDRecieveLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMHDRecieveLbl.setText("Reuse Received Count:");
 
-        jLabel38.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel38.setText("Reuse Scan Count:");
+        PMHDScanLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMHDScanLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMHDScanLbl.setText("Reuse Scan Count:");
 
-        jTextField20.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMHDRecieveTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jTextField21.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMHDScanTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel39.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel39.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel39.setText("Order Notes:");
+        PMOnotesLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMOnotesLbl.setForeground(new java.awt.Color(214, 214, 214));
+        PMOnotesLbl.setText("Order Notes:");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        PMOnotesTxtA.setColumns(20);
+        PMOnotesTxtA.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMOnotesTxtA.setRows(5);
+        jScrollPane2.setViewportView(PMOnotesTxtA);
 
-        jButton18.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton18.setText("Update");
+        PMOnotesBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PMOnotesBtn.setText("Update");
 
         javax.swing.GroupLayout ProductionManagerLayout = new javax.swing.GroupLayout(ProductionManager);
         ProductionManager.setLayout(ProductionManagerLayout);
         ProductionManagerLayout.setHorizontalGroup(
             ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addComponent(PMTabLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
             .addGroup(ProductionManagerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PMHDScanLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSentDtLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSentLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMPheatLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMScanCompLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMBScanLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSCompLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSheatLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSnotesLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMGrossLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMRdateLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMVendorLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMOrderLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMDmanLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMHDRecieveLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMOnotesLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField21)
-                    .addComponent(jTextField20)
-                    .addComponent(jTextField12)
-                    .addComponent(jTextField13)
-                    .addComponent(PMRdatePk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField15)
+                    .addComponent(PMHDScanTxt)
+                    .addComponent(PMHDRecieveTxt)
+                    .addComponent(PMOrderTxt)
+                    .addComponent(PMVendorTxt)
+                    .addComponent(PMRdatePc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMGrossTxt)
                     .addComponent(jScrollPane1)
-                    .addComponent(jTextField17)
-                    .addComponent(jXDatePicker3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField16)
-                    .addComponent(jXDatePicker4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField18)
-                    .addComponent(jXDatePicker5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField19)
-                    .addComponent(jXDatePicker6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSheatTxt)
+                    .addComponent(PMSCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMBScanTxt)
+                    .addComponent(PMScanCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMPheatTxt)
+                    .addComponent(PMDmanPc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSentTxt)
+                    .addComponent(PMSentDtPc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PMSentDtBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSentBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMOrderBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                    .addComponent(PMSheatBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMSCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMPheatBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMScanCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMBScanBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMDmanBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PMOnotesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         ProductionManagerLayout.setVerticalGroup(
             ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ProductionManagerLayout.createSequentialGroup()
-                .addComponent(jLabel2)
+                .addComponent(PMTabLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(PMOrderLbl)
+                    .addComponent(PMOrderTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMOrderBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMVendorLbl)
+                    .addComponent(PMVendorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(PMRdatePk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMRdateLbl)
+                    .addComponent(PMRdatePc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMGrossLbl)
+                    .addComponent(PMGrossTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
+                    .addComponent(PMSnotesLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel29)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMSheatLbl)
+                    .addComponent(PMSheatBtn)
+                    .addComponent(PMSheatTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(jXDatePicker3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(PMSCompLbl)
+                    .addComponent(PMSCompPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMSCompBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton12)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31))
+                    .addComponent(PMBScanBtn)
+                    .addComponent(PMBScanTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMBScanLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jXDatePicker4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton13))
+                    .addComponent(PMScanCompLbl)
+                    .addComponent(PMScanCompPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMScanCompBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33)
-                    .addComponent(jButton14)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMPheatLbl)
+                    .addComponent(PMPheatBtn)
+                    .addComponent(PMPheatTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(jXDatePicker5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15))
+                    .addComponent(PMDmanLbl)
+                    .addComponent(PMDmanPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMDmanBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton16)
-                    .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35))
+                    .addComponent(PMSentBtn)
+                    .addComponent(PMSentTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMSentLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton17)
-                    .addComponent(jLabel36)
-                    .addComponent(jXDatePicker6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMSentDtBtn)
+                    .addComponent(PMSentDtLbl)
+                    .addComponent(PMSentDtPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMHDRecieveLbl)
+                    .addComponent(PMHDRecieveTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel38))
+                    .addComponent(PMHDScanTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMHDScanLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
-                    .addGroup(ProductionManagerLayout.createSequentialGroup()
-                        .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jButton18))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(PMOnotesLbl)
+                    .addComponent(PMOnotesBtn)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(484, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Production Manager", ProductionManager);
@@ -1955,7 +1956,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(jButton26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -2179,6 +2180,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(0,true);
                                 SetRecieveFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(0,true);
                                 SetRecieveEmpty();
@@ -2199,6 +2201,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(1,true);
                                 SetHeatFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(1,true);
                                 SetHeatEmpty();
@@ -2219,6 +2222,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(2,true);
                                 SetProductionManagerFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(2,true);
                                 SetProductionManagerEmpty();
@@ -2239,6 +2243,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(3,true);
                                 SetHDDManagerFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(3,true);
                                 SetHDDManagerEmpty();
@@ -2259,6 +2264,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(4,true);
                                 SetRecordViewFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(4,true);
                                 SetRecordViewEmpty();
@@ -2279,6 +2285,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(5,true);
                                 SetAdminFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(4,true);
                                 SetAdminEmpty();
@@ -2299,6 +2306,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(6,true);
                                 SetWipeFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(6,true);
                                 SetWipeEmpty();
@@ -2319,6 +2327,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(7,true);
                                 SetResaleFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(7,true);
                                 SetResaleEmpty();
@@ -2339,6 +2348,7 @@ private LocalDateTime myTimeStamp;
                             case 3://full access
                                 TabPanel.setEnabledAt(8,true);
                                 SetOpsDashFull();
+                                break;
                             default://all others are view only for now
                                 TabPanel.setEnabledAt(8,true);
                                 SetOpsDashEmpty();
@@ -2689,8 +2699,6 @@ private LocalDateTime myTimeStamp;
         // TODO Make selected order's Sort heat number update or insert from OID and HeatSortTxt.getText()
         if(!HeatOrdLbl.getText().equals("Order")){
             String thisOID = HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),0).toString();
-            //int disRow = HeatOrdersTbl.getSelectedRow();
-            //Now Insert or update data
             try{//TESTED
                 System.out.println("Updating SortScan");
                 //needs to be update or insert if not in.
@@ -2712,6 +2720,24 @@ private LocalDateTime myTimeStamp;
 
     private void HeatProdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeatProdBtnActionPerformed
         // TODO add your handling code here:
+        if(!HeatOrdLbl.getText().equals("Order")){
+            String thisOID = HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),0).toString();
+            try{//TESTED
+                System.out.println("Updating Production");
+                //needs to be update or insert if not in.
+                String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].[Production] "
+                        + "WHERE OID LIKE '" + thisOID + "') "
+                        + "UPDATE [HDD_Records].[dbo].[Production] SET Pheat ='"+ HeatProdTxt.getText() +"' "
+                        + "WHERE OID LIKE '" + thisOID+"' "
+                        + "ELSE INSERT INTO [HDD_Records].[dbo].[Production](OID,Pheat) VALUES('"+ thisOID +"','"+HeatProdTxt.getText()+"');";
+                System.out.println("Updating Production Heat with: " + SQL);
+                Connection conny = DriverManager.getConnection(Myurl);
+                Statement stater =  conny.createStatement();
+                stater.executeUpdate(SQL);
+            }catch (Exception e) {e.printStackTrace();}
+        }
+        // then refresh table
+        refreshHeatsTbl();
     }//GEN-LAST:event_HeatProdBtnActionPerformed
 
     private void TabPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabPanelStateChanged
@@ -2734,18 +2760,20 @@ private LocalDateTime myTimeStamp;
         // TODO add your handling code here:
         //System.out.println("Row Selected: " + HeatOrdersTbl.getSelectedRow());
         HeatOrdLbl.setText((HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),1).toString()));
-        try{
+        try{//get data for sort
             HeatSortTxt.setText((HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),2).toString()));
             HeatSortTxt.setEnabled(true);
             HeatSortBtn.setEnabled(true);
-        }catch (Exception e){
+        }catch (Exception e){//if no data for sort default empty
             HeatSortTxt.setText("");
             HeatSortTxt.setEnabled(true);
             HeatSortBtn.setEnabled(true);
         }
-        try{
+        try{//get data for production
             HeatProdTxt.setText((HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),3).toString()));
-        }catch (Exception e){
+            HeatProdTxt.setEnabled(true);
+            HeatProdBtn.setEnabled(true);
+        }catch (Exception e){//if no data for production default empty
             HeatProdTxt.setText("");
             HeatProdTxt.setEnabled(true);
             HeatProdBtn.setEnabled(true);
@@ -2817,26 +2845,63 @@ private LocalDateTime myTimeStamp;
     //****************Heat Assignment***************************************TAB1
     private void SetHeatEmpty(){
         //stub to clear and set empty HeatAssignment Tab
+        refreshHeatsTbl();
+        HeatOrdersTbl.setEnabled(false);
     }
     
     private void SetHeatLimited(){
         //stub to clear and set limited access HeatAssignment Tab
+        HeatOrdersTbl.setEnabled(false);
     }
     
     private void SetHeatFull(){
         //stub to clear and set full access HeatAssignment Tab
+        HeatOrdersTbl.setEnabled(true);
     }
     //**************Production Manager**************************************TAB2
     private void SetProductionManagerEmpty(){
         //stub to clear and set empty ProductionManager Tab
+        PMOrderTxt.setText(""); PMOrderTxt.setEnabled(true); PMOrderBtn.setEnabled(true);
+        PMVendorTxt.setText(""); PMVendorTxt.setEnabled(false);
+        PMRdatePc.setDate(null); PMRdatePc.setEnabled(false);
+        PMGrossTxt.setText(""); PMGrossTxt.setEnabled(false);
+        PMSnotesTxtA.setText(""); PMSnotesTxtA.setEnabled(false);
+        PMSheatTxt.setText(""); PMSheatTxt.setEnabled(false); PMSheatBtn.setEnabled(false);
+        PMSCompPc.setDate(null); PMSCompPc.setEnabled(false); PMSCompBtn.setEnabled(false);
+        PMBScanTxt.setText(""); PMBScanTxt.setEnabled(false); PMBScanBtn.setEnabled(false);
+        PMScanCompPc.setDate(null); PMScanCompPc.setEnabled(false); PMScanCompBtn.setEnabled(false);
+        PMPheatTxt.setText(""); PMPheatTxt.setEnabled(false); PMPheatBtn.setEnabled(false);
+        PMDmanPc.setDate(null); PMDmanPc.setEnabled(false); PMDmanBtn.setEnabled(false);
+        PMSentTxt.setText(""); PMSentTxt.setEnabled(false); PMSentBtn.setEnabled(false);
+        PMSentDtPc.setDate(null); PMSentDtPc.setEnabled(false); PMSentDtBtn.setEnabled(false);
+        PMHDRecieveTxt.setText(""); PMHDRecieveTxt.setEnabled(false);
+        PMHDScanTxt.setText(""); PMHDScanTxt.setEnabled(false);
+        PMOnotesTxtA.setText(""); PMOnotesTxtA.setEnabled(false); PMOnotesBtn.setEnabled(false);
     }
     
     private void SetProductionManagerLimited(){
         //stub to clear and set limited access ProductionManager Tab
+        SetProductionManagerEmpty();
     }
     
     private void SetProductionManagerFull(){
         //stub to clear and set full access ProductionManager Tab
+        PMOrderTxt.setText(""); PMOrderTxt.setEnabled(true); PMOrderBtn.setEnabled(true);
+        PMVendorTxt.setText(""); PMVendorTxt.setEnabled(true);
+        PMRdatePc.setDate(null); PMRdatePc.setEnabled(true);
+        PMGrossTxt.setText(""); PMGrossTxt.setEnabled(true);
+        PMSnotesTxtA.setText(""); PMSnotesTxtA.setEnabled(true);
+        PMSheatTxt.setText(""); PMSheatTxt.setEnabled(true); PMSheatBtn.setEnabled(true);
+        PMSCompPc.setDate(null); PMSCompPc.setEnabled(true); PMSCompBtn.setEnabled(true);
+        PMBScanTxt.setText(""); PMBScanTxt.setEnabled(true); PMBScanBtn.setEnabled(true);
+        PMScanCompPc.setDate(null); PMScanCompPc.setEnabled(true); PMScanCompBtn.setEnabled(true);
+        PMPheatTxt.setText(""); PMPheatTxt.setEnabled(true); PMPheatBtn.setEnabled(true);
+        PMDmanPc.setDate(null); PMDmanPc.setEnabled(true); PMDmanBtn.setEnabled(true);
+        PMSentTxt.setText(""); PMSentTxt.setEnabled(true); PMSentBtn.setEnabled(true);
+        PMSentDtPc.setDate(null); PMSentDtPc.setEnabled(true); PMSentDtBtn.setEnabled(true);
+        PMHDRecieveTxt.setText(""); PMHDRecieveTxt.setEnabled(true);
+        PMHDScanTxt.setText(""); PMHDScanTxt.setEnabled(true);
+        PMOnotesTxtA.setText(""); PMOnotesTxtA.setEnabled(true); PMOnotesBtn.setEnabled(true);
     }
     //**************HDD Manager*********************************************TAB3
     private void SetHDDManagerEmpty(){
@@ -2988,6 +3053,7 @@ private LocalDateTime myTimeStamp;
                 HeatProdTxt.setEnabled(false);
                 HeatProdBtn.setEnabled(false);
                 HeatOrdLbl.setText("Order");
+                //HeatOrdersTbl.setEnabled(true);
         } catch (Exception e){e.printStackTrace();}
     }
     
@@ -3065,7 +3131,49 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JPasswordField LoginPswrdTxt;
     private javax.swing.JTextField LoginUserTxt;
     private javax.swing.JPanel OpsDashTb;
-    private org.jdesktop.swingx.JXDatePicker PMRdatePk;
+    private javax.swing.JButton PMBScanBtn;
+    private javax.swing.JLabel PMBScanLbl;
+    private javax.swing.JTextField PMBScanTxt;
+    private javax.swing.JButton PMDmanBtn;
+    private javax.swing.JLabel PMDmanLbl;
+    private org.jdesktop.swingx.JXDatePicker PMDmanPc;
+    private javax.swing.JLabel PMGrossLbl;
+    private javax.swing.JTextField PMGrossTxt;
+    private javax.swing.JLabel PMHDRecieveLbl;
+    private javax.swing.JTextField PMHDRecieveTxt;
+    private javax.swing.JLabel PMHDScanLbl;
+    private javax.swing.JTextField PMHDScanTxt;
+    private javax.swing.JButton PMOnotesBtn;
+    private javax.swing.JLabel PMOnotesLbl;
+    private javax.swing.JTextArea PMOnotesTxtA;
+    private javax.swing.JButton PMOrderBtn;
+    private javax.swing.JLabel PMOrderLbl;
+    private javax.swing.JTextField PMOrderTxt;
+    private javax.swing.JButton PMPheatBtn;
+    private javax.swing.JLabel PMPheatLbl;
+    private javax.swing.JTextField PMPheatTxt;
+    private javax.swing.JLabel PMRdateLbl;
+    private org.jdesktop.swingx.JXDatePicker PMRdatePc;
+    private javax.swing.JButton PMSCompBtn;
+    private javax.swing.JLabel PMSCompLbl;
+    private org.jdesktop.swingx.JXDatePicker PMSCompPc;
+    private javax.swing.JButton PMScanCompBtn;
+    private javax.swing.JLabel PMScanCompLbl;
+    private org.jdesktop.swingx.JXDatePicker PMScanCompPc;
+    private javax.swing.JButton PMSentBtn;
+    private javax.swing.JButton PMSentDtBtn;
+    private javax.swing.JLabel PMSentDtLbl;
+    private org.jdesktop.swingx.JXDatePicker PMSentDtPc;
+    private javax.swing.JLabel PMSentLbl;
+    private javax.swing.JTextField PMSentTxt;
+    private javax.swing.JButton PMSheatBtn;
+    private javax.swing.JLabel PMSheatLbl;
+    private javax.swing.JTextField PMSheatTxt;
+    private javax.swing.JLabel PMSnotesLbl;
+    private javax.swing.JTextArea PMSnotesTxtA;
+    private javax.swing.JLabel PMTabLbl;
+    private javax.swing.JLabel PMVendorLbl;
+    private javax.swing.JTextField PMVendorTxt;
     private javax.swing.JPanel ProductionManager;
     private javax.swing.JButton RcvAdateBtn;
     private javax.swing.JLabel RcvAdateLbl;
@@ -3116,28 +3224,12 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel UserLbl;
     private javax.swing.JPanel WipeReports;
     private javax.swing.JLabel WipeReportsLbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
@@ -3146,18 +3238,7 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -3194,19 +3275,8 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
     private javax.swing.JTextField jTextField24;
@@ -3233,10 +3303,6 @@ private LocalDateTime myTimeStamp;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker12;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker13;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker14;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker3;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker4;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker5;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker6;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker8;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker9;
     // End of variables declaration//GEN-END:variables
