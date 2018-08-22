@@ -1349,6 +1349,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Lookup"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMOrderBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="PMVendorLbl">
               <Properties>
@@ -1426,6 +1429,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMSheatBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="PMSCompBtn">
               <Properties>

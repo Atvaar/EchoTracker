@@ -948,6 +948,11 @@ private LocalDateTime myTimeStamp;
 
         PMOrderBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         PMOrderBtn.setText("Lookup");
+        PMOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMOrderBtnActionPerformed(evt);
+            }
+        });
 
         PMVendorLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         PMVendorLbl.setForeground(new java.awt.Color(214, 214, 214));
@@ -977,6 +982,11 @@ private LocalDateTime myTimeStamp;
 
         PMSheatBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         PMSheatBtn.setText("Update");
+        PMSheatBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMSheatBtnActionPerformed(evt);
+            }
+        });
 
         PMSCompBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         PMSCompBtn.setText("Update");
@@ -2384,6 +2394,7 @@ private LocalDateTime myTimeStamp;
         // TODO add your handling code here:
         String OrderNum;
         OrderNum = RcvOrdrTxt.getText();
+        SetRecieveEmpty();
         //IF BLANK DISABLE EVERYTHING ON THE TAB
         if (OrderNum.equals("")){
         SetRecieveEmpty();
@@ -2689,8 +2700,7 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_RcvAdateBtnActionPerformed
 
     private void HeatAssignmentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HeatAssignmentFocusGained
-        // TODO make when focused run query to find all recieved orders that have not been dismantled and hdds sent to hdd room load into the table
-        // TODO make order line selected load data into the Order Label and Txt boxes                   RIGHT HERE GUS!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //mute point not used
         // TODO make buttons update the heat #'s or insert production table and insert heat nums
         refreshHeatsTbl();
     }//GEN-LAST:event_HeatAssignmentFocusGained
@@ -2753,6 +2763,23 @@ private LocalDateTime myTimeStamp;
                 refreshHeatsTbl();
                 HeatOrdLbl.setText("Order");
                 break;
+            case 2:
+                SetProductionManagerEmpty();
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            default:
+                break;
         }
     }//GEN-LAST:event_TabPanelStateChanged
 
@@ -2779,6 +2806,104 @@ private LocalDateTime myTimeStamp;
             HeatProdBtn.setEnabled(true);
         }
     }//GEN-LAST:event_HeatOrdersTblMouseClicked
+
+    private void PMOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMOrderBtnActionPerformed
+        // look up everything for the Production manager tab---------------------------------------
+        String OrderNum;
+        OrderNum = PMOrderTxt.getText();
+        //IF BLANK DISABLE EVERYTHING ON THE TAB
+        if (OrderNum.equals("")){
+        SetProductionManagerEmpty();
+        }else {
+            //lookup order, if order entered populate tab per user level if not ask if you would like to create order
+            try {
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                System.out.println("looking for order!" + OrderNum);
+                conn = DriverManager.getConnection(Myurl);
+                String SQL = "SELECT O.OID, O.InOrdNum, V.Vendor, R.Adate, R.Gross, N.Snotes, N.Onotes, S.Sheat, S.Sdate, S.BSdate, S.BSHDDCount, P.Pheat, P.DManDate, P.Pcount, P.Sdate AS SentToHDD, P.Ddate, T.HDCount, T.Tdate, COUNT(H.HSID) AS HSCount FROM [HDD_Records].[dbo].[Orders] AS O\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON O.VID = V.VID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Recieving] AS R ON O.OID = R.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON O.OID = N.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON O.OID = S.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON O.OID = P.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Transfer] AS T ON O.OID = T.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[HardDrive] AS H ON O.OID = H.OID\n" +
+                    "WHERE O.InOrdNum LIKE '"+ OrderNum +"'\n" +
+                    "GROUP BY O.OID, O.InOrdNum, V.Vendor, R.Adate, R.Gross, N.Snotes, N.Onotes, S.Sheat, S.Sdate, S.BSdate, S.BSHDDCount, P.Pheat, P.DManDate, P.Pcount, P.Sdate , P.Ddate, T.HDCount, T.Tdate";
+                System.out.println(SQL);
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(SQL);
+                try {  
+                    if (rs.next()) {
+                        //If order found do as follows
+                        PMVendorTxt.setText(rs.getString("Vendor"));
+                        PMRdatePc.setDate(rs.getDate("Adate"));
+                        PMGrossTxt.setText(rs.getString("Gross"));
+                        PMSnotesTxtA.setText(rs.getString("Snotes"));
+                        PMSheatTxt.setText(rs.getString("Sheat"));
+                        PMSCompPc.setDate(rs.getDate("Sdate"));
+                        PMBScanTxt.setText(rs.getString("BSHDDCount"));
+                        PMScanCompPc.setDate(rs.getDate("BSdate"));
+                        PMPheatTxt.setText(rs.getString("Pheat"));
+                        PMDmanPc.setDate(rs.getDate("DManDate"));
+                        PMSentTxt.setText(rs.getString("Pcount"));
+                        PMSentDtPc.setDate(rs.getDate("SentToHdd"));
+                        PMHDRecieveTxt.setText(rs.getString("HDCount"));//need to add data to production table to show recieved into hdd cage
+                        PMHDScanTxt.setText(rs.getString("HSCount"));//Also need table entry
+                        PMOnotesTxtA.setText(rs.getString("Onotes"));
+                        //switch for setting user access
+                        switch (userAccess[0]){
+                            case 0://no access
+                                ProductionManager.setVisible(false);
+                                break;
+                            case 1://view only
+                                break;
+                            case 2://limited access
+                                break;
+                            case 3://full access
+                                SetProductionManagerFull();
+                                break;
+                            default://unknow clear it and burn the evidence
+                                SetRecieveEmpty();
+                                break;
+                        }
+                    }else {
+                        System.out.println("Nope!");
+                        CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
+                        SetRecieveEmpty(); 
+                        CreateVendCmbBx.removeAllItems();
+                        CreateVendCmbBx.addItem("");
+                        CreateVendCmbBx.setModel(new DefaultComboBoxModel(getAllVendorNums().toArray()));
+                        CreateOrderDialog.setVisible((true));
+                    }
+                } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e){e.printStackTrace();}
+         }
+        
+    }//GEN-LAST:event_PMOrderBtnActionPerformed
+
+    private void PMSheatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSheatBtnActionPerformed
+        // TODO add your handling code here:-------------------------------------------------------------------------------------------------------
+        //--------------------------------------------WORK HERE GUS--------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        String thisOID = HeatOrdersTbl.getValueAt(HeatOrdersTbl.getSelectedRow(),0).toString();
+            try{
+                System.out.println("Updating SortScan");
+                //needs to be update or insert if not in.
+                String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].[SortScan] "
+                        + "WHERE OID LIKE '" + thisOID + "') "
+                        + "UPDATE [HDD_Records].[dbo].[SortScan] SET Sheat ='"+ HeatSortTxt.getText() +"' "
+                        + "WHERE OID LIKE '" + thisOID+"' "
+                        + "ELSE INSERT INTO [HDD_Records].[dbo].[SortScan](OID,Sheat) VALUES('"+ thisOID +"','"+HeatSortTxt.getText()+"');";
+                System.out.println("Updating Sort Heat with: " + SQL);
+                Connection conny = DriverManager.getConnection(Myurl);
+                Statement stater =  conny.createStatement();
+                stater.executeUpdate(SQL);
+            }catch (Exception e) {e.printStackTrace();}
+        
+        // then refresh table
+        //refreshHeatsTbl();
+    }//GEN-LAST:event_PMSheatBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -2886,22 +3011,22 @@ private LocalDateTime myTimeStamp;
     
     private void SetProductionManagerFull(){
         //stub to clear and set full access ProductionManager Tab
-        PMOrderTxt.setText(""); PMOrderTxt.setEnabled(true); PMOrderBtn.setEnabled(true);
-        PMVendorTxt.setText(""); PMVendorTxt.setEnabled(true);
-        PMRdatePc.setDate(null); PMRdatePc.setEnabled(true);
-        PMGrossTxt.setText(""); PMGrossTxt.setEnabled(true);
-        PMSnotesTxtA.setText(""); PMSnotesTxtA.setEnabled(true);
-        PMSheatTxt.setText(""); PMSheatTxt.setEnabled(true); PMSheatBtn.setEnabled(true);
-        PMSCompPc.setDate(null); PMSCompPc.setEnabled(true); PMSCompBtn.setEnabled(true);
-        PMBScanTxt.setText(""); PMBScanTxt.setEnabled(true); PMBScanBtn.setEnabled(true);
-        PMScanCompPc.setDate(null); PMScanCompPc.setEnabled(true); PMScanCompBtn.setEnabled(true);
-        PMPheatTxt.setText(""); PMPheatTxt.setEnabled(true); PMPheatBtn.setEnabled(true);
-        PMDmanPc.setDate(null); PMDmanPc.setEnabled(true); PMDmanBtn.setEnabled(true);
-        PMSentTxt.setText(""); PMSentTxt.setEnabled(true); PMSentBtn.setEnabled(true);
-        PMSentDtPc.setDate(null); PMSentDtPc.setEnabled(true); PMSentDtBtn.setEnabled(true);
-        PMHDRecieveTxt.setText(""); PMHDRecieveTxt.setEnabled(true);
-        PMHDScanTxt.setText(""); PMHDScanTxt.setEnabled(true);
-        PMOnotesTxtA.setText(""); PMOnotesTxtA.setEnabled(true); PMOnotesBtn.setEnabled(true);
+        PMOrderTxt.setEnabled(true); PMOrderBtn.setEnabled(true);
+        PMVendorTxt.setEnabled(true);
+        PMRdatePc.setEnabled(true);
+        PMGrossTxt.setEnabled(true);
+        PMSnotesTxtA.setEnabled(true);
+        PMSheatTxt.setEnabled(true); PMSheatBtn.setEnabled(true);
+        PMSCompPc.setEnabled(true); PMSCompBtn.setEnabled(true);
+        PMBScanTxt.setEnabled(true); PMBScanBtn.setEnabled(true);
+        PMScanCompPc.setEnabled(true); PMScanCompBtn.setEnabled(true);
+        PMPheatTxt.setEnabled(true); PMPheatBtn.setEnabled(true);
+        PMDmanPc.setEnabled(true); PMDmanBtn.setEnabled(true);
+        PMSentTxt.setEnabled(true); PMSentBtn.setEnabled(true);
+        PMSentDtPc.setEnabled(true); PMSentDtBtn.setEnabled(true);
+        PMHDRecieveTxt.setEnabled(true);
+        PMHDScanTxt.setEnabled(true);
+        PMOnotesTxtA.setEnabled(true); PMOnotesBtn.setEnabled(true);
     }
     //**************HDD Manager*********************************************TAB3
     private void SetHDDManagerEmpty(){
