@@ -452,7 +452,7 @@
               <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Component id="TabPanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="TabPanel" alignment="0" pref="814" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -543,7 +543,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RcvTabTitleLbl" alignment="0" pref="775" max="32767" attributes="0"/>
+                          <Component id="RcvTabTitleLbl" alignment="0" pref="789" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="RcvOrdrLbl" alignment="0" max="32767" attributes="0"/>
@@ -986,7 +986,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="jLabel3" alignment="0" pref="809" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1133,6 +1133,9 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="1"/>
+            </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[800, 598]"/>
             </Property>
@@ -1148,7 +1151,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="PMTabLbl" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="PMTabLbl" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -1171,35 +1174,56 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PMHDScanTxt" max="32767" attributes="0"/>
-                          <Component id="PMHDRecieveTxt" max="32767" attributes="0"/>
-                          <Component id="PMOrderTxt" max="32767" attributes="0"/>
-                          <Component id="PMVendorTxt" max="32767" attributes="0"/>
-                          <Component id="PMRdatePc" max="32767" attributes="0"/>
-                          <Component id="PMGrossTxt" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
-                          <Component id="PMSheatTxt" max="32767" attributes="0"/>
-                          <Component id="PMSCompPc" max="32767" attributes="0"/>
-                          <Component id="PMBScanTxt" max="32767" attributes="0"/>
-                          <Component id="PMScanCompPc" max="32767" attributes="0"/>
-                          <Component id="PMPheatTxt" max="32767" attributes="0"/>
-                          <Component id="PMDmanPc" max="32767" attributes="0"/>
-                          <Component id="PMSentTxt" max="32767" attributes="0"/>
-                          <Component id="PMSentDtPc" max="32767" attributes="0"/>
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="PMSentDtBtn" max="32767" attributes="0"/>
-                          <Component id="PMSentBtn" max="32767" attributes="0"/>
-                          <Component id="PMOrderBtn" pref="79" max="32767" attributes="0"/>
-                          <Component id="PMSheatBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="PMSCompBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="PMPheatBtn" max="32767" attributes="0"/>
-                          <Component id="PMScanCompBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="PMBScanBtn" alignment="1" max="32767" attributes="0"/>
-                          <Component id="PMDmanBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="PMOnotesBtn" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="PMBScanTxt" min="-2" pref="269" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="PMBScanBtn" min="-2" pref="79" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="PMBSAlterTxt" min="-2" pref="99" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="PMBSAddBtn" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="PMHDScanTxt" max="32767" attributes="0"/>
+                                  <Component id="PMHDRecieveTxt" max="32767" attributes="0"/>
+                                  <Component id="PMOrderTxt" max="32767" attributes="0"/>
+                                  <Component id="PMVendorTxt" max="32767" attributes="0"/>
+                                  <Component id="PMRdatePc" max="32767" attributes="0"/>
+                                  <Component id="PMGrossTxt" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                                  <Component id="PMSheatTxt" max="32767" attributes="0"/>
+                                  <Component id="PMSCompPc" max="32767" attributes="0"/>
+                                  <Component id="PMScanCompPc" max="32767" attributes="0"/>
+                                  <Component id="PMPheatTxt" max="32767" attributes="0"/>
+                                  <Component id="PMDmanPc" max="32767" attributes="0"/>
+                                  <Component id="PMSentDtPc" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="PMSentDtBtn" max="32767" attributes="0"/>
+                                  <Component id="PMOrderBtn" max="32767" attributes="0"/>
+                                  <Component id="PMSheatBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PMSCompBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PMPheatBtn" max="32767" attributes="0"/>
+                                  <Component id="PMScanCompBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PMDmanBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PMOnotesBtn" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PMBSSubBtn" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="PMSentTxt" min="-2" pref="269" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="PMSentBtn" min="-2" pref="79" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="PMSentAlterTxt" min="-2" pref="99" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="PMSentAddBtn" min="-2" pref="89" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="PMSentSubBtn" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -1252,6 +1276,9 @@
                           <Component id="PMBScanBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMBScanTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMBScanLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMBSAddBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMBSAlterTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMBSSubBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1273,9 +1300,12 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="PMSentBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMSentTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMSentLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMSentAddBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMSentSubBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMSentBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMSentAlterTxt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="PMSentTxt" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1299,7 +1329,7 @@
                           <Component id="PMOnotesBtn" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="137" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="484" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="484" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1367,9 +1397,11 @@
             </Component>
             <Component class="javax.swing.JTextField" name="PMVendorTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="PMRdateLbl">
@@ -1386,10 +1418,12 @@
             <Component class="org.jdesktop.swingx.JXDatePicker" name="PMRdatePc">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
+                <Property name="enabled" type="boolean" value="false"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
+                <Property name="lightWeightPopupEnabled" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="PMGrossLbl">
@@ -1416,6 +1450,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="PMGrossTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
@@ -1440,6 +1475,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMSCompBtnActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
@@ -1450,6 +1488,7 @@
               <SubComponents>
                 <Component class="javax.swing.JTextArea" name="PMSnotesTxtA">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -1512,6 +1551,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMBScanBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="PMSheatTxt">
               <Properties>
@@ -1545,6 +1587,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMScanCompBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="PMPheatLbl">
               <Properties>
@@ -1571,6 +1616,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMPheatBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="PMDmanLbl">
               <Properties>
@@ -1597,6 +1645,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMDmanBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="PMSentLbl">
               <Properties>
@@ -1623,6 +1674,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMSentBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="PMSentDtLbl">
               <Properties>
@@ -1642,6 +1696,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMSentDtBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="org.jdesktop.swingx.JXDatePicker" name="PMSentDtPc">
               <Properties>
@@ -1674,16 +1731,20 @@
             </Component>
             <Component class="javax.swing.JTextField" name="PMHDRecieveTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="PMHDScanTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="PMOnotesLbl">
@@ -1723,6 +1784,64 @@
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="PMBSAddBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add +"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMBSAddBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="PMBSAlterTxt">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="PMBSSubBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Subtract -"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMBSSubBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="PMSentAlterTxt">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="PMSentAddBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add +"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMSentAddBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="PMSentSubBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Subtract -"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMSentSubBtnActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="HDDManager">
@@ -1758,7 +1877,7 @@
                                   <Component id="jLabel58" max="32767" attributes="0"/>
                                   <Component id="jLabel56" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel55" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel52" alignment="1" pref="279" max="32767" attributes="0"/>
+                                  <Component id="jLabel52" alignment="1" pref="283" max="32767" attributes="0"/>
                                   <Component id="jLabel51" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jLabel50" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jLabel49" alignment="1" max="32767" attributes="0"/>
@@ -1780,7 +1899,7 @@
                                   <Component id="RcvOrdrTxt1" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextField23" max="32767" attributes="0"/>
                                   <Component id="jTextField24" max="32767" attributes="0"/>
-                                  <Component id="HDDManageSerialCompDt" pref="182" max="32767" attributes="0"/>
+                                  <Component id="HDDManageSerialCompDt" pref="188" max="32767" attributes="0"/>
                                   <Component id="jXDatePicker9" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextField25" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jXDatePicker10" alignment="0" max="32767" attributes="0"/>
@@ -1795,7 +1914,7 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="78" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
                                       <Component id="jTextField28" min="-2" pref="75" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jTextField27" min="-2" pref="64" max="-2" attributes="0"/>
@@ -2441,7 +2560,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel60" pref="213" max="32767" attributes="0"/>
+                              <Component id="jLabel60" pref="227" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTextField34" min="-2" pref="365" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2604,7 +2723,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel25" pref="795" max="32767" attributes="0"/>
+                  <Component id="jLabel25" pref="809" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2652,7 +2771,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="WipeReportsLbl" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="WipeReportsLbl" alignment="0" pref="809" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2700,7 +2819,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ResaleLbl" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="ResaleLbl" alignment="0" pref="809" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2775,7 +2894,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jToggleButton1" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane10" pref="490" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane10" pref="504" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
@@ -3033,7 +3152,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DashboardLbl1" pref="775" max="32767" attributes="0"/>
+                          <Component id="DashboardLbl1" pref="789" max="32767" attributes="0"/>
                           <Component id="jScrollPane9" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
