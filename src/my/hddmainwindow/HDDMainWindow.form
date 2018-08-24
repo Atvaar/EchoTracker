@@ -1783,6 +1783,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMOnotesBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="PMBSAddBtn">
               <Properties>
@@ -1877,53 +1880,56 @@
                                   <Component id="jLabel58" max="32767" attributes="0"/>
                                   <Component id="jLabel56" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel55" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel52" alignment="1" pref="283" max="32767" attributes="0"/>
-                                  <Component id="jLabel51" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel50" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel49" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel48" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManageSerialCompLbl" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel46" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel45" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel44" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel43" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="RcvOrdrLbl1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="273" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveLbl" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManCompDLbl" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManSentCLbl" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManDmanCLbl" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManBSCompLbl" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManBSCLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManVendLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManOrderLbl" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel54" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jLabel57" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane4" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManTblPnl" alignment="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jTextField22" max="32767" attributes="0"/>
-                                  <Component id="jTextField14" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="RcvOrdrTxt1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField23" max="32767" attributes="0"/>
-                                  <Component id="jTextField24" max="32767" attributes="0"/>
-                                  <Component id="HDDManageSerialCompDt" pref="188" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker9" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jTextField25" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker10" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManBSCTxt" max="32767" attributes="0"/>
+                                  <Component id="HDDManVendTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManOrderTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCTxt" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompPc" pref="178" max="32767" attributes="0"/>
+                                  <Component id="HDDManDmanCPc" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManSentCTxt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManCompDPc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jXDatePicker12" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker11" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jTextField26" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompPc" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveTxt" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jTextField31" max="32767" attributes="0"/>
                                   <Component id="jTextField32" max="32767" attributes="0"/>
                                   <Component id="jTextField33" max="32767" attributes="0"/>
                                   <Component id="jXDatePicker13" max="32767" attributes="0"/>
+                                  <Component id="HDDManBSCompPc" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
-                                      <Component id="jTextField28" min="-2" pref="75" max="-2" attributes="0"/>
+                                      <Component id="HDDManRecieveUDBtn" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField27" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <Component id="HDDManRAlterTxt" min="-2" pref="75" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="RcvOrdrBtn2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="HDDManRAddBtn" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="HDDManRSubBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jPanel2" max="32767" attributes="0"/>
+                                  <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
                                   <Component id="RcvOrdrBtn3" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="RcvOrdrBtn1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManOrderBtn" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="326" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompBtn" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -1937,67 +1943,70 @@
                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="RcvOrdrLbl1" alignment="3" max="-2" attributes="0"/>
-                          <Component id="RcvOrdrBtn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="RcvOrdrTxt1" alignment="3" max="-2" attributes="0"/>
+                          <Component id="HDDManOrderLbl" alignment="3" max="-2" attributes="0"/>
+                          <Component id="HDDManOrderBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManOrderTxt" alignment="3" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManVendLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManVendTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManBSCLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManBSCTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField23" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManBSCompLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManBSCompPc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSerialCLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSerialCTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="HDDManageSerialCompLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="HDDManageSerialCompDt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSerialCompLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSerialCompPc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSerialCompBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jXDatePicker9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField25" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManDmanCLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManDmanCPc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jXDatePicker10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSentCLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSentCTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField26" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField27" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="RcvOrdrBtn2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField28" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManCompDLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManCompDPc" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jXDatePicker11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRecieveLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRecieveTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRAddBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRAlterTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRSubBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRecieveUDBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="HDDManRecieveCompLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRecieveCompPc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRecieveCompBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanel2" max="32767" attributes="0"/>
-                          <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
+                          <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
+                          <Component id="HDDManTblPnl" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -2031,7 +2040,7 @@
                           <Component id="jScrollPane5" min="-2" pref="65" max="-2" attributes="0"/>
                           <Component id="RcvOrdrBtn4" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="469" max="32767" attributes="0"/>
+                      <EmptySpace pref="458" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2053,7 +2062,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="RcvOrdrLbl1">
+            <Component class="javax.swing.JLabel" name="HDDManOrderLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="1"/>
@@ -2065,17 +2074,17 @@
                 <Property name="text" type="java.lang.String" value="ORDER NUMBER:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="RcvOrdrTxt1">
+            <Component class="javax.swing.JTextField" name="HDDManOrderTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvOrdrTxt1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManOrderTxtActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="RcvOrdrBtn1">
+            <Component class="javax.swing.JButton" name="HDDManOrderBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2083,10 +2092,10 @@
                 <Property name="text" type="java.lang.String" value="Lookup"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvOrdrBtn1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManOrderBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel43">
+            <Component class="javax.swing.JLabel" name="HDDManVendLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2098,7 +2107,16 @@
                 <Property name="text" type="java.lang.String" value="Vendor:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel44">
+            <Component class="javax.swing.JTextField" name="HDDManVendTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="HDDManBSCLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2110,7 +2128,16 @@
                 <Property name="text" type="java.lang.String" value="Box Scan HDD Count:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel45">
+            <Component class="javax.swing.JTextField" name="HDDManBSCTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="HDDManBSCompLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2122,35 +2149,9 @@
                 <Property name="text" type="java.lang.String" value="Box Scan Complete Date:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField14">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-              </Properties>
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManBSCompPc">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField22">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField23">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField24">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel46">
+            <Component class="javax.swing.JLabel" name="HDDManSerialCLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2162,7 +2163,16 @@
                 <Property name="text" type="java.lang.String" value="Serialization HDD Count:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="HDDManageSerialCompLbl">
+            <Component class="javax.swing.JTextField" name="HDDManSerialCTxt">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="HDDManSerialCompLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2174,9 +2184,27 @@
                 <Property name="text" type="java.lang.String" value="Serialization Completion Date:  "/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManageSerialCompDt">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManSerialCompPc">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel48">
+            <Component class="javax.swing.JButton" name="HDDManSerialCompBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Update"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManSerialCompBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="HDDManDmanCLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2188,9 +2216,16 @@
                 <Property name="text" type="java.lang.String" value="Dismantle Complete Date:  "/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker9">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManDmanCPc">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel49">
+            <Component class="javax.swing.JLabel" name="HDDManSentCLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2202,14 +2237,16 @@
                 <Property name="text" type="java.lang.String" value="HDD Count - Sent To Reuse:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField25">
+            <Component class="javax.swing.JTextField" name="HDDManSentCTxt">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel50">
+            <Component class="javax.swing.JLabel" name="HDDManCompDLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2221,9 +2258,16 @@
                 <Property name="text" type="java.lang.String" value="Completed Order HDD Delivery Date:  "/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker10">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManCompDPc">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel51">
+            <Component class="javax.swing.JLabel" name="HDDManRecieveLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2235,21 +2279,14 @@
                 <Property name="text" type="java.lang.String" value="Reuse HDD Received:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField26">
+            <Component class="javax.swing.JTextField" name="HDDManRecieveTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField27">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="RcvOrdrBtn2">
+            <Component class="javax.swing.JButton" name="HDDManRecieveUDBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2257,10 +2294,10 @@
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvOrdrBtn2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManRecieveUDBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField28">
+            <Component class="javax.swing.JTextField" name="HDDManRAlterTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2268,7 +2305,29 @@
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel52">
+            <Component class="javax.swing.JButton" name="HDDManRAddBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add +"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManRAddBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="HDDManRSubBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Subtract -"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManRSubBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="HDDManRecieveCompLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2280,16 +2339,32 @@
                 <Property name="text" type="java.lang.String" value="Reuse HDD Received Complete Date:  "/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker11">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManRecieveCompPc">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+            <Component class="javax.swing.JButton" name="HDDManRecieveCompBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Update"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManRecieveCompBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="HDDManTblPnl">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable2">
+                <Component class="javax.swing.JTable" name="HDDManSizeTbl">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2310,7 +2385,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel2">
+            <Container class="javax.swing.JPanel" name="HDDManLanesPnl">
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -2318,11 +2393,16 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField29" max="32767" attributes="0"/>
+                              <Component id="HDDManLaneIndTxt" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jTextField30" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel53" max="32767" attributes="0"/>
+                                      <Component id="jTextField30" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField1" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <Component id="jTextField2" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -2339,16 +2419,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField29" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManLaneIndTxt" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton23" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="26" max="32767" attributes="0"/>
                       </Group>
@@ -2356,7 +2438,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="jTextField29">
+                <Component class="javax.swing.JTextField" name="HDDManLaneIndTxt">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="12" style="1"/>
@@ -2398,6 +2480,20 @@
                     <Property name="horizontalAlignment" type="int" value="0"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JTextField" name="jTextField1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="12" style="1"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jTextField2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="12" style="1"/>
+                    </Property>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel54">
@@ -2413,6 +2509,11 @@
               </Properties>
             </Component>
             <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker12">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel55">
               <Properties>
@@ -2495,6 +2596,11 @@
               </Properties>
             </Component>
             <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker13">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel59">
               <Properties>
@@ -2894,7 +3000,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jToggleButton1" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane10" pref="504" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane10" pref="510" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>

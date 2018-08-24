@@ -188,40 +188,45 @@ private LocalDateTime myTimeStamp;
         PMSentSubBtn = new javax.swing.JButton();
         HDDManager = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        RcvOrdrLbl1 = new javax.swing.JLabel();
-        RcvOrdrTxt1 = new javax.swing.JTextField();
-        RcvOrdrBtn1 = new javax.swing.JButton();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField22 = new javax.swing.JTextField();
-        jTextField23 = new javax.swing.JTextField();
-        jTextField24 = new javax.swing.JTextField();
-        jLabel46 = new javax.swing.JLabel();
-        HDDManageSerialCompLbl = new javax.swing.JLabel();
-        HDDManageSerialCompDt = new org.jdesktop.swingx.JXDatePicker();
-        jLabel48 = new javax.swing.JLabel();
-        jXDatePicker9 = new org.jdesktop.swingx.JXDatePicker();
-        jLabel49 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
-        jLabel50 = new javax.swing.JLabel();
-        jXDatePicker10 = new org.jdesktop.swingx.JXDatePicker();
-        jLabel51 = new javax.swing.JLabel();
-        jTextField26 = new javax.swing.JTextField();
-        jTextField27 = new javax.swing.JTextField();
-        RcvOrdrBtn2 = new javax.swing.JButton();
-        jTextField28 = new javax.swing.JTextField();
-        jLabel52 = new javax.swing.JLabel();
-        jXDatePicker11 = new org.jdesktop.swingx.JXDatePicker();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        jTextField29 = new javax.swing.JTextField();
+        HDDManOrderLbl = new javax.swing.JLabel();
+        HDDManOrderTxt = new javax.swing.JTextField();
+        HDDManOrderBtn = new javax.swing.JButton();
+        HDDManVendLbl = new javax.swing.JLabel();
+        HDDManVendTxt = new javax.swing.JTextField();
+        HDDManBSCLbl = new javax.swing.JLabel();
+        HDDManBSCTxt = new javax.swing.JTextField();
+        HDDManBSCompLbl = new javax.swing.JLabel();
+        HDDManBSCompPc = new org.jdesktop.swingx.JXDatePicker();
+        HDDManSerialCLbl = new javax.swing.JLabel();
+        HDDManSerialCTxt = new javax.swing.JTextField();
+        HDDManSerialCompLbl = new javax.swing.JLabel();
+        HDDManSerialCompPc = new org.jdesktop.swingx.JXDatePicker();
+        HDDManSerialCompBtn = new javax.swing.JButton();
+        HDDManDmanCLbl = new javax.swing.JLabel();
+        HDDManDmanCPc = new org.jdesktop.swingx.JXDatePicker();
+        HDDManSentCLbl = new javax.swing.JLabel();
+        HDDManSentCTxt = new javax.swing.JTextField();
+        HDDManCompDLbl = new javax.swing.JLabel();
+        HDDManCompDPc = new org.jdesktop.swingx.JXDatePicker();
+        HDDManRecieveLbl = new javax.swing.JLabel();
+        HDDManRecieveTxt = new javax.swing.JTextField();
+        HDDManRecieveUDBtn = new javax.swing.JButton();
+        HDDManRAlterTxt = new javax.swing.JTextField();
+        HDDManRAddBtn = new javax.swing.JButton();
+        HDDManRSubBtn = new javax.swing.JButton();
+        HDDManRecieveCompLbl = new javax.swing.JLabel();
+        HDDManRecieveCompPc = new org.jdesktop.swingx.JXDatePicker();
+        HDDManRecieveCompBtn = new javax.swing.JButton();
+        HDDManTblPnl = new javax.swing.JScrollPane();
+        HDDManSizeTbl = new javax.swing.JTable();
+        HDDManLanesPnl = new javax.swing.JPanel();
+        HDDManLaneIndTxt = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         jTextField30 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         jLabel54 = new javax.swing.JLabel();
         jXDatePicker12 = new org.jdesktop.swingx.JXDatePicker();
         jLabel55 = new javax.swing.JLabel();
@@ -1139,6 +1144,11 @@ private LocalDateTime myTimeStamp;
 
         PMOnotesBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         PMOnotesBtn.setText("Update");
+        PMOnotesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMOnotesBtnActionPerformed(evt);
+            }
+        });
 
         PMBSAddBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         PMBSAddBtn.setText("Add +");
@@ -1347,104 +1357,154 @@ private LocalDateTime myTimeStamp;
         jLabel15.setText("     HDD Manager");
         jLabel15.setToolTipText("");
 
-        RcvOrdrLbl1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        RcvOrdrLbl1.setForeground(new java.awt.Color(214, 214, 214));
-        RcvOrdrLbl1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        RcvOrdrLbl1.setText("ORDER NUMBER:");
+        HDDManOrderLbl.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        HDDManOrderLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManOrderLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManOrderLbl.setText("ORDER NUMBER:");
 
-        RcvOrdrTxt1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        RcvOrdrTxt1.addActionListener(new java.awt.event.ActionListener() {
+        HDDManOrderTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManOrderTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RcvOrdrTxt1ActionPerformed(evt);
+                HDDManOrderTxtActionPerformed(evt);
             }
         });
 
-        RcvOrdrBtn1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        RcvOrdrBtn1.setText("Lookup");
-        RcvOrdrBtn1.addActionListener(new java.awt.event.ActionListener() {
+        HDDManOrderBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManOrderBtn.setText("Lookup");
+        HDDManOrderBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RcvOrdrBtn1ActionPerformed(evt);
+                HDDManOrderBtnActionPerformed(evt);
             }
         });
 
-        jLabel43.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel43.setText("Vendor:  ");
+        HDDManVendLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManVendLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManVendLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManVendLbl.setText("Vendor:  ");
 
-        jLabel44.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel44.setText("Box Scan HDD Count:  ");
+        HDDManVendTxt.setEditable(false);
+        HDDManVendTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManVendTxt.setFocusable(false);
 
-        jLabel45.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel45.setText("Box Scan Complete Date:  ");
+        HDDManBSCLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManBSCLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManBSCLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManBSCLbl.setText("Box Scan HDD Count:  ");
 
-        jTextField14.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManBSCTxt.setEditable(false);
+        HDDManBSCTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManBSCTxt.setFocusable(false);
 
-        jTextField22.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManBSCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManBSCompLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManBSCompLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManBSCompLbl.setText("Box Scan Complete Date:  ");
 
-        jTextField23.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSerialCLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSerialCLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManSerialCLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManSerialCLbl.setText("Serialization HDD Count:  ");
 
-        jTextField24.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSerialCTxt.setEditable(false);
+        HDDManSerialCTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSerialCTxt.setFocusable(false);
 
-        jLabel46.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel46.setText("Serialization HDD Count:  ");
+        HDDManSerialCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSerialCompLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManSerialCompLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManSerialCompLbl.setText("Serialization Completion Date:  ");
 
-        HDDManageSerialCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        HDDManageSerialCompLbl.setForeground(new java.awt.Color(214, 214, 214));
-        HDDManageSerialCompLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        HDDManageSerialCompLbl.setText("Serialization Completion Date:  ");
+        HDDManSerialCompPc.setEditable(false);
+        HDDManSerialCompPc.setFocusable(false);
+        HDDManSerialCompPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jLabel48.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel48.setText("Dismantle Complete Date:  ");
-
-        jLabel49.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel49.setText("HDD Count - Sent To Reuse:  ");
-
-        jTextField25.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-
-        jLabel50.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel50.setText("Completed Order HDD Delivery Date:  ");
-
-        jLabel51.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel51.setText("Reuse HDD Received:  ");
-
-        jTextField26.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-
-        jTextField27.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-
-        RcvOrdrBtn2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        RcvOrdrBtn2.setText("Update");
-        RcvOrdrBtn2.addActionListener(new java.awt.event.ActionListener() {
+        HDDManSerialCompBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSerialCompBtn.setText("Update");
+        HDDManSerialCompBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RcvOrdrBtn2ActionPerformed(evt);
+                HDDManSerialCompBtnActionPerformed(evt);
             }
         });
 
-        jTextField28.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTextField28.setFocusable(false);
+        HDDManDmanCLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManDmanCLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManDmanCLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManDmanCLbl.setText("Dismantle Complete Date:  ");
 
-        jLabel52.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel52.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel52.setText("Reuse HDD Received Complete Date:  ");
+        HDDManDmanCPc.setEditable(false);
+        HDDManDmanCPc.setFocusable(false);
+        HDDManDmanCPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        HDDManSentCLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSentCLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManSentCLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManSentCLbl.setText("HDD Count - Sent To Reuse:  ");
+
+        HDDManSentCTxt.setEditable(false);
+        HDDManSentCTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSentCTxt.setFocusable(false);
+
+        HDDManCompDLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManCompDLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManCompDLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManCompDLbl.setText("Completed Order HDD Delivery Date:  ");
+
+        HDDManCompDPc.setEditable(false);
+        HDDManCompDPc.setFocusable(false);
+        HDDManCompDPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        HDDManRecieveLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRecieveLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManRecieveLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManRecieveLbl.setText("Reuse HDD Received:  ");
+
+        HDDManRecieveTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        HDDManRecieveUDBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRecieveUDBtn.setText("Update");
+        HDDManRecieveUDBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManRecieveUDBtnActionPerformed(evt);
+            }
+        });
+
+        HDDManRAlterTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRAlterTxt.setFocusable(false);
+
+        HDDManRAddBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRAddBtn.setText("Add +");
+        HDDManRAddBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManRAddBtnActionPerformed(evt);
+            }
+        });
+
+        HDDManRSubBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRSubBtn.setText("Subtract -");
+        HDDManRSubBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManRSubBtnActionPerformed(evt);
+            }
+        });
+
+        HDDManRecieveCompLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRecieveCompLbl.setForeground(new java.awt.Color(214, 214, 214));
+        HDDManRecieveCompLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HDDManRecieveCompLbl.setText("Reuse HDD Received Complete Date:  ");
+
+        HDDManRecieveCompPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        HDDManRecieveCompBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRecieveCompBtn.setText("Update");
+        HDDManRecieveCompBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManRecieveCompBtnActionPerformed(evt);
+            }
+        });
+
+        HDDManSizeTbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        HDDManSizeTbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManSizeTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -1460,11 +1520,11 @@ private LocalDateTime myTimeStamp;
                 "HDD Size", "HDD Count In", "HDD Count Out"
             }
         ));
-        jScrollPane4.setViewportView(jTable2);
+        HDDManTblPnl.setViewportView(HDDManSizeTbl);
 
-        jTextField29.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTextField29.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField29.setText("LANE");
+        HDDManLaneIndTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManLaneIndTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        HDDManLaneIndTxt.setText("LANE");
 
         jLabel53.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1479,37 +1539,47 @@ private LocalDateTime myTimeStamp;
         jTextField30.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jTextField1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        jTextField2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+
+        javax.swing.GroupLayout HDDManLanesPnlLayout = new javax.swing.GroupLayout(HDDManLanesPnl);
+        HDDManLanesPnl.setLayout(HDDManLanesPnlLayout);
+        HDDManLanesPnlLayout.setHorizontalGroup(
+            HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField29)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField30)
-                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(HDDManLaneIndTxt)
+                    .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
+                        .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField30))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton20, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton23, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        HDDManLanesPnlLayout.setVerticalGroup(
+            HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HDDManLaneIndTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53)
-                    .addComponent(jButton20))
+                    .addComponent(jButton20)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton23)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -1517,6 +1587,8 @@ private LocalDateTime myTimeStamp;
         jLabel54.setForeground(new java.awt.Color(214, 214, 214));
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel54.setText("Reuse HDD Received Complete Date:  ");
+
+        jXDatePicker12.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jLabel55.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(214, 214, 214));
@@ -1551,6 +1623,8 @@ private LocalDateTime myTimeStamp;
         jLabel58.setForeground(new java.awt.Color(214, 214, 214));
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel58.setText("HDD Report Complete Date:  ");
+
+        jXDatePicker13.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jLabel59.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel59.setForeground(new java.awt.Color(214, 214, 214));
@@ -1588,50 +1662,53 @@ private LocalDateTime myTimeStamp;
                             .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                            .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManageSerialCompLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel43, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RcvOrdrLbl1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManCompDLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManSentCLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManDmanCLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCompLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManBSCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManBSCLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManVendLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManOrderLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(HDDManTblPnl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField22)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RcvOrdrTxt1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField23)
-                            .addComponent(jTextField24)
-                            .addComponent(HDDManageSerialCompDt, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                            .addComponent(jXDatePicker9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField25, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jXDatePicker10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManBSCTxt)
+                            .addComponent(HDDManVendTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(HDDManOrderTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(HDDManSerialCTxt)
+                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                            .addComponent(HDDManDmanCPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManSentCTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(HDDManCompDPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jXDatePicker12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jXDatePicker11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField26)
+                            .addComponent(HDDManRecieveCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveTxt)
                             .addComponent(jTextField31)
                             .addComponent(jTextField32)
                             .addComponent(jTextField33)
-                            .addComponent(jXDatePicker13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jXDatePicker13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManBSCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(HDDManagerLayout.createSequentialGroup()
-                                .addGap(0, 82, Short.MAX_VALUE)
-                                .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HDDManRecieveUDBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(HDDManRAlterTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(RcvOrdrBtn2))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(HDDManRAddBtn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(HDDManRSubBtn))
+                            .addComponent(HDDManLanesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(RcvOrdrBtn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RcvOrdrBtn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(HDDManOrderBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         HDDManagerLayout.setVerticalGroup(
@@ -1640,56 +1717,59 @@ private LocalDateTime myTimeStamp;
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RcvOrdrLbl1)
-                    .addComponent(RcvOrdrBtn1)
-                    .addComponent(RcvOrdrTxt1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManOrderLbl)
+                    .addComponent(HDDManOrderBtn)
+                    .addComponent(HDDManOrderTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel43)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManVendLbl)
+                    .addComponent(HDDManVendTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManBSCLbl)
+                    .addComponent(HDDManBSCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManBSCompLbl)
+                    .addComponent(HDDManBSCompPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManSerialCLbl)
+                    .addComponent(HDDManSerialCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HDDManageSerialCompLbl)
-                    .addComponent(HDDManageSerialCompDt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
+                    .addComponent(HDDManSerialCompLbl)
+                    .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HDDManSerialCompBtn))
+                .addGap(3, 3, 3)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel48)
-                    .addComponent(jXDatePicker9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManDmanCLbl)
+                    .addComponent(HDDManDmanCPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManSentCLbl)
+                    .addComponent(HDDManSentCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel50)
-                    .addComponent(jXDatePicker10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManCompDLbl)
+                    .addComponent(HDDManCompDPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel51)
-                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RcvOrdrBtn2)
-                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManRecieveLbl)
+                    .addComponent(HDDManRecieveTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HDDManRAddBtn)
+                    .addComponent(HDDManRAlterTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HDDManRSubBtn)
+                    .addComponent(HDDManRecieveUDBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel52)
-                    .addComponent(jXDatePicker11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManRecieveCompLbl)
+                    .addComponent(HDDManRecieveCompPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HDDManRecieveCompBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(HDDManLanesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HDDManTblPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel54)
@@ -1716,7 +1796,7 @@ private LocalDateTime myTimeStamp;
                     .addComponent(jLabel59)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(RcvOrdrBtn4))
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addContainerGap(458, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("HDD Manager", HDDManager);
@@ -2078,7 +2158,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(jButton26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -2576,17 +2656,20 @@ private LocalDateTime myTimeStamp;
          }
     }//GEN-LAST:event_RcvOrdrBtnActionPerformed
 
-    private void RcvOrdrTxt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrTxt1ActionPerformed
+    private void HDDManOrderTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOrderTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RcvOrdrTxt1ActionPerformed
+    }//GEN-LAST:event_HDDManOrderTxtActionPerformed
 
-    private void RcvOrdrBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RcvOrdrBtn1ActionPerformed
+    private void HDDManOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOrderBtnActionPerformed
+        //============================================================================================================================
+        // TODO add your handling code here:================================================================WORK HERE GUS=============
+        //============================================================================================================================
+        HDDManLaneIndTxt.setBackground(Color.magenta);//Testing color change on Text boxes
+    }//GEN-LAST:event_HDDManOrderBtnActionPerformed
 
-    private void RcvOrdrBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn2ActionPerformed
+    private void HDDManRAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRAddBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_RcvOrdrBtn2ActionPerformed
+    }//GEN-LAST:event_HDDManRAddBtnActionPerformed
 
     private void RcvOrdrBtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrBtn3ActionPerformed
         // TODO add your handling code here:
@@ -2992,7 +3075,6 @@ private LocalDateTime myTimeStamp;
                 } catch (Exception e) {e.printStackTrace();}
             } catch (Exception e){e.printStackTrace();}
          }
-        
     }//GEN-LAST:event_PMOrderBtnActionPerformed
 
     private void PMSheatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSheatBtnActionPerformed
@@ -3101,25 +3183,62 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_PMSentBtnActionPerformed
 
     private void PMBSAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMBSAddBtnActionPerformed
-        // 
+        // adds what is in the PMBSAlterTxt to PMBScanTxt and uploads
+        int added = Integer.parseInt(PMBScanTxt.getText()) + Integer.parseInt(PMBSAlterTxt.getText());
+        PMBScanTxt.setText(String.valueOf(added));
+        PMBSAlterTxt.setText("");
+        updateOrInsertString(PMBScanTxt,"Production", "BSHDDCount",PMOrderTxt.getText());
     }//GEN-LAST:event_PMBSAddBtnActionPerformed
 
     private void PMBSSubBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMBSSubBtnActionPerformed
-        // 
+        // subtracts what is in the PMBSAlterTxt to PMBScanTxt and uploads
+       int subbed = Integer.parseInt(PMBScanTxt.getText()) - Integer.parseInt(PMBSAlterTxt.getText());
+        PMBScanTxt.setText(String.valueOf(subbed));
+        PMBSAlterTxt.setText("");
+        updateOrInsertString(PMBScanTxt,"Production", "BSHDDCount",PMOrderTxt.getText());
     }//GEN-LAST:event_PMBSSubBtnActionPerformed
 
     private void PMSentAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSentAddBtnActionPerformed
-        // 
+        // adds what is in the PMSentAlterTxt to PMSentTxt and uploads
+        int added = Integer.parseInt(PMSentTxt.getText()) + Integer.parseInt(PMSentAlterTxt.getText());
+        PMSentTxt.setText(String.valueOf(added));
+        PMSentAlterTxt.setText("");
+        updateOrInsertString(PMSentTxt,"Production", "Pcount",PMOrderTxt.getText());
     }//GEN-LAST:event_PMSentAddBtnActionPerformed
 
     private void PMSentSubBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSentSubBtnActionPerformed
-        /// 
+        // subtracts what is in the PMSentAlterTxt from PMSentTxt and uploads
+        int subbed = Integer.parseInt(PMSentTxt.getText()) - Integer.parseInt(PMSentAlterTxt.getText());
+        PMSentTxt.setText(String.valueOf(subbed));
+        PMSentAlterTxt.setText("");
+        updateOrInsertString(PMSentTxt,"Production", "Pcount",PMOrderTxt.getText());
     }//GEN-LAST:event_PMSentSubBtnActionPerformed
 
     private void PMSentDtBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSentDtBtnActionPerformed
         // Update or insert the Sent to HDD Room date
         updateInsertDate(PMSentDtPc,"Production","Sdate",PMOrderTxt.getText());
     }//GEN-LAST:event_PMSentDtBtnActionPerformed
+
+    private void PMOnotesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMOnotesBtnActionPerformed
+        // TODO add your handling code here:
+        updateOrInsertString(PMOnotesTxtA,"Notes","Onotes",PMOrderTxt.getText());
+    }//GEN-LAST:event_PMOnotesBtnActionPerformed
+
+    private void HDDManRSubBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRSubBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HDDManRSubBtnActionPerformed
+
+    private void HDDManRecieveUDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRecieveUDBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HDDManRecieveUDBtnActionPerformed
+
+    private void HDDManRecieveCompBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRecieveCompBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HDDManRecieveCompBtnActionPerformed
+
+    private void HDDManSerialCompBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManSerialCompBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HDDManSerialCompBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -3417,6 +3536,25 @@ private LocalDateTime myTimeStamp;
             }catch (Exception e) {e.printStackTrace();}                                         
     }
     
+    public void updateOrInsertString(JTextArea mTxt, String myTable, String myVar, String myOrder){
+            try{
+                System.out.println("Updating Box "+ myTable);
+                //needs to be update or insert if not in.
+                String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].["+ myTable +"] "
+                        + "WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] "
+                        + "WHERE InOrdNum LIKE '" + myOrder + "')) "
+                        + "UPDATE [HDD_Records].[dbo].["+ myTable +"] SET "+ myVar + " ='"+ mTxt.getText() +"' "
+                        + "WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] "
+                        + "WHERE InOrdNum LIKE '" + myOrder + "') "
+                        + "ELSE INSERT INTO [HDD_Records].[dbo].["+ myTable +"](OID,"+ myVar + ") VALUES((SELECT OID FROM [HDD_Records].[dbo].[Orders] "
+                        + "WHERE InOrdNum LIKE '" + myOrder + "'),'"+ mTxt.getText()+"')";
+                System.out.println("Updating "+ myTable +" with: " + SQL);
+                Connection conny = DriverManager.getConnection(Myurl);
+                Statement stater =  conny.createStatement();
+                stater.executeUpdate(SQL);
+            }catch (Exception e) {e.printStackTrace();}                                         
+    }
+    
     public void updateInsertDate(JXDatePicker myDate, String myTable, String myVar, String thisOrd){
             try{
                 System.out.println("Updating " + myTable);
@@ -3494,8 +3632,39 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel DashboardLbl;
     private javax.swing.JLabel DashboardLbl1;
     private javax.swing.JButton ExitBtn;
-    private org.jdesktop.swingx.JXDatePicker HDDManageSerialCompDt;
-    private javax.swing.JLabel HDDManageSerialCompLbl;
+    private javax.swing.JLabel HDDManBSCLbl;
+    private javax.swing.JTextField HDDManBSCTxt;
+    private javax.swing.JLabel HDDManBSCompLbl;
+    private org.jdesktop.swingx.JXDatePicker HDDManBSCompPc;
+    private javax.swing.JLabel HDDManCompDLbl;
+    private org.jdesktop.swingx.JXDatePicker HDDManCompDPc;
+    private javax.swing.JLabel HDDManDmanCLbl;
+    private org.jdesktop.swingx.JXDatePicker HDDManDmanCPc;
+    private javax.swing.JTextField HDDManLaneIndTxt;
+    private javax.swing.JPanel HDDManLanesPnl;
+    private javax.swing.JButton HDDManOrderBtn;
+    private javax.swing.JLabel HDDManOrderLbl;
+    private javax.swing.JTextField HDDManOrderTxt;
+    private javax.swing.JButton HDDManRAddBtn;
+    private javax.swing.JTextField HDDManRAlterTxt;
+    private javax.swing.JButton HDDManRSubBtn;
+    private javax.swing.JButton HDDManRecieveCompBtn;
+    private javax.swing.JLabel HDDManRecieveCompLbl;
+    private org.jdesktop.swingx.JXDatePicker HDDManRecieveCompPc;
+    private javax.swing.JLabel HDDManRecieveLbl;
+    private javax.swing.JTextField HDDManRecieveTxt;
+    private javax.swing.JButton HDDManRecieveUDBtn;
+    private javax.swing.JLabel HDDManSentCLbl;
+    private javax.swing.JTextField HDDManSentCTxt;
+    private javax.swing.JLabel HDDManSerialCLbl;
+    private javax.swing.JTextField HDDManSerialCTxt;
+    private javax.swing.JButton HDDManSerialCompBtn;
+    private javax.swing.JLabel HDDManSerialCompLbl;
+    private org.jdesktop.swingx.JXDatePicker HDDManSerialCompPc;
+    private javax.swing.JTable HDDManSizeTbl;
+    private javax.swing.JScrollPane HDDManTblPnl;
+    private javax.swing.JLabel HDDManVendLbl;
+    private javax.swing.JTextField HDDManVendTxt;
     private javax.swing.JPanel HDDManager;
     private javax.swing.JPanel HeatAssignment;
     private javax.swing.JLabel HeatOrdLbl;
@@ -3581,14 +3750,10 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JComboBox<String> RcvLocCmbBx;
     private javax.swing.JLabel RcvLocLbl;
     private javax.swing.JButton RcvOrdrBtn;
-    private javax.swing.JButton RcvOrdrBtn1;
-    private javax.swing.JButton RcvOrdrBtn2;
     private javax.swing.JButton RcvOrdrBtn3;
     private javax.swing.JButton RcvOrdrBtn4;
     private javax.swing.JLabel RcvOrdrLbl;
-    private javax.swing.JLabel RcvOrdrLbl1;
     private javax.swing.JTextField RcvOrdrTxt;
-    private javax.swing.JTextField RcvOrdrTxt1;
     private javax.swing.JButton RcvRdateBtn;
     private javax.swing.JLabel RcvRdateLbl;
     private org.jdesktop.swingx.JXDatePicker RcvRdatePc;
@@ -3626,16 +3791,7 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
@@ -3646,32 +3802,22 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField23;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField26;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
@@ -3685,12 +3831,9 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToolBar jToolBar1;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker10;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker11;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker12;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker13;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker14;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker8;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker9;
     // End of variables declaration//GEN-END:variables
 }
