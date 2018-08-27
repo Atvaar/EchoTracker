@@ -452,7 +452,7 @@
               <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Component id="TabPanel" alignment="0" pref="814" max="32767" attributes="0"/>
+          <Component id="TabPanel" alignment="0" pref="851" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -543,7 +543,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RcvTabTitleLbl" alignment="0" pref="789" max="32767" attributes="0"/>
+                          <Component id="RcvTabTitleLbl" alignment="0" pref="826" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="RcvOrdrLbl" alignment="0" max="32767" attributes="0"/>
@@ -986,7 +986,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" alignment="0" pref="809" max="32767" attributes="0"/>
+                  <Component id="jLabel3" alignment="0" pref="846" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1299,13 +1299,15 @@
                           <Component id="PMDmanBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="PMSentLbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMSentAddBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMSentSubBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMSentBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="PMSentAlterTxt" alignment="0" max="32767" attributes="0"/>
                           <Component id="PMSentTxt" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="PMSentLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PMSentAddBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PMSentSubBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="PMSentBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -1869,18 +1871,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel59" min="-2" pref="184" max="-2" attributes="0"/>
+                              <Component id="HDDManOnotesLbl" min="-2" pref="184" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane5" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="RcvOrdrBtn4" min="-2" max="-2" attributes="0"/>
+                              <Component id="HDDManOnotesBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel58" max="32767" attributes="0"/>
-                                  <Component id="jLabel56" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel55" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="273" max="32767" attributes="0"/>
+                                  <Component id="HDDManRdateLbl" max="32767" attributes="0"/>
+                                  <Component id="HDDManSOPLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HDDManSOFLbl" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="280" max="32767" attributes="0"/>
                                   <Component id="HDDManRecieveLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCLbl" alignment="1" max="32767" attributes="0"/>
@@ -1891,8 +1893,7 @@
                                   <Component id="HDDManBSCLbl" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManVendLbl" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderLbl" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel54" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jLabel57" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="HDDManSODLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManTblPnl" alignment="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1901,17 +1902,16 @@
                                   <Component id="HDDManVendTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCTxt" max="32767" attributes="0"/>
-                                  <Component id="HDDManSerialCompPc" pref="178" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompPc" pref="186" max="32767" attributes="0"/>
                                   <Component id="HDDManDmanCPc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDPc" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker12" max="32767" attributes="0"/>
                                   <Component id="HDDManRecieveCompPc" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManRecieveTxt" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jTextField31" max="32767" attributes="0"/>
-                                  <Component id="jTextField32" max="32767" attributes="0"/>
-                                  <Component id="jTextField33" max="32767" attributes="0"/>
-                                  <Component id="jXDatePicker13" max="32767" attributes="0"/>
+                                  <Component id="HDDManSOFTxt" max="32767" attributes="0"/>
+                                  <Component id="HDDManSOPTxt" max="32767" attributes="0"/>
+                                  <Component id="HDDManSODTxt" max="32767" attributes="0"/>
+                                  <Component id="HDDManRdatePc" max="32767" attributes="0"/>
                                   <Component id="HDDManBSCompPc" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -1926,9 +1926,8 @@
                                       <Component id="HDDManRSubBtn" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
-                                  <Component id="RcvOrdrBtn3" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderBtn" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="326" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="348" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCompBtn" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -2008,39 +2007,33 @@
                           <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
                           <Component id="HDDManTblPnl" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jXDatePicker12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="RcvOrdrBtn3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="HDDManSOFTxt" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSOFLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField31" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel55" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSOPTxt" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSOPLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField32" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSODTxt" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManSODLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextField33" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRdateLbl" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManRdatePc" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
-                          <Component id="jXDatePicker13" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManOnotesLbl" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane5" min="-2" pref="65" max="-2" attributes="0"/>
-                          <Component id="RcvOrdrBtn4" min="-2" max="-2" attributes="0"/>
+                          <Component id="HDDManOnotesBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="458" max="32767" attributes="0"/>
+                      <EmptySpace pref="499" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2393,21 +2386,22 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="HDDManLaneIndTxt" max="32767" attributes="0"/>
+                              <Component id="jComboBox1" max="32767" attributes="0"/>
+                              <Component id="jButton1" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel53" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jTextField30" max="32767" attributes="0"/>
+                                      <Component id="jLabel53" pref="172" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField1" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="jTextField2" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <Component id="jTextField1" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <Component id="jTextField2" min="-2" pref="47" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton20" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton23" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton20" max="32767" attributes="0"/>
+                                      <Component id="jButton23" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -2418,35 +2412,28 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="HDDManLaneIndTxt" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton23" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="HDDManLaneIndTxt">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="12" style="1"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="LANE"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel53">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2459,25 +2446,27 @@
                 <Component class="javax.swing.JButton" name="jButton20">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="14" style="1"/>
+                      <Font name="SansSerif" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="+"/>
+                    <Property name="text" type="java.lang.String" value="Add +"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton23">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="SansSerif" size="14" style="1"/>
+                      <Font name="SansSerif" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="-"/>
+                    <Property name="text" type="java.lang.String" value="Subtract -"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField30">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="12" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField1">
@@ -2494,28 +2483,35 @@
                     </Property>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JButton" name="jButton1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Update"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="SansSerif" size="12" style="1"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel54">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="d6" green="d6" red="d6" type="rgb"/>
-                </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="Reuse HDD Received Complete Date:  "/>
-              </Properties>
-            </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker12">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel55">
+            <Component class="javax.swing.JLabel" name="HDDManSOFLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2527,25 +2523,14 @@
                 <Property name="text" type="java.lang.String" value="Scan Out Failed:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="RcvOrdrBtn3">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="12" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Update"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvOrdrBtn3ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField31">
+            <Component class="javax.swing.JTextField" name="HDDManSOFTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel56">
+            <Component class="javax.swing.JLabel" name="HDDManSOPLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2557,14 +2542,14 @@
                 <Property name="text" type="java.lang.String" value="Scan Out Passed:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField32">
+            <Component class="javax.swing.JTextField" name="HDDManSOPTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel57">
+            <Component class="javax.swing.JLabel" name="HDDManSODLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2576,14 +2561,14 @@
                 <Property name="text" type="java.lang.String" value="Scan Out Delta:  "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField33">
+            <Component class="javax.swing.JTextField" name="HDDManSODTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel58">
+            <Component class="javax.swing.JLabel" name="HDDManRdateLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2595,14 +2580,14 @@
                 <Property name="text" type="java.lang.String" value="HDD Report Complete Date:  "/>
               </Properties>
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker13">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManRdatePc">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel59">
+            <Component class="javax.swing.JLabel" name="HDDManOnotesLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2621,7 +2606,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea3">
+                <Component class="javax.swing.JTextArea" name="HDDManOnotesTxtA">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
@@ -2629,7 +2614,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="RcvOrdrBtn4">
+            <Component class="javax.swing.JButton" name="HDDManOnotesBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -2637,7 +2622,7 @@
                 <Property name="text" type="java.lang.String" value="Update"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RcvOrdrBtn4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManOnotesBtnActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -2666,7 +2651,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel60" pref="227" max="32767" attributes="0"/>
+                              <Component id="jLabel60" pref="264" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTextField34" min="-2" pref="365" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2829,7 +2814,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel25" pref="809" max="32767" attributes="0"/>
+                  <Component id="jLabel25" pref="846" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2877,7 +2862,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="WipeReportsLbl" alignment="0" pref="809" max="32767" attributes="0"/>
+                  <Component id="WipeReportsLbl" alignment="0" pref="846" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2925,7 +2910,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ResaleLbl" alignment="0" pref="809" max="32767" attributes="0"/>
+                  <Component id="ResaleLbl" alignment="0" pref="846" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -3000,7 +2985,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jToggleButton1" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane10" pref="510" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane10" pref="539" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
@@ -3258,7 +3243,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DashboardLbl1" pref="789" max="32767" attributes="0"/>
+                          <Component id="DashboardLbl1" pref="826" max="32767" attributes="0"/>
                           <Component id="jScrollPane9" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
