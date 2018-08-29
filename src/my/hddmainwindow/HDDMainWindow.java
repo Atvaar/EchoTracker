@@ -223,11 +223,11 @@ private LocalDateTime myTimeStamp;
         jLabel53 = new javax.swing.JLabel();
         jButton20 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
-        jTextField30 = new javax.swing.JTextField();
+        HDDManPalletCTxt = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        HDDManLaneCmbBx = new javax.swing.JComboBox<>();
         HDDManSOFLbl = new javax.swing.JLabel();
         HDDManSOFTxt = new javax.swing.JTextField();
         HDDManSOPLbl = new javax.swing.JLabel();
@@ -240,6 +240,7 @@ private LocalDateTime myTimeStamp;
         jScrollPane5 = new javax.swing.JScrollPane();
         HDDManOnotesTxtA = new javax.swing.JTextArea();
         HDDManOnotesBtn = new javax.swing.JButton();
+        HDDManRdateBtn = new javax.swing.JButton();
         RecordView = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
@@ -563,7 +564,7 @@ private LocalDateTime myTimeStamp;
 
         RcvTabTitleLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         RcvTabTitleLbl.setForeground(new java.awt.Color(214, 214, 214));
-        RcvTabTitleLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        RcvTabTitleLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         RcvTabTitleLbl.setText("Inbound View");
         RcvTabTitleLbl.setFocusable(false);
         RcvTabTitleLbl.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -722,7 +723,7 @@ private LocalDateTime myTimeStamp;
             .addGroup(ReceiveTbLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createSequentialGroup()
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(RcvOrdrLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -840,7 +841,7 @@ private LocalDateTime myTimeStamp;
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         jLabel3.setText("     Heat Assignment");
         jLabel3.setToolTipText("");
 
@@ -904,7 +905,7 @@ private LocalDateTime myTimeStamp;
         HeatAssignment.setLayout(HeatAssignmentLayout);
         HeatAssignmentLayout.setHorizontalGroup(
             HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
             .addGroup(HeatAssignmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -934,7 +935,7 @@ private LocalDateTime myTimeStamp;
                     .addComponent(HeatSortBtn)
                     .addComponent(HeatProdTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HeatProdBtn))
-                .addContainerGap(646, Short.MAX_VALUE))
+                .addContainerGap(662, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Heat Assignment", HeatAssignment);
@@ -946,7 +947,7 @@ private LocalDateTime myTimeStamp;
         PMTabLbl.setBackground(new java.awt.Color(0, 0, 0));
         PMTabLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         PMTabLbl.setForeground(new java.awt.Color(214, 214, 214));
-        PMTabLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        PMTabLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         PMTabLbl.setText("Producion Manager View");
         PMTabLbl.setIconTextGap(30);
 
@@ -1352,7 +1353,7 @@ private LocalDateTime myTimeStamp;
         jLabel15.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(214, 214, 214));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         jLabel15.setText("     HDD Manager");
         jLabel15.setToolTipText("");
 
@@ -1413,8 +1414,6 @@ private LocalDateTime myTimeStamp;
         HDDManSerialCompLbl.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         HDDManSerialCompLbl.setText("Serialization Completion Date:  ");
 
-        HDDManSerialCompPc.setEditable(false);
-        HDDManSerialCompPc.setFocusable(false);
         HDDManSerialCompPc.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         HDDManSerialCompBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -1531,10 +1530,10 @@ private LocalDateTime myTimeStamp;
         jButton23.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton23.setText("Subtract -");
 
-        jTextField30.setEditable(false);
-        jTextField30.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTextField30.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField30.setFocusable(false);
+        HDDManPalletCTxt.setEditable(false);
+        HDDManPalletCTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManPalletCTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        HDDManPalletCTxt.setFocusable(false);
 
         jTextField1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
@@ -1543,8 +1542,8 @@ private LocalDateTime myTimeStamp;
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jButton1.setText("Update");
 
-        jComboBox1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        HDDManLaneCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManLaneCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout HDDManLanesPnlLayout = new javax.swing.GroupLayout(HDDManLanesPnl);
         HDDManLanesPnl.setLayout(HDDManLanesPnlLayout);
@@ -1553,36 +1552,38 @@ private LocalDateTime myTimeStamp;
             .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
-                        .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField30)
-                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                        .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(HDDManLaneCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManPalletCTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jTextField1))))
                 .addContainerGap())
         );
         HDDManLanesPnlLayout.setVerticalGroup(
             HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel53)
-                    .addComponent(jButton20)
+                    .addComponent(HDDManLaneCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel53)
+                    .addComponent(jButton20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton23)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(HDDManPalletCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
@@ -1634,6 +1635,9 @@ private LocalDateTime myTimeStamp;
             }
         });
 
+        HDDManRdateBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManRdateBtn.setText("Update");
+
         javax.swing.GroupLayout HDDManagerLayout = new javax.swing.GroupLayout(HDDManager);
         HDDManager.setLayout(HDDManagerLayout);
         HDDManagerLayout.setHorizontalGroup(
@@ -1653,7 +1657,7 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSOPLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSOFLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                             .addComponent(HDDManRecieveLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManCompDLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSentCLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1672,7 +1676,7 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManVendTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManOrderTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManSerialCTxt)
-                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                             .addComponent(HDDManDmanCPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSentCTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManCompDPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1695,8 +1699,9 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(HDDManRSubBtn))
                             .addComponent(HDDManLanesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManOrderBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                            .addComponent(HDDManSerialCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManRdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         HDDManagerLayout.setVerticalGroup(
@@ -1773,13 +1778,15 @@ private LocalDateTime myTimeStamp;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(HDDManRdateLbl)
-                    .addComponent(HDDManRdatePc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(HDDManRdatePc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HDDManRdateBtn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(HDDManOnotesLbl)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HDDManOnotesBtn))
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(514, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("HDD Manager", HDDManager);
@@ -1790,7 +1797,7 @@ private LocalDateTime myTimeStamp;
         jLabel24.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(214, 214, 214));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         jLabel24.setText("     Record Veiwer");
         jLabel24.setToolTipText("");
 
@@ -1887,7 +1894,7 @@ private LocalDateTime myTimeStamp;
                 .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6)
                     .addGroup(RecordViewLayout.createSequentialGroup()
-                        .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                        .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1908,7 +1915,7 @@ private LocalDateTime myTimeStamp;
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addContainerGap(438, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Record Veiwer", RecordView);
@@ -1918,7 +1925,7 @@ private LocalDateTime myTimeStamp;
         jLabel25.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(214, 214, 214));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         jLabel25.setText("     Administration View");
         jLabel25.setToolTipText("");
 
@@ -1926,13 +1933,13 @@ private LocalDateTime myTimeStamp;
         AdminTb.setLayout(AdminTbLayout);
         AdminTbLayout.setHorizontalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE)
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         AdminTbLayout.setVerticalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminTbLayout.createSequentialGroup()
                 .addComponent(jLabel25)
-                .addContainerGap(1150, Short.MAX_VALUE))
+                .addContainerGap(1166, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("Administration View", AdminTb);
@@ -1942,7 +1949,7 @@ private LocalDateTime myTimeStamp;
         WipeReportsLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         WipeReportsLbl.setForeground(new java.awt.Color(214, 214, 214));
         WipeReportsLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        WipeReportsLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        WipeReportsLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         WipeReportsLbl.setText("    Wipe Reports");
         WipeReportsLbl.setToolTipText("");
 
@@ -1950,7 +1957,7 @@ private LocalDateTime myTimeStamp;
         WipeReports.setLayout(WipeReportsLayout);
         WipeReportsLayout.setHorizontalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE)
+            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         WipeReportsLayout.setVerticalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1966,7 +1973,7 @@ private LocalDateTime myTimeStamp;
         ResaleLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         ResaleLbl.setForeground(new java.awt.Color(214, 214, 214));
         ResaleLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ResaleLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        ResaleLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         ResaleLbl.setText("     Resale");
         ResaleLbl.setToolTipText("");
 
@@ -1974,7 +1981,7 @@ private LocalDateTime myTimeStamp;
         ResaleTb.setLayout(ResaleTbLayout);
         ResaleTbLayout.setHorizontalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE)
+            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         ResaleTbLayout.setVerticalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1990,7 +1997,7 @@ private LocalDateTime myTimeStamp;
         DashboardLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         DashboardLbl.setForeground(new java.awt.Color(214, 214, 214));
         DashboardLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        DashboardLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        DashboardLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         DashboardLbl.setText("     Dashboard");
         DashboardLbl.setToolTipText("");
 
@@ -2141,7 +2148,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(jButton26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -2180,7 +2187,7 @@ private LocalDateTime myTimeStamp;
         DashboardLbl1.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         DashboardLbl1.setForeground(new java.awt.Color(214, 214, 214));
         DashboardLbl1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        DashboardLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/EchoLogo.jpg"))); // NOI18N
+        DashboardLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
         DashboardLbl1.setText("     About");
         DashboardLbl1.setToolTipText("");
 
@@ -2191,7 +2198,7 @@ private LocalDateTime myTimeStamp;
             .addGroup(AboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 826, Short.MAX_VALUE)
+                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -2202,7 +2209,7 @@ private LocalDateTime myTimeStamp;
                 .addComponent(DashboardLbl1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(695, Short.MAX_VALUE))
+                .addContainerGap(711, Short.MAX_VALUE))
         );
 
         TabPanel.addTab("About Echo Tracking Tool", About);
@@ -2248,7 +2255,7 @@ private LocalDateTime myTimeStamp;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 851, Short.MAX_VALUE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2651,29 +2658,30 @@ private LocalDateTime myTimeStamp;
 
         switch (tab){
             case 0:
-            SetRecieveEmpty();
-            break;
+                SetRecieveEmpty();
+                break;
             case 1:
-            refreshHeatsTbl();
-            HeatOrdLbl.setText("Order");
-            break;
+                refreshHeatsTbl();
+                HeatOrdLbl.setText("Order");
+                break;
             case 2:
-            SetProductionManagerEmpty();
-            break;
+                SetProductionManagerEmpty();
+                break;
             case 3:
-            break;
+                SetHDDManagerEmpty();
+                break;
             case 4:
-            break;
+                break;
             case 5:
-            break;
+                break;
             case 6:
-            break;
+                break;
             case 7:
-            break;
+                break;
             case 8:
-            break;
+                break;
             default:
-            break;
+                break;
         }
     }//GEN-LAST:event_TabPanelStateChanged
 
@@ -2706,12 +2714,12 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_HDDManSerialCompBtnActionPerformed
 
     private void HDDManOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOrderBtnActionPerformed
-        //============================================================================================================================
-        // TODO add your handling code here:================================================================WORK HERE GUS=============
-        //============================================================================================================================
         // look up everything for the Production manager tab---------------------------------------
-        String OrderNum;
-        OrderNum = HDDManOrderTxt.getText();
+        String OrderNum = HDDManOrderTxt.getText();
+        String HDDOrder;
+        if (OrderNum.substring(0, 1).matches("[0-9]")){
+            HDDOrder = OrderNum;
+        }else {HDDOrder = OrderNum.substring(1);}
         //IF BLANK DISABLE EVERYTHING ON THE TAB
         if (OrderNum.equals("")){
             SetHDDManagerEmpty();//remember to write the items in this
@@ -2721,9 +2729,16 @@ private LocalDateTime myTimeStamp;
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 System.out.println("looking for order!" + OrderNum);
                 conn = DriverManager.getConnection(Myurl);
-                String SQL = "SELECT O.OID, V.Vendor, S.BSHDDCount, S.BSdate,P.DManDate,P.Pcount,P.Sdate, T.HDcount, T.Tdate, T.SerialDate, R.LName, R.ColorR, R.ColorG, R.ColorB FROM [HDD_Records].[dbo].[Orders] AS O\n" +
+                String SQL = "SELECT O.OID, V.Vendor, S.BSHDDCount, S.BSdate,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"') AS SerialCount, P.DManDate, P.Pcount, P.Sdate,\n" +
+                    "T.PalletCount, T.HDcount, T.Tdate, T.SerialDate, N.Onotes, R.LName,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"' AND FailReason IN ('PASSED','Passed','passed'))) AS CountPASSED,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"' AND FailReason NOT IN ('PASSED','Passed','passed'))) AS CountFAILED,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"')-(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"')) AS ScanDelta,\n" +
+                    "R.ColorR, R.ColorG, R.ColorB, T.ReportDate FROM [HDD_Records].[dbo].[Orders] AS O\n" +
                     "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON O.VID = V.VID\n" +
                     "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON O.OID = P.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON O.OID = N.OID\n" +
                     "LEFT JOIN [HDD_Records].[dbo].[Transfer] AS T ON O.OID = T.OID\n" +
                     "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON O.OID = S.OID\n" +
                     "LEFT JOIN [HDD_Records].[dbo].[ReUseLocations] AS R ON T.LaneID = R.LaneID\n" +
@@ -2739,7 +2754,24 @@ private LocalDateTime myTimeStamp;
                         HDDManBSCompPc.setDate(rs.getDate("BSdate"));
                         HDDManSerialCompPc.setDate(rs.getDate("SerialDate"));
                         HDDManDmanCPc.setDate(rs.getDate("DManDate"));
-                        HDDManSentCTxt.setText(rs.getString("Sdate"));
+                        HDDManSentCTxt.setText(rs.getString("Pcount"));
+                        HDDManCompDPc.setDate(rs.getDate("Sdate"));
+                        HDDManSerialCTxt.setText(rs.getString("SerialCount"));
+                        HDDManSerialCompPc.setDate(rs.getDate("SerialDate"));
+                        HDDManRecieveTxt.setText(rs.getString("HDCount"));
+                        HDDManRecieveCompPc.setDate(rs.getDate("Tdate"));
+                        HDDManOnotesTxtA.setText(rs.getString("Onotes"));
+                        HDDManRdatePc.setDate(rs.getDate("ReportDate"));
+                        HDDManSOFTxt.setText(rs.getString("CountFAILED"));
+                        HDDManSOPTxt.setText(rs.getString("CountPASSED"));
+                        HDDManSODTxt.setText(rs.getString("ScanDelta"));
+                        HDDManPalletCTxt.setText(rs.getString("PalletCount"));
+                        ///////////////////////////////////////////////////////////////////////////////////////HERE Too Gus!!!!!!!!!!!!!!!!!!!!!
+                        HDDManLaneCmbBx.setSelectedItem(rs.getString("LName"));
+                        HDDManLaneCmbBx.setBackground(new Color(Integer.parseInt(rs.getString("ColorR")),Integer.parseInt(rs.getString("ColorG")),Integer.parseInt(rs.getString("ColorB"))));
+                        //Do portion that sets the Lanes and pallet count
+                        //////////////////////////////////////////////////////////////////////////////////////////////////////////////Gus Right Here!!
+                        //ADD Section to get table data
                         
                         //switch for setting user access
                         switch (userAccess[0]){
@@ -3413,14 +3445,48 @@ private LocalDateTime myTimeStamp;
     //**************HDD Manager*********************************************TAB3
     private void SetHDDManagerEmpty(){
         //stub to clear and set empty HDDManager Tab
+        HDDManOrderTxt.setText("");
+        HDDManVendTxt.setText("");  HDDManVendTxt.setEditable(false);
+        HDDManBSCTxt.setText("");  HDDManBSCTxt.setEditable(false);
+        HDDManBSCompPc.setDate(null); HDDManBSCompPc.setEditable(false);
+        HDDManSerialCTxt.setText("");  HDDManSerialCTxt.setEditable(false);
+        HDDManSerialCompPc.setDate(null);  HDDManSerialCompPc.setEnabled(false);//
+        HDDManSerialCompBtn.setEnabled(false);//
+        HDDManDmanCPc.setDate(null); HDDManDmanCPc.setEditable(false);
+        HDDManSentCTxt.setText("");  HDDManSentCTxt.setEditable(false);
+        HDDManCompDPc.setDate(null);  HDDManCompDPc.setEditable(false);
+        HDDManRecieveTxt.setText("");  HDDManRecieveTxt.setEnabled(false);//
+        HDDManRecieveUDBtn.setEnabled(false);//
+        HDDManRAddBtn.setEnabled(false);//
+        HDDManRSubBtn.setEnabled(false);//
+        HDDManRAlterTxt.setText("");  HDDManRAlterTxt.setEnabled(false);//
+        HDDManRecieveCompPc.setDate(null); HDDManRecieveCompPc.setEnabled(false);//
+        HDDManRecieveCompBtn.setEnabled(false);//
+        HDDManSOFTxt.setText("");  HDDManSOFTxt.setEditable(false);
+        HDDManSOPTxt.setText("");  HDDManSOPTxt.setEditable(false);
+        HDDManSODTxt.setText("");  HDDManSODTxt.setEditable(false);
+        HDDManRdatePc.setDate(null);  HDDManRdatePc.setEnabled(false);//
+        HDDManRdateBtn.setEnabled(false);//
     }
     
     private void SetHDDManagerLimited(){
         //stub to clear and set limited access HDDManager Tab
+        SetHDDManagerEmpty();
     }
     
     private void SetHDDManagerFull(){
         //stub to clear and set full access HDDManager Tab
+        HDDManSerialCompPc.setEnabled(true);//
+        HDDManSerialCompBtn.setEnabled(true);//
+        HDDManRecieveTxt.setEnabled(true);//
+        HDDManRecieveUDBtn.setEnabled(true);//
+        HDDManRAddBtn.setEnabled(true);//
+        HDDManRSubBtn.setEnabled(true);//
+        HDDManRAlterTxt.setEnabled(true);//
+        HDDManRecieveCompPc.setEnabled(true);//
+        HDDManRecieveCompBtn.setEnabled(true);//
+        HDDManRdatePc.setEnabled(true);//
+        HDDManRdateBtn.setEnabled(true);//
     }
     //**************Record View*********************************************TAB4
     private void SetRecordViewEmpty(){
@@ -3687,6 +3753,7 @@ private LocalDateTime myTimeStamp;
     private org.jdesktop.swingx.JXDatePicker HDDManCompDPc;
     private javax.swing.JLabel HDDManDmanCLbl;
     private org.jdesktop.swingx.JXDatePicker HDDManDmanCPc;
+    private javax.swing.JComboBox<String> HDDManLaneCmbBx;
     private javax.swing.JPanel HDDManLanesPnl;
     private javax.swing.JButton HDDManOnotesBtn;
     private javax.swing.JLabel HDDManOnotesLbl;
@@ -3694,9 +3761,11 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JButton HDDManOrderBtn;
     private javax.swing.JLabel HDDManOrderLbl;
     private javax.swing.JTextField HDDManOrderTxt;
+    private javax.swing.JTextField HDDManPalletCTxt;
     private javax.swing.JButton HDDManRAddBtn;
     private javax.swing.JTextField HDDManRAlterTxt;
     private javax.swing.JButton HDDManRSubBtn;
+    private javax.swing.JButton HDDManRdateBtn;
     private javax.swing.JLabel HDDManRdateLbl;
     private org.jdesktop.swingx.JXDatePicker HDDManRdatePc;
     private javax.swing.JButton HDDManRecieveCompBtn;
@@ -3837,7 +3906,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -3868,7 +3936,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;

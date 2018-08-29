@@ -452,7 +452,7 @@
               <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Component id="TabPanel" alignment="0" pref="851" max="32767" attributes="0"/>
+          <Component id="TabPanel" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -543,7 +543,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RcvTabTitleLbl" alignment="0" pref="826" max="32767" attributes="0"/>
+                          <Component id="RcvTabTitleLbl" alignment="0" pref="775" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="RcvOrdrLbl" alignment="0" max="32767" attributes="0"/>
@@ -684,7 +684,7 @@
                   <Color blue="d6" green="d6" red="d6" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Inbound View"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -986,7 +986,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" alignment="0" pref="846" max="32767" attributes="0"/>
+                  <Component id="jLabel3" alignment="0" pref="795" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1021,7 +1021,7 @@
                           <Component id="HeatProdTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="HeatProdBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="646" max="32767" attributes="0"/>
+                      <EmptySpace pref="662" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1036,7 +1036,7 @@
                   <Color blue="d6" green="d6" red="d6" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     Heat Assignment"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -1349,7 +1349,7 @@
                   <Color blue="d6" green="d6" red="d6" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Producion Manager View"/>
                 <Property name="iconTextGap" type="int" value="30"/>
@@ -1882,7 +1882,7 @@
                                   <Component id="HDDManRdateLbl" max="32767" attributes="0"/>
                                   <Component id="HDDManSOPLbl" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSOFLbl" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="280" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="259" max="32767" attributes="0"/>
                                   <Component id="HDDManRecieveLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCLbl" alignment="1" max="32767" attributes="0"/>
@@ -1902,7 +1902,7 @@
                                   <Component id="HDDManVendTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCTxt" max="32767" attributes="0"/>
-                                  <Component id="HDDManSerialCompPc" pref="186" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompPc" pref="164" max="32767" attributes="0"/>
                                   <Component id="HDDManDmanCPc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDPc" alignment="0" max="32767" attributes="0"/>
@@ -1927,8 +1927,9 @@
                                   </Group>
                                   <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderBtn" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="348" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="340" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCompBtn" max="32767" attributes="0"/>
+                                  <Component id="HDDManRdateBtn" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -2025,7 +2026,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="HDDManRdateLbl" min="-2" max="-2" attributes="0"/>
-                          <Component id="HDDManRdatePc" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="HDDManRdatePc" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="HDDManRdateBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -2033,7 +2037,7 @@
                           <Component id="jScrollPane5" min="-2" pref="65" max="-2" attributes="0"/>
                           <Component id="HDDManOnotesBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="499" max="32767" attributes="0"/>
+                      <EmptySpace pref="514" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2049,7 +2053,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     HDD Manager"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -2179,8 +2183,6 @@
             </Component>
             <Component class="org.jdesktop.swingx.JXDatePicker" name="HDDManSerialCompPc">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="focusable" type="boolean" value="false"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
@@ -2386,22 +2388,24 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jComboBox1" max="32767" attributes="0"/>
                               <Component id="jButton1" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField30" max="32767" attributes="0"/>
-                                      <Component id="jLabel53" pref="172" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="HDDManLaneCmbBx" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="HDDManPalletCTxt" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel53" alignment="0" pref="172" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField1" min="-2" pref="47" max="-2" attributes="0"/>
-                                      <Component id="jTextField2" min="-2" pref="47" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton20" max="32767" attributes="0"/>
-                                      <Component id="jButton23" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jTextField2" min="-2" pref="47" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jButton20" max="32767" attributes="0"/>
+                                              <Component id="jButton23" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jTextField1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -2413,17 +2417,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="HDDManLaneCmbBx" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton23" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField30" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="HDDManPalletCTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -2459,7 +2465,7 @@
                     <Property name="text" type="java.lang.String" value="Subtract -"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField30">
+                <Component class="javax.swing.JTextField" name="HDDManPalletCTxt">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -2491,7 +2497,7 @@
                     <Property name="text" type="java.lang.String" value="Update"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="HDDManLaneCmbBx">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="SansSerif" size="12" style="1"/>
@@ -2625,6 +2631,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HDDManOnotesBtnActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="HDDManRdateBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Update"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="RecordView">
@@ -2651,7 +2665,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel60" pref="264" max="32767" attributes="0"/>
+                              <Component id="jLabel60" pref="213" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTextField34" min="-2" pref="365" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2677,7 +2691,7 @@
                       <Component id="jScrollPane6" min="-2" pref="509" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane8" min="-2" pref="171" max="-2" attributes="0"/>
-                      <EmptySpace pref="422" max="32767" attributes="0"/>
+                      <EmptySpace pref="438" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2693,7 +2707,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     Record Veiwer"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -2814,14 +2828,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel25" pref="846" max="32767" attributes="0"/>
+                  <Component id="jLabel25" pref="795" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="1150" max="32767" attributes="0"/>
+                      <EmptySpace pref="1166" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2837,7 +2851,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     Administration View"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -2862,7 +2876,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="WipeReportsLbl" alignment="0" pref="846" max="32767" attributes="0"/>
+                  <Component id="WipeReportsLbl" alignment="0" pref="795" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2885,7 +2899,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="    Wipe Reports"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -2910,7 +2924,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ResaleLbl" alignment="0" pref="846" max="32767" attributes="0"/>
+                  <Component id="ResaleLbl" alignment="0" pref="795" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2933,7 +2947,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     Resale"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -2985,7 +2999,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jToggleButton1" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane10" pref="539" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane10" pref="490" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
@@ -3033,7 +3047,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     Dashboard"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
@@ -3243,7 +3257,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DashboardLbl1" pref="826" max="32767" attributes="0"/>
+                          <Component id="DashboardLbl1" pref="775" max="32767" attributes="0"/>
                           <Component id="jScrollPane9" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -3257,7 +3271,7 @@
                       <Component id="DashboardLbl1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane9" min="-2" pref="438" max="-2" attributes="0"/>
-                      <EmptySpace pref="695" max="32767" attributes="0"/>
+                      <EmptySpace pref="711" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -3290,7 +3304,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/my/resources/EchoLogo.jpg"/>
+                  <Image iconType="3" name="/my/resources/Echo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="     About"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
