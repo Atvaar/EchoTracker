@@ -224,7 +224,6 @@ private LocalDateTime myTimeStamp;
         jButton20 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         HDDManPalletCTxt = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         HDDManLaneCmbBx = new javax.swing.JComboBox<>();
@@ -1535,8 +1534,6 @@ private LocalDateTime myTimeStamp;
         HDDManPalletCTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         HDDManPalletCTxt.setFocusable(false);
 
-        jTextField1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-
         jTextField2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
@@ -1544,6 +1541,16 @@ private LocalDateTime myTimeStamp;
 
         HDDManLaneCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         HDDManLaneCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        HDDManLaneCmbBx.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                HDDManLaneCmbBxItemStateChanged(evt);
+            }
+        });
+        HDDManLaneCmbBx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManLaneCmbBxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HDDManLanesPnlLayout = new javax.swing.GroupLayout(HDDManLanesPnl);
         HDDManLanesPnl.setLayout(HDDManLanesPnlLayout);
@@ -1559,23 +1566,18 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManPalletCTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jTextField1))))
+                            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         HDDManLanesPnlLayout.setVerticalGroup(
             HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HDDManLaneCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(HDDManLaneCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53)
@@ -2148,7 +2150,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(jButton26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -2669,6 +2671,7 @@ private LocalDateTime myTimeStamp;
                 break;
             case 3:
                 SetHDDManagerEmpty();
+                //clear then load lane information
                 break;
             case 4:
                 break;
@@ -2707,10 +2710,12 @@ private LocalDateTime myTimeStamp;
 
     private void HDDManRecieveUDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRecieveUDBtnActionPerformed
         // TODO add your handling code here:
+        //have to do query to find the index of what lane is selected.----------------------------------------RIGHT HERE GUS-------------------------------
     }//GEN-LAST:event_HDDManRecieveUDBtnActionPerformed
 
     private void HDDManSerialCompBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManSerialCompBtnActionPerformed
         // TODO add your handling code here:
+        updateInsertDate(HDDManSerialCompPc,"Transfer","SerialDate",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManSerialCompBtnActionPerformed
 
     private void HDDManOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOrderBtnActionPerformed
@@ -2766,9 +2771,18 @@ private LocalDateTime myTimeStamp;
                         HDDManSOPTxt.setText(rs.getString("CountPASSED"));
                         HDDManSODTxt.setText(rs.getString("ScanDelta"));
                         HDDManPalletCTxt.setText(rs.getString("PalletCount"));
-                        ///////////////////////////////////////////////////////////////////////////////////////HERE Too Gus!!!!!!!!!!!!!!!!!!!!!
-                        HDDManLaneCmbBx.setSelectedItem(rs.getString("LName"));
-                        HDDManLaneCmbBx.setBackground(new Color(Integer.parseInt(rs.getString("ColorR")),Integer.parseInt(rs.getString("ColorG")),Integer.parseInt(rs.getString("ColorB"))));
+                        ///////////////////////////////////////////////////////////////////////////////////////HERE Too Gus!!!!!!!!!!!!!!!!!!!!!change to try and catch and swap
+                        try{
+                            HDDManLaneCmbBx.setSelectedItem(rs.getString("LName"));
+                            HDDManLaneCmbBx.setBackground(new Color(Integer.parseInt(rs.getString("ColorR")),Integer.parseInt(rs.getString("ColorG")),Integer.parseInt(rs.getString("ColorB"))));
+                            HDDManLaneCmbBx.setForeground(new Color(255-Integer.parseInt(rs.getString("ColorR")),255-Integer.parseInt(rs.getString("ColorG")),255-Integer.parseInt(rs.getString("ColorB"))));
+                        } catch (Exception e){
+                            e.printStackTrace();
+                            HDDManLaneCmbBx.setSelectedItem("None-Nada");
+                            HDDManLaneCmbBx.setBackground(new Color(0,0,0));
+                            HDDManLaneCmbBx.setForeground(new Color(255,255,255));
+                        }
+                        
                         //Do portion that sets the Lanes and pallet count
                         //////////////////////////////////////////////////////////////////////////////////////////////////////////////Gus Right Here!!
                         //ADD Section to get table data
@@ -3318,6 +3332,31 @@ private LocalDateTime myTimeStamp;
     private void RcvOrdrTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RcvOrdrTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RcvOrdrTxtActionPerformed
+
+    private void HDDManLaneCmbBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManLaneCmbBxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HDDManLaneCmbBxActionPerformed
+
+    private void HDDManLaneCmbBxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_HDDManLaneCmbBxItemStateChanged
+        // TODO add your handling code here:
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("Loading open orders into Heat Table!");
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "Select * FROM [HDD_Records].[dbo].[ReUseLocations] WHERE LName LIKE '" + HDDManLaneCmbBx.getSelectedItem() + "'";
+            System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            //may have to build in a minor wait so that 
+            while (rs.next()){
+                int redVal = rs.getInt("ColorR");
+                int greenVal = rs.getInt("ColorG");
+                int blueVal = rs.getInt("ColorB");
+                HDDManLaneCmbBx.setBackground(new Color(redVal,greenVal,blueVal));
+                HDDManLaneCmbBx.setForeground( new Color(255-redVal, 255-greenVal, 255-blueVal));
+            }
+        } catch (Exception e){e.printStackTrace();}
+    }//GEN-LAST:event_HDDManLaneCmbBxItemStateChanged
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -3467,6 +3506,28 @@ private LocalDateTime myTimeStamp;
         HDDManSODTxt.setText("");  HDDManSODTxt.setEditable(false);
         HDDManRdatePc.setDate(null);  HDDManRdatePc.setEnabled(false);//
         HDDManRdateBtn.setEnabled(false);//
+        
+        //mod this to fill the combobox
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("Loading open orders into Heat Table!");
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "Select Lname FROM [HDD_Records].[dbo].[ReUseLocations]";
+            System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            HDDManLaneCmbBx.removeAllItems();
+            //clear the jTable before we start
+            ArrayList <String> laneString = new ArrayList();
+            while (rs.next()){
+                laneString.add(rs.getString("Lname"));
+            }
+            HDDManLaneCmbBx.setModel(new DefaultComboBoxModel(laneString.toArray()));
+            HDDManLaneCmbBx.setSelectedItem("None-Nada");
+            HDDManLaneCmbBx.setBackground(Color.black);
+            HDDManLaneCmbBx.setForeground(Color.white);
+            //HeatOrdersTbl.setEnabled(true);
+        } catch (Exception e){e.printStackTrace();}
     }
     
     private void SetHDDManagerLimited(){
@@ -3596,37 +3657,37 @@ private LocalDateTime myTimeStamp;
     
     public void refreshHeatsTbl () {
         //this refreshes or loads the table on the heat assignment tab
-                try {
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                System.out.println("Loading open orders into Heat Table!");
-                conn = DriverManager.getConnection(Myurl);
-                String SQL = "SELECT O.OID,O.InOrdNum,R.Adate,P.Ddate,S.Sheat,P.Pheat FROM [HDD_Records].[dbo].[Recieving] AS R "+
-                    "FULL JOIN  [HDD_Records].[dbo].[Orders] AS O ON R.OID = O.OID "+
-                    "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON R.OID = P.OID "+
-                    "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON R.OID = S.OID "+
-                    "WHERE R.OID IN (SELECT R.OID FROM [dbo].Recieving  "+
-                    "WHERE R.Adate IS NOT NULL) AND P.OID NOT IN (SELECT P.OID FROM [dbo].[Production]  "+
-                    "WHERE P.Ddate IS NOT NULL)";//create sql statment to pull all the orders recieved without being completed.
-                System.out.println(SQL);
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery(SQL);
-                //clear the jTable before we start
-                DefaultTableModel model = (DefaultTableModel)HeatOrdersTbl.getModel();
-                model.setRowCount(0);
-                while (rs.next()){
-                    //fill table with result
-                    Object RowData[] = {rs.getString("OID"),rs.getString("InOrdNum"),rs.getString("Sheat"),rs.getString("Pheat")};
-                    model.addRow(RowData);
-                }
-                HeatOrdersTbl.setModel(model);
-                HeatSortTxt.setText("");
-                HeatSortTxt.setEnabled(false);
-                HeatSortBtn.setEnabled(false);
-                HeatProdTxt.setText("");
-                HeatProdTxt.setEnabled(false);
-                HeatProdBtn.setEnabled(false);
-                HeatOrdLbl.setText("Order");
-                //HeatOrdersTbl.setEnabled(true);
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("Loading open orders into Heat Table!");
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "SELECT O.OID,O.InOrdNum,R.Adate,P.Ddate,S.Sheat,P.Pheat FROM [HDD_Records].[dbo].[Recieving] AS R "+
+                "FULL JOIN  [HDD_Records].[dbo].[Orders] AS O ON R.OID = O.OID "+
+                "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON R.OID = P.OID "+
+                "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON R.OID = S.OID "+
+                "WHERE R.OID IN (SELECT R.OID FROM [dbo].Recieving  "+
+                "WHERE R.Adate IS NOT NULL) AND P.OID NOT IN (SELECT P.OID FROM [dbo].[Production]  "+
+                "WHERE P.Ddate IS NOT NULL)";//create sql statment to pull all the orders recieved without being completed.
+            System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            //clear the jTable before we start
+            DefaultTableModel model = (DefaultTableModel)HeatOrdersTbl.getModel();
+            model.setRowCount(0);
+            while (rs.next()){
+                //fill table with result
+                Object RowData[] = {rs.getString("OID"),rs.getString("InOrdNum"),rs.getString("Sheat"),rs.getString("Pheat")};
+                model.addRow(RowData);
+            }
+            HeatOrdersTbl.setModel(model);
+            HeatSortTxt.setText("");
+            HeatSortTxt.setEnabled(false);
+            HeatSortBtn.setEnabled(false);
+            HeatProdTxt.setText("");
+            HeatProdTxt.setEnabled(false);
+            HeatProdBtn.setEnabled(false);
+            HeatOrdLbl.setText("Order");
+            //HeatOrdersTbl.setEnabled(true);
         } catch (Exception e){e.printStackTrace();}
     }
     
@@ -3934,7 +3995,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
