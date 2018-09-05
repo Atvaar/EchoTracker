@@ -220,12 +220,12 @@ private LocalDateTime myTimeStamp;
         HDDManTblPnl = new javax.swing.JScrollPane();
         HDDManSizeTbl = new javax.swing.JTable();
         HDDManLanesPnl = new javax.swing.JPanel();
-        jLabel53 = new javax.swing.JLabel();
-        jButton20 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
+        HDDManPalletLbl = new javax.swing.JLabel();
+        HDDManPalletAddBtn = new javax.swing.JButton();
+        HDDManPalletSubBtn = new javax.swing.JButton();
         HDDManPalletCTxt = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        HDDManPalletAlterTxt = new javax.swing.JTextField();
+        HDDManLaneUDBtn = new javax.swing.JButton();
         HDDManLaneCmbBx = new javax.swing.JComboBox<>();
         HDDManSOFLbl = new javax.swing.JLabel();
         HDDManSOFTxt = new javax.swing.JTextField();
@@ -533,7 +533,6 @@ private LocalDateTime myTimeStamp;
         setName("Echo"); // NOI18N
         setPreferredSize(new java.awt.Dimension(800, 1280));
         setSize(new java.awt.Dimension(800, 1280));
-        setType(java.awt.Window.Type.UTILITY);
 
         ToolBar.setBackground(new java.awt.Color(214, 214, 214));
         ToolBar.setFloatable(false);
@@ -1519,25 +1518,38 @@ private LocalDateTime myTimeStamp;
         ));
         HDDManTblPnl.setViewportView(HDDManSizeTbl);
 
-        jLabel53.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel53.setText("Pallet Count");
+        HDDManPalletLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManPalletLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HDDManPalletLbl.setText("Pallet Count");
 
-        jButton20.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton20.setText("Add +");
+        HDDManPalletAddBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManPalletAddBtn.setText("Add +");
+        HDDManPalletAddBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManPalletAddBtnActionPerformed(evt);
+            }
+        });
 
-        jButton23.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton23.setText("Subtract -");
+        HDDManPalletSubBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManPalletSubBtn.setText("Subtract -");
+        HDDManPalletSubBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManPalletSubBtnActionPerformed(evt);
+            }
+        });
 
-        HDDManPalletCTxt.setEditable(false);
         HDDManPalletCTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         HDDManPalletCTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        HDDManPalletCTxt.setFocusable(false);
 
-        jTextField2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManPalletAlterTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton1.setText("Update");
+        HDDManLaneUDBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        HDDManLaneUDBtn.setText("Update");
+        HDDManLaneUDBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManLaneUDBtnActionPerformed(evt);
+            }
+        });
 
         HDDManLaneCmbBx.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         HDDManLaneCmbBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -1559,18 +1571,18 @@ private LocalDateTime myTimeStamp;
             .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HDDManLaneUDBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(HDDManLanesPnlLayout.createSequentialGroup()
                         .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(HDDManLaneCmbBx, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManPalletCTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                            .addComponent(HDDManPalletLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(HDDManPalletAlterTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(HDDManPalletAddBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(HDDManPalletSubBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         HDDManLanesPnlLayout.setVerticalGroup(
@@ -1580,15 +1592,15 @@ private LocalDateTime myTimeStamp;
                 .addComponent(HDDManLaneCmbBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel53)
-                    .addComponent(jButton20))
+                    .addComponent(HDDManPalletLbl)
+                    .addComponent(HDDManPalletAddBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(HDDManLanesPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton23)
+                    .addComponent(HDDManPalletSubBtn)
                     .addComponent(HDDManPalletCTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(HDDManPalletAlterTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(HDDManLaneUDBtn)
                 .addContainerGap())
         );
 
@@ -1639,6 +1651,11 @@ private LocalDateTime myTimeStamp;
 
         HDDManRdateBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         HDDManRdateBtn.setText("Update");
+        HDDManRdateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HDDManRdateBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HDDManagerLayout = new javax.swing.GroupLayout(HDDManager);
         HDDManager.setLayout(HDDManagerLayout);
@@ -2150,7 +2167,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(jButton26)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)))
                     .addComponent(jScrollPane7))
                 .addContainerGap())
         );
@@ -2671,7 +2688,6 @@ private LocalDateTime myTimeStamp;
                 break;
             case 3:
                 SetHDDManagerEmpty();
-                //clear then load lane information
                 break;
             case 4:
                 break;
@@ -2693,24 +2709,38 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_jTextField36ActionPerformed
 
     private void HDDManOnotesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOnotesBtnActionPerformed
-        // TODO add your handling code here:
+        // set the Onotes that are in the box to the table.
+        updateOrInsertString(HDDManOnotesTxtA,"Notes","Onotes",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManOnotesBtnActionPerformed
 
     private void HDDManRecieveCompBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRecieveCompBtnActionPerformed
         // TODO add your handling code here:
+        updateInsertDate(HDDManRecieveCompPc,"Transfer","Tdate",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManRecieveCompBtnActionPerformed
 
     private void HDDManRSubBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRSubBtnActionPerformed
-        // TODO add your handling code here:
+        // subtract the update
+        int digitT = Integer.parseInt(HDDManRecieveTxt.getText());
+        int digitS = Integer.parseInt(HDDManRAlterTxt.getText());
+        digitT = digitT - digitS;
+        HDDManRecieveTxt.setText(Integer.toString(digitT));
+        HDDManRAlterTxt.setText("");
+        updateOrInsertString(HDDManRecieveTxt,"Transfer","HDCount",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManRSubBtnActionPerformed
 
     private void HDDManRAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRAddBtnActionPerformed
-        // TODO add your handling code here:
+        // add the update
+        int digitT = Integer.parseInt(HDDManRecieveTxt.getText());
+        int digitA = Integer.parseInt(HDDManRAlterTxt.getText());
+        digitT = digitT + digitA;
+        HDDManRecieveTxt.setText(Integer.toString(digitT));
+        HDDManRAlterTxt.setText("");
+        updateOrInsertString(HDDManRecieveTxt,"Transfer","HDCount",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManRAddBtnActionPerformed
 
     private void HDDManRecieveUDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRecieveUDBtnActionPerformed
         // TODO add your handling code here:
-        //have to do query to find the index of what lane is selected.----------------------------------------RIGHT HERE GUS-------------------------------
+        updateOrInsertString(HDDManRecieveTxt,"Transfer","HDCount",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManRecieveUDBtnActionPerformed
 
     private void HDDManSerialCompBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManSerialCompBtnActionPerformed
@@ -2727,7 +2757,7 @@ private LocalDateTime myTimeStamp;
         }else {HDDOrder = OrderNum.substring(1);}
         //IF BLANK DISABLE EVERYTHING ON THE TAB
         if (OrderNum.equals("")){
-            SetHDDManagerEmpty();//remember to write the items in this
+            SetHDDManagerEmpty();
         }else {
             //lookup order, if order entered populate tab per user level if not ask if you would like to create order
             try {
@@ -2771,7 +2801,7 @@ private LocalDateTime myTimeStamp;
                         HDDManSOPTxt.setText(rs.getString("CountPASSED"));
                         HDDManSODTxt.setText(rs.getString("ScanDelta"));
                         HDDManPalletCTxt.setText(rs.getString("PalletCount"));
-                        ///////////////////////////////////////////////////////////////////////////////////////HERE Too Gus!!!!!!!!!!!!!!!!!!!!!change to try and catch and swap
+                        //////////try to find a way to make it load every time correctly
                         try{
                             HDDManLaneCmbBx.setSelectedItem(rs.getString("LName"));
                             HDDManLaneCmbBx.setBackground(new Color(Integer.parseInt(rs.getString("ColorR")),Integer.parseInt(rs.getString("ColorG")),Integer.parseInt(rs.getString("ColorB"))));
@@ -2782,10 +2812,6 @@ private LocalDateTime myTimeStamp;
                             HDDManLaneCmbBx.setBackground(new Color(0,0,0));
                             HDDManLaneCmbBx.setForeground(new Color(255,255,255));
                         }
-                        
-                        //Do portion that sets the Lanes and pallet count
-                        //////////////////////////////////////////////////////////////////////////////////////////////////////////////Gus Right Here!!
-                        //ADD Section to get table data
                         
                         //switch for setting user access
                         switch (userAccess[0]){
@@ -2805,25 +2831,38 @@ private LocalDateTime myTimeStamp;
                         }
                     }else {
                         System.out.println("Nope!");
-                        //CreateOrdNumTxt.setText(RcvOrdrTxt.getText());
                         SetHDDManagerEmpty();
-                        //CreateVendCmbBx.removeAllItems();
-                        //CreateVendCmbBx.addItem("");
-                        //CreateVendCmbBx.setModel(new DefaultComboBoxModel(getAllVendorNums().toArray()));
-                        //CreateOrderDialog.setVisible((true));
                     }
                 } catch (Exception e) {e.printStackTrace();}
-            } catch (Exception e){e.printStackTrace();}
+            } catch (Exception e){
+                e.printStackTrace();
+                SetHDDManagerEmpty();
+            }
         }
-        
-        
-        String forTable = HDDManOrderTxt.getText().substring(1);
-        /*
-        SELECT I.HDDCapacity, COUNT(I.HDDSerial)AS 'Scanned In', COUNT(O.HDDSerial) AS 'Scanned Out' FROM [HDD_Records].[dbo].[HDDCheckIn] AS I
-        FULL JOIN [HDD_Records].[dbo].[HDDCheckOut] AS O ON I.HDDSerial = O.HDDSerial
-        WHERE HDDIon LIKE '1800953'
-        GROUP BY HDDCapacity
-        */
+        try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("looking for order!" + OrderNum);
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "SELECT I.HDDCapacity, COUNT(I.HDDSerial)AS 'Scanned In', COUNT(O.HDDSerial) AS 'Scanned Out' FROM [HDD_Records].[dbo].[HDDCheckIn] AS I\n" +
+                "FULL JOIN [HDD_Records].[dbo].[HDDCheckOut] AS O ON I.HDDSerial = O.HDDSerial\n" +
+                "WHERE HDDIon LIKE '"+ HDDOrder +"'\n" +
+                "GROUP BY HDDCapacity";
+            //System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            //clear table
+            HDDManSizeTbl.removeAll();
+            //create new model for the HDDSize Table
+            DefaultTableModel model = (DefaultTableModel)HDDManSizeTbl.getModel();
+            model.setRowCount(0);
+            while (rs.next()){
+                //fill table with result
+                Object RowData[] = {rs.getString("HDDCapacity"),rs.getString("Scanned In"),rs.getString("Scanned Out")};
+                model.addRow(RowData);
+            }
+            HDDManSizeTbl.setModel(model);
+            //set new model to table
+        } catch (Exception e){e.printStackTrace();}
     }//GEN-LAST:event_HDDManOrderBtnActionPerformed
 
     private void HDDManOrderTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOrderTxtActionPerformed
@@ -3259,6 +3298,7 @@ private LocalDateTime myTimeStamp;
         // TODO add your handling code here:
         String OrderNum = RcvOrdrTxt.getText();
         SetRecieveEmpty();
+        RcvOrdrTxt.setText(OrderNum);
         //IF BLANK DISABLE EVERYTHING ON THE TAB
         if (OrderNum.equals("")){
             SetRecieveEmpty();
@@ -3322,6 +3362,9 @@ private LocalDateTime myTimeStamp;
                         CreateVendCmbBx.removeAllItems();
                         CreateVendCmbBx.addItem("");
                         CreateVendCmbBx.setModel(new DefaultComboBoxModel(getAllVendorNums().toArray()));
+                        CreateVendCmbBx.addItem("");
+                        CreateVendCmbBx.setSelectedItem("");
+                        CreateRdatePc.setDate(null);
                         CreateOrderDialog.setVisible((true));
                     }
                 } catch (Exception e) {e.printStackTrace();}
@@ -3357,6 +3400,51 @@ private LocalDateTime myTimeStamp;
             }
         } catch (Exception e){e.printStackTrace();}
     }//GEN-LAST:event_HDDManLaneCmbBxItemStateChanged
+
+    private void HDDManRdateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManRdateBtnActionPerformed
+        // TODO add your handling code here:
+        updateInsertDate(HDDManRdatePc,"Transfer","ReportDate",HDDManOrderTxt.getText());
+    }//GEN-LAST:event_HDDManRdateBtnActionPerformed
+
+    private void HDDManLaneUDBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManLaneUDBtnActionPerformed
+        // update the pallet count numbers
+        if (HDDManPalletCTxt.getText().equals(""))
+        {HDDManPalletCTxt.setText("0");}
+        updateOrInsertString(HDDManPalletCTxt,"Transfer","PalletCount",HDDManOrderTxt.getText());
+        
+        //update the lane id for the order.
+          try{
+                System.out.println("Updating Lane "+ HDDManLaneCmbBx.getSelectedItem());
+                //needs to be update or insert if not in.
+                String SQL = "UPDATE [HDD_Records].[dbo].[Transfer] \n" +
+                    "SET LaneID = (SELECT LaneID FROM [HDD_Records].[dbo].[ReUseLocations] WHERE LName LIKE '" + HDDManLaneCmbBx.getSelectedItem() + "')\n" +
+                    "WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + HDDManOrderTxt.getText() + "')";
+                System.out.println("Updating Lane ID with: " + SQL);
+                Connection conny = DriverManager.getConnection(Myurl);
+                Statement stater =  conny.createStatement();
+                stater.executeUpdate(SQL);
+            }catch (Exception e) {e.printStackTrace();}  
+    }//GEN-LAST:event_HDDManLaneUDBtnActionPerformed
+
+    private void HDDManPalletAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManPalletAddBtnActionPerformed
+        // add the update
+        int digitT = Integer.parseInt(HDDManPalletCTxt.getText());
+        int digitA = Integer.parseInt(HDDManPalletAlterTxt.getText());
+        digitT = digitT + digitA;
+        HDDManPalletCTxt.setText(Integer.toString(digitT));
+        HDDManPalletAlterTxt.setText("");
+        updateOrInsertString(HDDManPalletCTxt,"Transfer","PalletCount",HDDManOrderTxt.getText());
+    }//GEN-LAST:event_HDDManPalletAddBtnActionPerformed
+
+    private void HDDManPalletSubBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManPalletSubBtnActionPerformed
+        // TODO add your handling code here:
+        int digitT = Integer.parseInt(HDDManPalletCTxt.getText());
+        int digitA = Integer.parseInt(HDDManPalletAlterTxt.getText());
+        digitT = digitT - digitA;
+        HDDManPalletCTxt.setText(Integer.toString(digitT));
+        HDDManPalletAlterTxt.setText("");
+        updateOrInsertString(HDDManPalletCTxt,"Transfer","PalletCount",HDDManOrderTxt.getText());
+    }//GEN-LAST:event_HDDManPalletSubBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -3506,6 +3594,8 @@ private LocalDateTime myTimeStamp;
         HDDManSODTxt.setText("");  HDDManSODTxt.setEditable(false);
         HDDManRdatePc.setDate(null);  HDDManRdatePc.setEnabled(false);//
         HDDManRdateBtn.setEnabled(false);//
+        HDDManPalletCTxt.setText(""); HDDManPalletCTxt.setEnabled(false);//
+        HDDManPalletAlterTxt.setText(""); HDDManPalletAlterTxt.setEnabled(false);//
         
         //mod this to fill the combobox
         try {
@@ -3548,6 +3638,8 @@ private LocalDateTime myTimeStamp;
         HDDManRecieveCompBtn.setEnabled(true);//
         HDDManRdatePc.setEnabled(true);//
         HDDManRdateBtn.setEnabled(true);//
+        HDDManPalletCTxt.setEnabled(true);//
+        HDDManPalletAlterTxt.setEnabled(true);//
     }
     //**************Record View*********************************************TAB4
     private void SetRecordViewEmpty(){
@@ -3815,6 +3907,7 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel HDDManDmanCLbl;
     private org.jdesktop.swingx.JXDatePicker HDDManDmanCPc;
     private javax.swing.JComboBox<String> HDDManLaneCmbBx;
+    private javax.swing.JButton HDDManLaneUDBtn;
     private javax.swing.JPanel HDDManLanesPnl;
     private javax.swing.JButton HDDManOnotesBtn;
     private javax.swing.JLabel HDDManOnotesLbl;
@@ -3822,7 +3915,11 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JButton HDDManOrderBtn;
     private javax.swing.JLabel HDDManOrderLbl;
     private javax.swing.JTextField HDDManOrderTxt;
+    private javax.swing.JButton HDDManPalletAddBtn;
+    private javax.swing.JTextField HDDManPalletAlterTxt;
     private javax.swing.JTextField HDDManPalletCTxt;
+    private javax.swing.JLabel HDDManPalletLbl;
+    private javax.swing.JButton HDDManPalletSubBtn;
     private javax.swing.JButton HDDManRAddBtn;
     private javax.swing.JTextField HDDManRAlterTxt;
     private javax.swing.JButton HDDManRSubBtn;
@@ -3961,9 +4058,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel UserLbl;
     private javax.swing.JPanel WipeReports;
     private javax.swing.JLabel WipeReportsLbl;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
@@ -3978,7 +4072,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JPanel jPanel1;
@@ -3995,7 +4088,6 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
