@@ -6,6 +6,7 @@
 package my.hddmainwindow;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -3141,6 +3142,7 @@ private LocalDateTime myTimeStamp;
                 Statement stater =  conny.createStatement();
                 stater.executeUpdate(SQL);
             }catch (Exception e) {e.printStackTrace();}
+            
         }
         // then refresh table
         refreshHeatsTbl();
@@ -3402,7 +3404,7 @@ private LocalDateTime myTimeStamp;
                 int greenVal = rs.getInt("ColorG");
                 int blueVal = rs.getInt("ColorB");
                 HDDManLaneCmbBx.setBackground(new Color(redVal,greenVal,blueVal));
-                //HDDManLaneCmbBx.setForeground( new Color(255-redVal, 255-greenVal, 255-blueVal));
+                HDDManLaneCmbBx.setForeground( new Color(255-redVal, 255-greenVal, 255-blueVal));
             }
         } catch (Exception e){e.printStackTrace();}
     }//GEN-LAST:event_HDDManLaneCmbBxItemStateChanged
@@ -3617,7 +3619,9 @@ private LocalDateTime myTimeStamp;
             conn = DriverManager.getConnection(Myurl);
             String SQL = "Select Lname FROM [HDD_Records].[dbo].[ReUseLocations]";
             System.out.println(SQL);
+            //stmt = conn.prepareStatement(SQL);
             stmt = conn.createStatement();
+            //rs = rutro.executeQuery();
             rs = stmt.executeQuery(SQL);
             HDDManLaneCmbBx.removeAllItems();
             ArrayList <String> laneString = new ArrayList();
@@ -3626,7 +3630,7 @@ private LocalDateTime myTimeStamp;
                 System.out.println(rs.getString("Lname"));
             }
             HDDManLaneCmbBx.setModel(new DefaultComboBoxModel(laneString.toArray()));
-            HDDManLaneCmbBx.setSelectedItem("None-Nada");
+            HDDManLaneCmbBx.setSelectedItem("None-Nada");//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   WHOLLY FAQU 0000000000000000000000000!!!!!!!!!!!!!!!!!!!!!
         } catch (Exception e){e.printStackTrace();}
         
         //clear HDDManSizeTbl
