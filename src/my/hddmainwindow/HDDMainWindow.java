@@ -343,6 +343,11 @@ private LocalDateTime myTimeStamp;
                 LoginPswrdTxtActionPerformed(evt);
             }
         });
+        LoginPswrdTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LoginPswrdTxtKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2329,7 +2334,11 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_LoginCancelBtnActionPerformed
 
     private void LoginOKBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginOKBtnActionPerformed
-        //Check user name and password.  if valid login and hide any screens not allowed
+        LoginNow();
+    }//GEN-LAST:event_LoginOKBtnActionPerformed
+
+    private void LoginNow(){
+         //Check user name and password.  if valid login and hide any screens not allowed
         //if not valid make person loggin and if cancel hide all tabs
         classUser = LoginUserTxt.getText();
         classPass = LoginPswrdTxt.getText();
@@ -2581,8 +2590,7 @@ private LocalDateTime myTimeStamp;
         } catch (Exception e){
             e.printStackTrace();
         }
-    }//GEN-LAST:event_LoginOKBtnActionPerformed
-
+    }
     private void CreateOrdNumTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateOrdNumTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CreateOrdNumTxtActionPerformed
@@ -2801,18 +2809,16 @@ private LocalDateTime myTimeStamp;
                         HDDManSOPTxt.setText(rs.getString("CountPASSED"));
                         HDDManSODTxt.setText(rs.getString("ScanDelta"));
                         HDDManPalletCTxt.setText(rs.getString("PalletCount"));
+                        System.out.println("Good till the lane selection");
                         //////////try to find a way to make it load every time correctly
                         try{
                             HDDManLaneCmbBx.setSelectedItem(rs.getString("LName"));
-                            HDDManLaneCmbBx.setBackground(new Color(Integer.parseInt(rs.getString("ColorR")),Integer.parseInt(rs.getString("ColorG")),Integer.parseInt(rs.getString("ColorB"))));
-                            HDDManLaneCmbBx.setForeground(new Color(255-Integer.parseInt(rs.getString("ColorR")),255-Integer.parseInt(rs.getString("ColorG")),255-Integer.parseInt(rs.getString("ColorB"))));
-                        } catch (Exception e){
+                            System.out.println("passed lane selection");
+                        } catch(Exception e){
                             e.printStackTrace();
                             HDDManLaneCmbBx.setSelectedItem("None-Nada");
-                            HDDManLaneCmbBx.setBackground(new Color(0,0,0));
-                            HDDManLaneCmbBx.setForeground(new Color(255,255,255));
+                            System.out.println("failed lane Selection");
                         }
-                        
                         //switch for setting user access
                         switch (userAccess[0]){
                             case 0://no access
@@ -2902,7 +2908,7 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_PMBSAddBtnActionPerformed
 
     private void PMOnotesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMOnotesBtnActionPerformed
-        // TODO add your handling code here:
+        // Update or insert into Notes Table the Order or Onotes
         updateOrInsertString(PMOnotesTxtA,"Notes","Onotes",PMOrderTxt.getText());
     }//GEN-LAST:event_PMOnotesBtnActionPerformed
 
@@ -2917,12 +2923,12 @@ private LocalDateTime myTimeStamp;
     }//GEN-LAST:event_PMSentBtnActionPerformed
 
     private void PMDmanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMDmanBtnActionPerformed
-        // TODO add your handling code here:
+        // Update or insert the Dman date
         updateInsertDate(PMDmanPc,"Production","DManDate", PMOrderTxt.getText());
     }//GEN-LAST:event_PMDmanBtnActionPerformed
 
     private void PMPheatBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMPheatBtnActionPerformed
-        // TODO add your handling code here:
+        // Update or insert the Production Heat
         updateOrInsertString(PMPheatTxt, "Production", "Pheat", PMOrderTxt.getText());
     }//GEN-LAST:event_PMPheatBtnActionPerformed
 
@@ -3396,7 +3402,7 @@ private LocalDateTime myTimeStamp;
                 int greenVal = rs.getInt("ColorG");
                 int blueVal = rs.getInt("ColorB");
                 HDDManLaneCmbBx.setBackground(new Color(redVal,greenVal,blueVal));
-                HDDManLaneCmbBx.setForeground( new Color(255-redVal, 255-greenVal, 255-blueVal));
+                //HDDManLaneCmbBx.setForeground( new Color(255-redVal, 255-greenVal, 255-blueVal));
             }
         } catch (Exception e){e.printStackTrace();}
     }//GEN-LAST:event_HDDManLaneCmbBxItemStateChanged
@@ -3414,12 +3420,12 @@ private LocalDateTime myTimeStamp;
         
         //update the lane id for the order.
           try{
-                System.out.println("Updating Lane "+ HDDManLaneCmbBx.getSelectedItem());
+                //System.out.println("Updating Lane "+ HDDManLaneCmbBx.getSelectedItem());
                 //needs to be update or insert if not in.
                 String SQL = "UPDATE [HDD_Records].[dbo].[Transfer] \n" +
                     "SET LaneID = (SELECT LaneID FROM [HDD_Records].[dbo].[ReUseLocations] WHERE LName LIKE '" + HDDManLaneCmbBx.getSelectedItem() + "')\n" +
                     "WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] WHERE InOrdNum LIKE '" + HDDManOrderTxt.getText() + "')";
-                System.out.println("Updating Lane ID with: " + SQL);
+                //System.out.println("Updating Lane ID with: " + SQL);
                 Connection conny = DriverManager.getConnection(Myurl);
                 Statement stater =  conny.createStatement();
                 stater.executeUpdate(SQL);
@@ -3445,6 +3451,13 @@ private LocalDateTime myTimeStamp;
         HDDManPalletAlterTxt.setText("");
         updateOrInsertString(HDDManPalletCTxt,"Transfer","PalletCount",HDDManOrderTxt.getText());
     }//GEN-LAST:event_HDDManPalletSubBtnActionPerformed
+
+    private void LoginPswrdTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LoginPswrdTxtKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            LoginNow();
+        }//On enter in the password window of login run the Login
+    }//GEN-LAST:event_LoginPswrdTxtKeyPressed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -3571,7 +3584,7 @@ private LocalDateTime myTimeStamp;
     }
     //**************HDD Manager*********************************************TAB3
     private void SetHDDManagerEmpty(){
-        //stub to clear and set empty HDDManager Tab
+        //stub to clear and set empty HDDManager Tab =====================================================FIX THIS GUS  check bottom of https://stackoverflow.com/questions/4343078/jdbc-returning-empty-result-set
         HDDManOrderTxt.setText("");
         HDDManVendTxt.setText("");  HDDManVendTxt.setEditable(false);
         HDDManBSCTxt.setText("");  HDDManBSCTxt.setEditable(false);
@@ -3597,27 +3610,29 @@ private LocalDateTime myTimeStamp;
         HDDManPalletCTxt.setText(""); HDDManPalletCTxt.setEnabled(false);//
         HDDManPalletAlterTxt.setText(""); HDDManPalletAlterTxt.setEnabled(false);//
         
-        //mod this to fill the combobox
+        //mod this to fill the Lanes combobox
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            System.out.println("Loading open orders into Heat Table!");
+            System.out.println("Loading Lane Combo Box!");
             conn = DriverManager.getConnection(Myurl);
             String SQL = "Select Lname FROM [HDD_Records].[dbo].[ReUseLocations]";
             System.out.println(SQL);
             stmt = conn.createStatement();
             rs = stmt.executeQuery(SQL);
             HDDManLaneCmbBx.removeAllItems();
-            //clear the jTable before we start
             ArrayList <String> laneString = new ArrayList();
             while (rs.next()){
                 laneString.add(rs.getString("Lname"));
+                System.out.println(rs.getString("Lname"));
             }
             HDDManLaneCmbBx.setModel(new DefaultComboBoxModel(laneString.toArray()));
             HDDManLaneCmbBx.setSelectedItem("None-Nada");
-            HDDManLaneCmbBx.setBackground(Color.black);
-            HDDManLaneCmbBx.setForeground(Color.white);
-            //HeatOrdersTbl.setEnabled(true);
         } catch (Exception e){e.printStackTrace();}
+        
+        //clear HDDManSizeTbl
+        DefaultTableModel model = (DefaultTableModel)HDDManSizeTbl.getModel();
+        model.setRowCount(0);
+        HDDManSizeTbl.setModel(model);
     }
     
     private void SetHDDManagerLimited(){
