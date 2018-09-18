@@ -447,10 +447,10 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="ToolBar" min="-2" pref="231" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
+              <Component id="LoginExitTool" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
-          <Component id="TabPanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="TabPanel" alignment="0" pref="825" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -458,7 +458,7 @@
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="ToolBar" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jToolBar1" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="LoginExitTool" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="TabPanel" max="32767" attributes="0"/>
@@ -541,7 +541,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RcvTabTitleLbl" alignment="0" pref="775" max="32767" attributes="0"/>
+                          <Component id="RcvTabTitleLbl" alignment="0" pref="800" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="RcvOrdrLbl" alignment="0" max="32767" attributes="0"/>
@@ -984,7 +984,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="jLabel3" alignment="0" pref="820" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1297,8 +1297,7 @@
                           <Component id="PMDmanBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PMSentAlterTxt" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="PMSentTxt" alignment="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="PMSentLbl" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1306,30 +1305,31 @@
                               <Component id="PMSentSubBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="PMSentBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="PMSentAlterTxt" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="PMSentDtBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMSentDtLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMSentDtPc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMSentDtBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PMHDRecieveLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMHDRecieveTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="PMHDScanTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="PMHDScanLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMHDScanTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="PMOnotesLbl" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMOnotesBtn" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="137" max="-2" attributes="0"/>
+                          <Component id="PMOnotesBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="484" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="511" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1880,7 +1880,7 @@
                                   <Component id="HDDManRdateLbl" max="32767" attributes="0"/>
                                   <Component id="HDDManSOPLbl" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSOFLbl" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="259" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="267" max="32767" attributes="0"/>
                                   <Component id="HDDManRecieveLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCLbl" alignment="1" max="32767" attributes="0"/>
@@ -1900,7 +1900,7 @@
                                   <Component id="HDDManVendTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCTxt" max="32767" attributes="0"/>
-                                  <Component id="HDDManSerialCompPc" pref="164" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompPc" pref="173" max="32767" attributes="0"/>
                                   <Component id="HDDManDmanCPc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDPc" alignment="0" max="32767" attributes="0"/>
@@ -1925,7 +1925,7 @@
                                   </Group>
                                   <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderBtn" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="340" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="348" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCompBtn" max="32767" attributes="0"/>
                                   <Component id="HDDManRdateBtn" alignment="0" max="32767" attributes="0"/>
                               </Group>
@@ -2662,7 +2662,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel60" pref="213" max="32767" attributes="0"/>
+                              <Component id="jLabel60" pref="238" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTextField34" min="-2" pref="365" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2825,7 +2825,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel25" pref="795" max="32767" attributes="0"/>
+                  <Component id="jLabel25" pref="820" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2873,7 +2873,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="WipeReportsLbl" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="WipeReportsLbl" alignment="0" pref="820" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2921,7 +2921,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ResaleLbl" alignment="0" pref="795" max="32767" attributes="0"/>
+                  <Component id="ResaleLbl" alignment="0" pref="820" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2974,32 +2974,26 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="jXDatePicker8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel26" min="-2" pref="129" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jPanel3" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="DashFromPc" min="-2" pref="132" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jXDatePicker14" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField35" min="-2" pref="139" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButton25" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButton26" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jToggleButton1" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="jScrollPane10" pref="486" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="DashFromToLbl" min="-2" pref="93" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="DashToPc" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="DashOrderVendorTxt" min="-2" pref="139" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="DashExportBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="DashPrintBtn" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="DashFilterBtn" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane7" alignment="0" max="32767" attributes="0"/>
+                          <Component id="DashPendingScroll" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="DashHDDRoomScroll" pref="504" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -3010,24 +3004,22 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="DashboardLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jXDatePicker8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jXDatePicker14" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField35" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton25" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton26" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="DashFromPc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DashToPc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DashOrderVendorTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DashExportBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DashPrintBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DashFilterBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DashFromToLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jScrollPane10" pref="0" max="32767" attributes="0"/>
+                          <Component id="DashHDDRoomScroll" pref="0" max="32767" attributes="0"/>
                           <Component id="jPanel3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane7" pref="927" max="32767" attributes="0"/>
+                      <Component id="DashPendingScroll" pref="943" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -3058,17 +3050,17 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabel61" max="32767" attributes="0"/>
-                              <Component id="jLabel47" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jLabel28" alignment="1" pref="140" max="32767" attributes="0"/>
-                              <Component id="jLabel27" alignment="1" max="32767" attributes="0"/>
+                              <Component id="DashToRemoveLbl" max="32767" attributes="0"/>
+                              <Component id="DashToDManLbl" alignment="1" pref="140" max="32767" attributes="0"/>
+                              <Component id="DashToProcessLbl" alignment="1" max="32767" attributes="0"/>
+                              <Component id="DashInboundLbl" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField39" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jTextField38" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jTextField37" max="32767" attributes="0"/>
-                              <Component id="jTextField36" alignment="1" max="32767" attributes="0"/>
+                              <Component id="DashToRemoveTxt" alignment="1" pref="120" max="32767" attributes="0"/>
+                              <Component id="DashToDManTxt" alignment="1" max="32767" attributes="0"/>
+                              <Component id="DashToProcessTxt" max="32767" attributes="0"/>
+                              <Component id="DashInboundTxt" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -3079,23 +3071,23 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField36" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashInboundLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashInboundTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField37" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashToProcessLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashToProcessTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField38" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashToDManLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashToDManTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField39" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashToRemoveLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="DashToRemoveTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="25" max="32767" attributes="0"/>
                       </Group>
@@ -3103,47 +3095,47 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel27">
+                <Component class="javax.swing.JLabel" name="DashInboundLbl">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Orders Inbound"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel28">
+                <Component class="javax.swing.JTextField" name="DashInboundTxt">
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DashInboundTxtActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="DashToProcessLbl">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Orders Not Processed"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel47">
+                <Component class="javax.swing.JTextField" name="DashToProcessTxt">
+                </Component>
+                <Component class="javax.swing.JLabel" name="DashToDManLbl">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Tobe Dismantled (lbs)"/>
+                    <Property name="text" type="java.lang.String" value="To Be Dismantled (lbs)"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel61">
+                <Component class="javax.swing.JTextField" name="DashToDManTxt">
+                </Component>
+                <Component class="javax.swing.JLabel" name="DashToRemoveLbl">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="HDD To Be Removed"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField36">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField36ActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField37">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField38">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField39">
+                <Component class="javax.swing.JTextField" name="DashToRemoveTxt">
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+            <Container class="javax.swing.JScrollPane" name="DashPendingScroll">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable4">
+                <Component class="javax.swing.JTable" name="DashPendingTbl">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="8" rowCount="10">
@@ -3161,11 +3153,11 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker8">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="DashFromPc">
             </Component>
-            <Component class="org.jdesktop.swingx.JXDatePicker" name="jXDatePicker14">
+            <Component class="org.jdesktop.swingx.JXDatePicker" name="DashToPc">
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel26">
+            <Component class="javax.swing.JLabel" name="DashFromToLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
@@ -3177,36 +3169,36 @@
                 <Property name="text" type="java.lang.String" value="&lt;From----TO&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField35">
+            <Component class="javax.swing.JTextField" name="DashOrderVendorTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton25">
+            <Component class="javax.swing.JButton" name="DashExportBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Export"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton26">
+            <Component class="javax.swing.JButton" name="DashPrintBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Print"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+            <Component class="javax.swing.JToggleButton" name="DashFilterBtn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Filter"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+            <Container class="javax.swing.JScrollPane" name="DashHDDRoomScroll">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable6">
+                <Component class="javax.swing.JTable" name="DashHDDRoomTbl">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="7">
@@ -3254,7 +3246,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DashboardLbl1" pref="775" max="32767" attributes="0"/>
+                          <Component id="DashboardLbl1" pref="800" max="32767" attributes="0"/>
                           <Component id="jScrollPane9" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -3311,7 +3303,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JToolBar" name="jToolBar1">
+    <Container class="javax.swing.JToolBar" name="LoginExitTool">
       <Properties>
         <Property name="rollover" type="boolean" value="true"/>
       </Properties>

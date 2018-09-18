@@ -6,7 +6,6 @@
 package my.hddmainwindow;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -16,16 +15,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.*;
 
 //for jtabbedpanel
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
+//import javax.swing.event.*;
 
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -259,30 +255,30 @@ private LocalDateTime myTimeStamp;
         OpsDashTb = new javax.swing.JPanel();
         DashboardLbl = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
-        jTextField37 = new javax.swing.JTextField();
-        jTextField38 = new javax.swing.JTextField();
-        jTextField39 = new javax.swing.JTextField();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jXDatePicker8 = new org.jdesktop.swingx.JXDatePicker();
-        jXDatePicker14 = new org.jdesktop.swingx.JXDatePicker();
-        jLabel26 = new javax.swing.JLabel();
-        jTextField35 = new javax.swing.JTextField();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        DashInboundLbl = new javax.swing.JLabel();
+        DashInboundTxt = new javax.swing.JTextField();
+        DashToProcessLbl = new javax.swing.JLabel();
+        DashToProcessTxt = new javax.swing.JTextField();
+        DashToDManLbl = new javax.swing.JLabel();
+        DashToDManTxt = new javax.swing.JTextField();
+        DashToRemoveLbl = new javax.swing.JLabel();
+        DashToRemoveTxt = new javax.swing.JTextField();
+        DashPendingScroll = new javax.swing.JScrollPane();
+        DashPendingTbl = new javax.swing.JTable();
+        DashFromPc = new org.jdesktop.swingx.JXDatePicker();
+        DashToPc = new org.jdesktop.swingx.JXDatePicker();
+        DashFromToLbl = new javax.swing.JLabel();
+        DashOrderVendorTxt = new javax.swing.JTextField();
+        DashExportBtn = new javax.swing.JButton();
+        DashPrintBtn = new javax.swing.JButton();
+        DashFilterBtn = new javax.swing.JToggleButton();
+        DashHDDRoomScroll = new javax.swing.JScrollPane();
+        DashHDDRoomTbl = new javax.swing.JTable();
         About = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         DashboardLbl1 = new javax.swing.JLabel();
-        jToolBar1 = new javax.swing.JToolBar();
+        LoginExitTool = new javax.swing.JToolBar();
         LogInOutBtn = new javax.swing.JButton();
         ExitBtn = new javax.swing.JButton();
 
@@ -727,7 +723,7 @@ private LocalDateTime myTimeStamp;
             .addGroup(ReceiveTbLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createSequentialGroup()
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(RcvOrdrLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -909,7 +905,7 @@ private LocalDateTime myTimeStamp;
         HeatAssignment.setLayout(HeatAssignmentLayout);
         HeatAssignmentLayout.setHorizontalGroup(
             HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
             .addGroup(HeatAssignmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1321,33 +1317,33 @@ private LocalDateTime myTimeStamp;
                     .addComponent(PMDmanPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PMDmanBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PMSentAlterTxt)
-                    .addComponent(PMSentTxt)
+                .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(PMSentTxt, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(PMSentLbl)
                         .addComponent(PMSentAddBtn)
                         .addComponent(PMSentSubBtn)
-                        .addComponent(PMSentBtn)))
+                        .addComponent(PMSentBtn))
+                    .addComponent(PMSentAlterTxt))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PMSentDtBtn)
                     .addComponent(PMSentDtLbl)
-                    .addComponent(PMSentDtPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(PMSentDtPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMSentDtBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PMHDRecieveLbl)
                     .addComponent(PMHDRecieveTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PMHDScanTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PMHDScanLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(PMHDScanLbl)
+                    .addComponent(PMHDScanTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
                 .addGroup(ProductionManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PMOnotesLbl)
-                    .addComponent(PMOnotesBtn)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(484, 484, 484))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PMOnotesBtn))
+                .addGap(511, 511, 511))
         );
 
         TabPanel.addTab("Production Manager", ProductionManager);
@@ -1682,7 +1678,7 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSOPLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSOFLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
                             .addComponent(HDDManRecieveLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManCompDLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSentCLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1701,7 +1697,7 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManVendTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManOrderTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManSerialCTxt)
-                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                             .addComponent(HDDManDmanCPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSentCTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManCompDPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1724,7 +1720,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(HDDManRSubBtn))
                             .addComponent(HDDManLanesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManOrderBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
                             .addComponent(HDDManSerialCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManRdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -1919,7 +1915,7 @@ private LocalDateTime myTimeStamp;
                 .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6)
                     .addGroup(RecordViewLayout.createSequentialGroup()
-                        .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                        .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1958,7 +1954,7 @@ private LocalDateTime myTimeStamp;
         AdminTb.setLayout(AdminTbLayout);
         AdminTbLayout.setHorizontalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
         AdminTbLayout.setVerticalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1982,7 +1978,7 @@ private LocalDateTime myTimeStamp;
         WipeReports.setLayout(WipeReportsLayout);
         WipeReportsLayout.setHorizontalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
         WipeReportsLayout.setVerticalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2006,7 +2002,7 @@ private LocalDateTime myTimeStamp;
         ResaleTb.setLayout(ResaleTbLayout);
         ResaleTbLayout.setHorizontalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
         ResaleTbLayout.setVerticalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2026,19 +2022,19 @@ private LocalDateTime myTimeStamp;
         DashboardLbl.setText("     Dashboard");
         DashboardLbl.setToolTipText("");
 
-        jLabel27.setText("Orders Inbound");
+        DashInboundLbl.setText("Orders Inbound");
 
-        jLabel28.setText("Orders Not Processed");
-
-        jLabel47.setText("Tobe Dismantled (lbs)");
-
-        jLabel61.setText("HDD To Be Removed");
-
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+        DashInboundTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
+                DashInboundTxtActionPerformed(evt);
             }
         });
+
+        DashToProcessLbl.setText("Orders Not Processed");
+
+        DashToDManLbl.setText("To Be Dismantled (lbs)");
+
+        DashToRemoveLbl.setText("HDD To Be Removed");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -2047,16 +2043,16 @@ private LocalDateTime myTimeStamp;
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(DashToRemoveLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DashToDManLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(DashToProcessLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DashInboundLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField37)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(DashToRemoveTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(DashToDManTxt, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(DashToProcessTxt)
+                    .addComponent(DashInboundTxt, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -2064,24 +2060,24 @@ private LocalDateTime myTimeStamp;
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(jTextField36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DashInboundLbl)
+                    .addComponent(DashInboundTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(jTextField37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DashToProcessLbl)
+                    .addComponent(DashToProcessTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(jTextField38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DashToDManLbl)
+                    .addComponent(DashToDManTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel61)
-                    .addComponent(jTextField39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(DashToRemoveLbl)
+                    .addComponent(DashToRemoveTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        DashPendingTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -2106,22 +2102,22 @@ private LocalDateTime myTimeStamp;
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane7.setViewportView(jTable4);
+        DashPendingScroll.setViewportView(DashPendingTbl);
 
-        jLabel26.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("<From----TO>");
+        DashFromToLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        DashFromToLbl.setForeground(new java.awt.Color(214, 214, 214));
+        DashFromToLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DashFromToLbl.setText("<From----TO>");
 
-        jTextField35.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        DashOrderVendorTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton25.setText("Export");
+        DashExportBtn.setText("Export");
 
-        jButton26.setText("Print");
+        DashPrintBtn.setText("Print");
 
-        jToggleButton1.setText("Filter");
+        DashFilterBtn.setText("Filter");
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        DashHDDRoomTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Cage Backlog", null, null, null, null},
                 {"Wipe Passed", null, null, null, null},
@@ -2143,7 +2139,7 @@ private LocalDateTime myTimeStamp;
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane10.setViewportView(jTable6);
+        DashHDDRoomScroll.setViewportView(DashHDDRoomTbl);
 
         javax.swing.GroupLayout OpsDashTbLayout = new javax.swing.GroupLayout(OpsDashTb);
         OpsDashTb.setLayout(OpsDashTbLayout);
@@ -2154,27 +2150,24 @@ private LocalDateTime myTimeStamp;
                 .addContainerGap()
                 .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(OpsDashTbLayout.createSequentialGroup()
-                        .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(OpsDashTbLayout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jXDatePicker8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(DashFromPc, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(OpsDashTbLayout.createSequentialGroup()
-                                .addComponent(jXDatePicker14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)))
-                    .addComponent(jScrollPane7))
+                        .addComponent(DashFromToLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DashToPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DashOrderVendorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DashExportBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DashPrintBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DashFilterBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(DashPendingScroll)
+                    .addGroup(OpsDashTbLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DashHDDRoomScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         OpsDashTbLayout.setVerticalGroup(
@@ -2182,21 +2175,20 @@ private LocalDateTime myTimeStamp;
             .addGroup(OpsDashTbLayout.createSequentialGroup()
                 .addComponent(DashboardLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jXDatePicker8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jXDatePicker14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton25)
-                        .addComponent(jButton26)
-                        .addComponent(jToggleButton1))
-                    .addComponent(jLabel26))
+                .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DashFromPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DashToPc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DashOrderVendorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DashExportBtn)
+                    .addComponent(DashPrintBtn)
+                    .addComponent(DashFilterBtn)
+                    .addComponent(DashFromToLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(OpsDashTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(DashHDDRoomScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+                .addComponent(DashPendingScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 943, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2223,7 +2215,7 @@ private LocalDateTime myTimeStamp;
             .addGroup(AboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
+                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -2239,7 +2231,7 @@ private LocalDateTime myTimeStamp;
 
         TabPanel.addTab("About Echo Tracking Tool", About);
 
-        jToolBar1.setRollover(true);
+        LoginExitTool.setRollover(true);
 
         LogInOutBtn.setBackground(new java.awt.Color(214, 214, 214));
         LogInOutBtn.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -2254,7 +2246,7 @@ private LocalDateTime myTimeStamp;
                 LogInOutBtnActionPerformed(evt);
             }
         });
-        jToolBar1.add(LogInOutBtn);
+        LoginExitTool.add(LogInOutBtn);
 
         ExitBtn.setBackground(new java.awt.Color(214, 214, 214));
         ExitBtn.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -2269,7 +2261,7 @@ private LocalDateTime myTimeStamp;
                 ExitBtnActionPerformed(evt);
             }
         });
-        jToolBar1.add(ExitBtn);
+        LoginExitTool.add(ExitBtn);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2278,16 +2270,16 @@ private LocalDateTime myTimeStamp;
             .addGroup(layout.createSequentialGroup()
                 .addComponent(ToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LoginExitTool, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LoginExitTool, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TabPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2713,9 +2705,9 @@ private LocalDateTime myTimeStamp;
         }
     }//GEN-LAST:event_TabPanelStateChanged
 
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    private void DashInboundTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashInboundTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_DashInboundTxtActionPerformed
 
     private void HDDManOnotesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HDDManOnotesBtnActionPerformed
         // set the Onotes that are in the box to the table.
@@ -2897,7 +2889,7 @@ private LocalDateTime myTimeStamp;
         int subbed = Integer.parseInt(PMBScanTxt.getText()) - Integer.parseInt(PMBSAlterTxt.getText());
         PMBScanTxt.setText(String.valueOf(subbed));
         PMBSAlterTxt.setText("");
-        updateOrInsertString(PMBScanTxt,"Production", "BSHDDCount",PMOrderTxt.getText());
+        updateOrInsertString(PMBScanTxt,"SortScan", "BSHDDCount",PMOrderTxt.getText());
     }//GEN-LAST:event_PMBSSubBtnActionPerformed
 
     private void PMBSAddBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMBSAddBtnActionPerformed
@@ -2905,7 +2897,7 @@ private LocalDateTime myTimeStamp;
         int added = Integer.parseInt(PMBScanTxt.getText()) + Integer.parseInt(PMBSAlterTxt.getText());
         PMBScanTxt.setText(String.valueOf(added));
         PMBSAlterTxt.setText("");
-        updateOrInsertString(PMBScanTxt,"Production", "BSHDDCount",PMOrderTxt.getText());
+        updateOrInsertString(PMBScanTxt,"SortScan", "BSHDDCount",PMOrderTxt.getText());
     }//GEN-LAST:event_PMBSAddBtnActionPerformed
 
     private void PMOnotesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMOnotesBtnActionPerformed
@@ -3586,7 +3578,7 @@ private LocalDateTime myTimeStamp;
     }
     //**************HDD Manager*********************************************TAB3
     private void SetHDDManagerEmpty(){
-        //stub to clear and set empty HDDManager Tab =====================================================FIX THIS GUS  check bottom of https://stackoverflow.com/questions/4343078/jdbc-returning-empty-result-set
+        //stub to clear and set empty HDDManager Tab 
         HDDManOrderTxt.setText("");
         HDDManVendTxt.setText("");  HDDManVendTxt.setEditable(false);
         HDDManBSCTxt.setText("");  HDDManBSCTxt.setEditable(false);
@@ -3612,16 +3604,14 @@ private LocalDateTime myTimeStamp;
         HDDManPalletCTxt.setText(""); HDDManPalletCTxt.setEnabled(false);//
         HDDManPalletAlterTxt.setText(""); HDDManPalletAlterTxt.setEnabled(false);//
         
-        //mod this to fill the Lanes combobox
+        //fill the Lanes combobox=====================================================FIX THIS GUS  check bottom of https://stackoverflow.com/questions/4343078/jdbc-returning-empty-result-set
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             System.out.println("Loading Lane Combo Box!");
             conn = DriverManager.getConnection(Myurl);
             String SQL = "Select Lname FROM [HDD_Records].[dbo].[ReUseLocations]";
             System.out.println(SQL);
-            //stmt = conn.prepareStatement(SQL);
             stmt = conn.createStatement();
-            //rs = rutro.executeQuery();
             rs = stmt.executeQuery(SQL);
             HDDManLaneCmbBx.removeAllItems();
             ArrayList <String> laneString = new ArrayList();
@@ -3630,7 +3620,7 @@ private LocalDateTime myTimeStamp;
                 System.out.println(rs.getString("Lname"));
             }
             HDDManLaneCmbBx.setModel(new DefaultComboBoxModel(laneString.toArray()));
-            HDDManLaneCmbBx.setSelectedItem("None-Nada");//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   WHOLLY FAQU 0000000000000000000000000!!!!!!!!!!!!!!!!!!!!!
+            HDDManLaneCmbBx.setSelectedItem("None-Nada");//OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   WHOLLY FAQU 0000000000000000000000000!!!!!!!!!!!!!!!!!!!!! even refresh works odds do not WTF!!
         } catch (Exception e){e.printStackTrace();}
         
         //clear HDDManSizeTbl
@@ -3725,7 +3715,6 @@ private LocalDateTime myTimeStamp;
     //  PUBLIC UTILITY FUNCTIONS################################################
     //##########################################################################
     
-    //fix this so you can give an order number and return an array of location names.
     public ArrayList<String> getLox4vendor(String x){
         ArrayList<String> vendorString = new ArrayList();
         try {
@@ -3802,9 +3791,16 @@ private LocalDateTime myTimeStamp;
         } catch (Exception e){e.printStackTrace();}
     }
     
+    public void refreshDashboardTab(){
+        //this is where the mainquery to update the dashboard is.
+        //pull factory status numbers
+        //pull HDD Room numbers -- ON HOLD TILL SCAN SOLD MATERIAL AND PALLET NUMBERING
+        //pull ordernumber in date range
+    }
+    
     public void updateOrInsertString(JTextField mTxt, String myTable, String myVar, String myOrder){
             try{
-                System.out.println("Updating Box "+ myTable);
+                //System.out.println("Updating Box "+ myTable);
                 //needs to be update or insert if not in.
                 String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].["+ myTable +"] "
                         + "WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] "
@@ -3814,7 +3810,7 @@ private LocalDateTime myTimeStamp;
                         + "WHERE InOrdNum LIKE '" + myOrder + "') "
                         + "ELSE INSERT INTO [HDD_Records].[dbo].["+ myTable +"](OID,"+ myVar + ") VALUES((SELECT OID FROM [HDD_Records].[dbo].[Orders] "
                         + "WHERE InOrdNum LIKE '" + myOrder + "'),'"+ mTxt.getText()+"')";
-                System.out.println("Updating "+ myTable +" with: " + SQL);
+                //System.out.println("Updating "+ myTable +" with: " + SQL);
                 Connection conny = DriverManager.getConnection(Myurl);
                 Statement stater =  conny.createStatement();
                 stater.executeUpdate(SQL);
@@ -3823,7 +3819,7 @@ private LocalDateTime myTimeStamp;
     
     public void updateOrInsertString(JTextArea mTxt, String myTable, String myVar, String myOrder){
             try{
-                System.out.println("Updating Box "+ myTable);
+                //System.out.println("Updating Box "+ myTable);
                 //needs to be update or insert if not in.
                 String SQL = "IF EXISTS(SELECT OID FROM [HDD_Records].[dbo].["+ myTable +"] "
                         + "WHERE OID LIKE (SELECT OID FROM [HDD_Records].[dbo].[Orders] "
@@ -3833,7 +3829,7 @@ private LocalDateTime myTimeStamp;
                         + "WHERE InOrdNum LIKE '" + myOrder + "') "
                         + "ELSE INSERT INTO [HDD_Records].[dbo].["+ myTable +"](OID,"+ myVar + ") VALUES((SELECT OID FROM [HDD_Records].[dbo].[Orders] "
                         + "WHERE InOrdNum LIKE '" + myOrder + "'),'"+ mTxt.getText()+"')";
-                System.out.println("Updating "+ myTable +" with: " + SQL);
+                //System.out.println("Updating "+ myTable +" with: " + SQL);
                 Connection conny = DriverManager.getConnection(Myurl);
                 Statement stater =  conny.createStatement();
                 stater.executeUpdate(SQL);
@@ -3842,7 +3838,7 @@ private LocalDateTime myTimeStamp;
     
     public void updateInsertDate(JXDatePicker myDate, String myTable, String myVar, String thisOrd){
             try{
-                System.out.println("Updating " + myTable);
+                //System.out.println("Updating " + myTable);
                 Date mynowDate = myDate.getDate();
                 DateFormat oDateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 String szDate = oDateFormat.format(mynowDate);
@@ -3855,7 +3851,7 @@ private LocalDateTime myTimeStamp;
                         + "WHERE InOrdNum LIKE '" + thisOrd + "') "
                         + "ELSE INSERT INTO [HDD_Records].[dbo].[" + myTable +"](OID," + myVar +") VALUES((SELECT OID FROM [HDD_Records].[dbo].[Orders] "
                         + "WHERE InOrdNum LIKE '" + thisOrd + "'),'" + szDate + "')";
-                System.out.println("Updating Box Scan Comp Date with: " + SQL);
+                //System.out.println("Updating Box Scan Comp Date with: " + SQL);
                 Connection conny = DriverManager.getConnection(Myurl);
                 Statement stater =  conny.createStatement();
                 stater.executeUpdate(SQL);
@@ -3914,6 +3910,25 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel CreateShipLocLbl;
     private javax.swing.JComboBox<String> CreateVendCmbBx;
     private javax.swing.JLabel CreateVendorNumLbl;
+    private javax.swing.JButton DashExportBtn;
+    private javax.swing.JToggleButton DashFilterBtn;
+    private org.jdesktop.swingx.JXDatePicker DashFromPc;
+    private javax.swing.JLabel DashFromToLbl;
+    private javax.swing.JScrollPane DashHDDRoomScroll;
+    private javax.swing.JTable DashHDDRoomTbl;
+    private javax.swing.JLabel DashInboundLbl;
+    private javax.swing.JTextField DashInboundTxt;
+    private javax.swing.JTextField DashOrderVendorTxt;
+    private javax.swing.JScrollPane DashPendingScroll;
+    private javax.swing.JTable DashPendingTbl;
+    private javax.swing.JButton DashPrintBtn;
+    private javax.swing.JLabel DashToDManLbl;
+    private javax.swing.JTextField DashToDManTxt;
+    private org.jdesktop.swingx.JXDatePicker DashToPc;
+    private javax.swing.JLabel DashToProcessLbl;
+    private javax.swing.JTextField DashToProcessTxt;
+    private javax.swing.JLabel DashToRemoveLbl;
+    private javax.swing.JTextField DashToRemoveTxt;
     private javax.swing.JLabel DashboardLbl;
     private javax.swing.JLabel DashboardLbl1;
     private javax.swing.JButton ExitBtn;
@@ -3980,6 +3995,7 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JDialog LogInDialog;
     private javax.swing.JButton LogInOutBtn;
     private javax.swing.JButton LoginCancelBtn;
+    private javax.swing.JToolBar LoginExitTool;
     private javax.swing.JButton LoginOKBtn;
     private javax.swing.JPasswordField LoginPswrdTxt;
     private javax.swing.JTextField LoginUserTxt;
@@ -4078,45 +4094,25 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JPanel WipeReports;
     private javax.swing.JLabel WipeReportsLbl;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField34;
-    private javax.swing.JTextField jTextField35;
-    private javax.swing.JTextField jTextField36;
-    private javax.swing.JTextField jTextField37;
-    private javax.swing.JTextField jTextField38;
-    private javax.swing.JTextField jTextField39;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToolBar jToolBar1;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker14;
-    private org.jdesktop.swingx.JXDatePicker jXDatePicker8;
     // End of variables declaration//GEN-END:variables
 }
