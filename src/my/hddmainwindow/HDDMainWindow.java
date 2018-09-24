@@ -2079,23 +2079,23 @@ private LocalDateTime myTimeStamp;
 
         DashPendingTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Orders", "Recieved", "Weight", "Box Scan Completed", "Box Scan HDD Count", "Dismantle Completed", "Production HDD Count", "Reuse Scan HDD Count"
+                "Orders", "Recieved", "Weight", "Box Scan Completed", "Box Scan HDD Count", "Dismantle Completed", "Production HDD Count", "Report Date", "Reuse Scan HDD Count"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2114,6 +2114,11 @@ private LocalDateTime myTimeStamp;
         DashExportBtn.setText("Export");
 
         DashPrintBtn.setText("Print");
+        DashPrintBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashPrintBtnActionPerformed(evt);
+            }
+        });
 
         DashFilterBtn.setText("Filter");
 
@@ -2463,15 +2468,18 @@ private LocalDateTime myTimeStamp;
                                 SetRecordViewEmpty();
                                 break;
                             case 2://limited access for now is view only
-                                TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(4,false);
+                                //TabPanel.setEnabledAt(4,true);
                                 SetRecordViewLimited();
                                 break;
                             case 3://full access
-                                TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(4,false);
+                                //TabPanel.setEnabledAt(4,true);
                                 SetRecordViewFull();
                                 break;
                             default://all others are view only for now
-                                TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(4,false);
+                                //TabPanel.setEnabledAt(4,true);
                                 SetRecordViewEmpty();
                                 break;
                         }
@@ -2480,19 +2488,23 @@ private LocalDateTime myTimeStamp;
                                 TabPanel.setEnabledAt(5,false);
                                 break;
                             case 1://view only
-                                TabPanel.setEnabledAt(5,true);
+                                TabPanel.setEnabledAt(5,false);
+                                //TabPanel.setEnabledAt(5,true);
                                 SetAdminEmpty();
                                 break;
                             case 2://limited access for now is view only
-                                TabPanel.setEnabledAt(5,true);
+                                TabPanel.setEnabledAt(5,false);
+                                //TabPanel.setEnabledAt(5,true);
                                 SetAdminLimited();
                                 break;
                             case 3://full access
-                                TabPanel.setEnabledAt(5,true);
+                                TabPanel.setEnabledAt(5,false);
+                                //TabPanel.setEnabledAt(5,true);
                                 SetAdminFull();
                                 break;
                             default://all others are view only for now
-                                TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(5,false);
+                                //TabPanel.setEnabledAt(4,true);
                                 SetAdminEmpty();
                                 break;
                         }
@@ -2501,19 +2513,23 @@ private LocalDateTime myTimeStamp;
                                 TabPanel.setEnabledAt(6,false);
                                 break;
                             case 1://view only
-                                TabPanel.setEnabledAt(6,true);
+                                //TabPanel.setEnabledAt(6,true);
+                                TabPanel.setEnabledAt(6,false);
                                 SetWipeEmpty();
                                 break;
                             case 2://limited access for now is view only
-                                TabPanel.setEnabledAt(6,true);
+                                //TabPanel.setEnabledAt(6,true);
+                                TabPanel.setEnabledAt(6,false);
                                 SetWipeLimited();
                                 break;
                             case 3://full access
-                                TabPanel.setEnabledAt(6,true);
+                                //TabPanel.setEnabledAt(6,true);
+                                TabPanel.setEnabledAt(6,false);
                                 SetWipeFull();
                                 break;
                             default://all others are view only for now
-                                TabPanel.setEnabledAt(6,true);
+                                //TabPanel.setEnabledAt(6,true);
+                                TabPanel.setEnabledAt(6,false);
                                 SetWipeEmpty();
                                 break;
                         }
@@ -2522,19 +2538,23 @@ private LocalDateTime myTimeStamp;
                                 TabPanel.setEnabledAt(7,false);
                                 break;
                             case 1://view only
-                                TabPanel.setEnabledAt(7,true);
+                                //TabPanel.setEnabledAt(7,true);
+                                TabPanel.setEnabledAt(7,false);
                                 SetResaleEmpty();
                                 break;
                             case 2://limited access for now is view only
-                                TabPanel.setEnabledAt(7,true);
+                                //TabPanel.setEnabledAt(7,true);
+                                TabPanel.setEnabledAt(7,false);
                                 SetResaleLimited();
                                 break;
                             case 3://full access
-                                TabPanel.setEnabledAt(7,true);
+                                //TabPanel.setEnabledAt(7,true);
+                                TabPanel.setEnabledAt(7,false);
                                 SetResaleFull();
                                 break;
                             default://all others are view only for now
-                                TabPanel.setEnabledAt(7,true);
+                                //TabPanel.setEnabledAt(7,true);
+                                TabPanel.setEnabledAt(7,false);
                                 SetResaleEmpty();
                                 break;
                         }
@@ -2699,6 +2719,8 @@ private LocalDateTime myTimeStamp;
             case 7:
                 break;
             case 8:
+                SetOpsDashEmpty();
+                refreshDashboardTab();
                 break;
             default:
                 break;
@@ -3452,6 +3474,24 @@ private LocalDateTime myTimeStamp;
             LoginNow();
         }//On enter in the password window of login run the Login
     }//GEN-LAST:event_LoginPswrdTxtKeyPressed
+
+    private void DashPrintBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashPrintBtnActionPerformed
+        //Print button clicked
+        try {
+            //add if filters then set title accordingly =======================================================WORK HERE GUS
+            boolean complete = DashPendingTbl.print();
+            if (complete) {
+                /* show a success message  */
+                System.out.println("Printed DashPendingTbl");
+            } else {
+                /*show a message indicating that printing was cancelled */
+                System.out.println("FAILED to print DashPendingTbl");
+            }
+        } catch (Exception pe) {
+            /* Printing failed, report to the user */
+                System.out.println("Hell I dunno!");
+        }
+    }//GEN-LAST:event_DashPrintBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -3701,14 +3741,23 @@ private LocalDateTime myTimeStamp;
     //**************OpsDash Tab*********************************************TAB8
     private void SetOpsDashEmpty(){
         //stub to clear and set empty Ops Dashboard Tab
+        DashFromPc.setDate(null);
+        DashToPc.setDate(null);
+        DashOrderVendorTxt.setText("");
+        DashInboundTxt.setText("");
+        DashToProcessTxt.setText("");
+        DashToDManTxt.setText("");
+        DashToRemoveTxt.setText("");
     }
     
     private void SetOpsDashLimited(){
         //stub to clear and set limited access Ops Dashboard Tab
+        SetOpsDashEmpty();
     }
     
     private void SetOpsDashFull(){
         //stub to clear and set full access Ops Dashboard Tab
+        SetOpsDashEmpty();
     }
     
     //##########################################################################
@@ -3794,8 +3843,57 @@ private LocalDateTime myTimeStamp;
     public void refreshDashboardTab(){
         //this is where the mainquery to update the dashboard is.
         //pull factory status numbers
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("Loading open orders into Heat Table!");
+            String SQL = "SELECT (SELECT COUNT(OID) FROM [HDD_Records].[dbo].[Recieving] WHERE Rdate IS NOT NULL AND Adate IS NULL)AS 'Inbound',\n" +
+                "(SELECT COUNT(R.OID) FROM [HDD_Records].[dbo].[Recieving] AS R FULL JOIN [HDD_Records].[dbo].[Production] AS P ON R.OID = P.OID WHERE R.Adate IS NOT NULL AND P.DManDate IS NULL) AS '2BProcessed',\n" +
+                "(SELECT SUM(R.Gross) FROM [HDD_Records].[dbo].[Recieving] AS R FULL JOIN [HDD_Records].[dbo].[Production] AS P ON R.OID = P.OID WHERE R.Adate IS NOT NULL AND P.DManDate IS NULL) AS 'TotalWeight',\n" +
+                "(SELECT SUM(S.BSHDDCount) FROM [HDD_Records].[dbo].[Recieving] AS R \n" +
+                "FULL JOIN [HDD_Records].[dbo].[Production] AS P ON R.OID = P.OID\n" +
+                "FULL JOIN [HDD_Records].[dbo].[SortScan] AS S ON R.OID = S.OID\n" +
+                "WHERE R.Adate IS NOT NULL AND P.DManDate IS NULL) AS 'BxScanHDDTotal'";//create sql statment to pull all the orders recieved without being completed.
+            System.out.println(SQL);
+            Connection connish = DriverManager.getConnection(Myurl);
+            Statement state = connish.createStatement();
+            ResultSet rst = state.executeQuery(SQL);
+            while (rst.next()){
+                //fill table with result
+                DashInboundTxt.setText(rst.getString("Inbound"));
+                DashToProcessTxt.setText(rst.getString("2BProcessed"));
+                DashToDManTxt.setText(rst.getString("TotalWeight"));
+                DashToRemoveTxt.setText(rst.getString("BxScanHDDTotal"));
+            }
+            //close connection
+            //connish.close();
+        } catch (Exception e){e.printStackTrace();}
         //pull HDD Room numbers -- ON HOLD TILL SCAN SOLD MATERIAL AND PALLET NUMBERING
         //pull ordernumber in date range
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("Loading open orders into Heat Table!");
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "SELECT O.InOrdNum, R.Adate, R.Gross, S.BSdate,S.BSHDDCount, P.DManDate, P.Pcount, T.ReportDate, (SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE SUBSTRING(O.InOrdNum,2,LEN(O.InOrdNum))) AS 'ScannedInHDD' FROM [HDD_Records].[dbo].[Orders] AS O\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Recieving] AS R ON O.OID = R.OID\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON O.OID = P.OID\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON O.OID = S.OID\n" +
+                "LEFT JOIN [HDD_Records].[dbo].[Transfer] AS T ON O.OID = T.OID\n" +
+                "WHERE R.Adate IS NOT NULL AND T.ReportDate IS NULL\n" +
+                "ORDER BY R.Rdate";//create sql statment to pull all the orders recieved without being completed.
+            System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            //clear the jTable before we start
+            DefaultTableModel model = (DefaultTableModel)DashPendingTbl.getModel();
+            model.setRowCount(0);
+            while (rs.next()){
+                //fill table with result
+                Object RowData[] = {rs.getString("InOrdNum"),rs.getString("Adate"),rs.getString("Gross"),rs.getString("BSDate"),rs.getString("BSHDDCount"),rs.getString("DManDate"),rs.getString("Pcount"),rs.getString("ReportDate"),rs.getString("ScannedInHDD")};
+                model.addRow(RowData);
+            }
+        DashPendingTbl.setModel(model);
+        //conn.close();
+        } catch (Exception e){e.printStackTrace();}
     }
     
     public void updateOrInsertString(JTextField mTxt, String myTable, String myVar, String myOrder){
