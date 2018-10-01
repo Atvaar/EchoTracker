@@ -23,6 +23,11 @@ import java.awt.event.*;
 import javax.swing.*;
 //import javax.swing.event.*;
 
+//for export to cvs
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.jdesktop.swingx.JXDatePicker;
 
 public class HDDMainWindow extends javax.swing.JFrame {
@@ -84,6 +89,7 @@ private LocalDateTime myTimeStamp;
         CreateRdatePc = new org.jdesktop.swingx.JXDatePicker();
         CreateNewBtn = new javax.swing.JButton();
         CreateCancel = new javax.swing.JButton();
+        SaveAs = new javax.swing.JFileChooser();
         ToolBar = new javax.swing.JToolBar();
         UserLbl = new javax.swing.JLabel();
         TabPanel = new javax.swing.JTabbedPane();
@@ -238,14 +244,14 @@ private LocalDateTime myTimeStamp;
         HDDManOnotesBtn = new javax.swing.JButton();
         HDDManRdateBtn = new javax.swing.JButton();
         RecordView = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jTextField34 = new javax.swing.JTextField();
-        jButton24 = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        RVLbl = new javax.swing.JLabel();
+        RVOrderNumLbl = new javax.swing.JLabel();
+        RVOrderNumTxt = new javax.swing.JTextField();
+        RVOrderLookupBtn = new javax.swing.JButton();
+        RVOrderDataScroll = new javax.swing.JScrollPane();
+        RVOrderDataTbl = new javax.swing.JTable();
+        RVOrderHDDScroll = new javax.swing.JScrollPane();
+        RVOrderHDDTbl = new javax.swing.JTable();
         AdminTb = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         WipeReports = new javax.swing.JPanel();
@@ -524,6 +530,14 @@ private LocalDateTime myTimeStamp;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        SaveAs.setDialogType(javax.swing.JFileChooser.SAVE_DIALOG);
+        SaveAs.setCurrentDirectory(new java.io.File("C:\\Users\\me\\Documents"));
+        SaveAs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveAsActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Echo");
         setBackground(new java.awt.Color(0, 102, 102));
@@ -723,7 +737,7 @@ private LocalDateTime myTimeStamp;
             .addGroup(ReceiveTbLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                    .addComponent(RcvTabTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ReceiveTbLayout.createSequentialGroup()
                         .addGroup(ReceiveTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(RcvOrdrLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -905,7 +919,7 @@ private LocalDateTime myTimeStamp;
         HeatAssignment.setLayout(HeatAssignmentLayout);
         HeatAssignmentLayout.setHorizontalGroup(
             HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
             .addGroup(HeatAssignmentLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(HeatAssignmentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1678,7 +1692,7 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManRdateLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSOPLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSOFLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                             .addComponent(HDDManRecieveLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManCompDLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSentCLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1697,7 +1711,7 @@ private LocalDateTime myTimeStamp;
                             .addComponent(HDDManVendTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManOrderTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManSerialCTxt)
-                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                            .addComponent(HDDManSerialCompPc, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                             .addComponent(HDDManDmanCPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManSentCTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HDDManCompDPc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1720,7 +1734,7 @@ private LocalDateTime myTimeStamp;
                                 .addComponent(HDDManRSubBtn))
                             .addComponent(HDDManLanesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManOrderBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+                            .addComponent(HDDManRecieveCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
                             .addComponent(HDDManSerialCompBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(HDDManRdateBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -1815,30 +1829,35 @@ private LocalDateTime myTimeStamp;
         RecordView.setBackground(new java.awt.Color(0, 102, 102));
         RecordView.setAutoscrolls(true);
 
-        jLabel24.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
-        jLabel24.setText("     Record Veiwer");
-        jLabel24.setToolTipText("");
+        RVLbl.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
+        RVLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RVLbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        RVLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/resources/Echo.png"))); // NOI18N
+        RVLbl.setText("     Record Veiwer");
+        RVLbl.setToolTipText("");
 
-        jLabel60.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel60.setForeground(new java.awt.Color(214, 214, 214));
-        jLabel60.setText("Order Number:");
-        jLabel60.setFocusable(false);
+        RVOrderNumLbl.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        RVOrderNumLbl.setForeground(new java.awt.Color(214, 214, 214));
+        RVOrderNumLbl.setText("Order Number:");
+        RVOrderNumLbl.setFocusable(false);
 
-        jTextField34.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RVOrderNumTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
-        jButton24.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton24.setText("Lookup");
+        RVOrderLookupBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RVOrderLookupBtn.setText("Lookup");
+        RVOrderLookupBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RVOrderLookupBtnActionPerformed(evt);
+            }
+        });
 
-        jScrollPane6.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        RVOrderDataScroll.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTable3.setBackground(new java.awt.Color(0, 102, 102));
-        jTable3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTable3.setForeground(new java.awt.Color(214, 214, 214));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        RVOrderDataTbl.setBackground(new java.awt.Color(0, 102, 102));
+        RVOrderDataTbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        RVOrderDataTbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RVOrderDataTbl.setForeground(new java.awt.Color(214, 214, 214));
+        RVOrderDataTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -1883,11 +1902,11 @@ private LocalDateTime myTimeStamp;
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane6.setViewportView(jTable3);
+        RVOrderDataScroll.setViewportView(RVOrderDataTbl);
 
-        jTable5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable5.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        RVOrderHDDTbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        RVOrderHDDTbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RVOrderHDDTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -1903,39 +1922,39 @@ private LocalDateTime myTimeStamp;
                 "HDD Size", "HDD Count In", "HDD Count Out"
             }
         ));
-        jScrollPane8.setViewportView(jTable5);
+        RVOrderHDDScroll.setViewportView(RVOrderHDDTbl);
 
         javax.swing.GroupLayout RecordViewLayout = new javax.swing.GroupLayout(RecordView);
         RecordView.setLayout(RecordViewLayout);
         RecordViewLayout.setHorizontalGroup(
             RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RVLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(RecordViewLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6)
+                    .addComponent(RVOrderDataScroll)
                     .addGroup(RecordViewLayout.createSequentialGroup()
-                        .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                        .addComponent(RVOrderNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(RVOrderNumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(RVOrderLookupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RVOrderHDDScroll, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         RecordViewLayout.setVerticalGroup(
             RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RecordViewLayout.createSequentialGroup()
-                .addComponent(jLabel24)
+                .addComponent(RVLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel60)
-                    .addComponent(jTextField34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton24))
+                    .addComponent(RVOrderNumLbl)
+                    .addComponent(RVOrderNumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RVOrderLookupBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RVOrderDataScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RVOrderHDDScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(438, Short.MAX_VALUE))
         );
 
@@ -1954,7 +1973,7 @@ private LocalDateTime myTimeStamp;
         AdminTb.setLayout(AdminTbLayout);
         AdminTbLayout.setHorizontalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         AdminTbLayout.setVerticalGroup(
             AdminTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1978,7 +1997,7 @@ private LocalDateTime myTimeStamp;
         WipeReports.setLayout(WipeReportsLayout);
         WipeReportsLayout.setHorizontalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(WipeReportsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         WipeReportsLayout.setVerticalGroup(
             WipeReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2002,7 +2021,7 @@ private LocalDateTime myTimeStamp;
         ResaleTb.setLayout(ResaleTbLayout);
         ResaleTbLayout.setHorizontalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(ResaleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         ResaleTbLayout.setVerticalGroup(
             ResaleTbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2112,6 +2131,11 @@ private LocalDateTime myTimeStamp;
         DashOrderVendorTxt.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
 
         DashExportBtn.setText("Export");
+        DashExportBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashExportBtnActionPerformed(evt);
+            }
+        });
 
         DashPrintBtn.setText("Print");
         DashPrintBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -2172,7 +2196,7 @@ private LocalDateTime myTimeStamp;
                     .addGroup(OpsDashTbLayout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(DashHDDRoomScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)))
+                        .addComponent(DashHDDRoomScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         OpsDashTbLayout.setVerticalGroup(
@@ -2220,7 +2244,7 @@ private LocalDateTime myTimeStamp;
             .addGroup(AboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+                    .addComponent(DashboardLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -2468,18 +2492,15 @@ private LocalDateTime myTimeStamp;
                                 SetRecordViewEmpty();
                                 break;
                             case 2://limited access for now is view only
-                                TabPanel.setEnabledAt(4,false);
-                                //TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(4,true);
                                 SetRecordViewLimited();
                                 break;
                             case 3://full access
-                                TabPanel.setEnabledAt(4,false);
-                                //TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(4,true);
                                 SetRecordViewFull();
                                 break;
                             default://all others are view only for now
-                                TabPanel.setEnabledAt(4,false);
-                                //TabPanel.setEnabledAt(4,true);
+                                TabPanel.setEnabledAt(4,true);
                                 SetRecordViewEmpty();
                                 break;
                         }
@@ -2711,6 +2732,7 @@ private LocalDateTime myTimeStamp;
                 SetHDDManagerEmpty();
                 break;
             case 4:
+                SetRecordViewEmpty();
                 break;
             case 5:
                 break;
@@ -3478,20 +3500,121 @@ private LocalDateTime myTimeStamp;
     private void DashPrintBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashPrintBtnActionPerformed
         //Print button clicked
         try {
-            //add if filters then set title accordingly =======================================================WORK HERE GUS
-            boolean complete = DashPendingTbl.print();
-            if (complete) {
-                /* show a success message  */
-                System.out.println("Printed DashPendingTbl");
-            } else {
-                /*show a message indicating that printing was cancelled */
-                System.out.println("FAILED to print DashPendingTbl");
-            }
+            //add if filters then set title accordingly
+            DashPendingTbl.print();
         } catch (Exception pe) {
             /* Printing failed, report to the user */
-                System.out.println("Hell I dunno!");
+            pe.printStackTrace();
         }
     }//GEN-LAST:event_DashPrintBtnActionPerformed
+
+    private void DashExportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashExportBtnActionPerformed
+        // call SaveAs window to choose file name and save output
+        SaveAs.setCurrentDirectory(new File("/home/me/Documents"));
+        SaveAs.setSelectedFile(new File("/home/me/Documents/default.csv"));
+        //SaveAs.showSaveDialog(this);
+        int returnVal = SaveAs.showSaveDialog(this);
+    if (returnVal == JFileChooser.APPROVE_OPTION) {
+        File file = SaveAs.getSelectedFile();
+        toExcel(DashPendingTbl, file);
+    } else {
+        System.out.println("File access cancelled by user.");
+    }
+        
+    }//GEN-LAST:event_DashExportBtnActionPerformed
+
+    private void SaveAsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveAsActionPerformed
+        //not used
+    }//GEN-LAST:event_SaveAsActionPerformed
+
+    private void RVOrderLookupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RVOrderLookupBtnActionPerformed
+        // First lookup order details then load Order table=======================================================================Right HERE
+        // Second lookup HDD information then load HDD table======================================================================Right HERE
+        String OrderNum = RVOrderNumTxt.getText();
+        String HDDOrder;
+        if (OrderNum.substring(0, 1).matches("[0-9]")){
+            HDDOrder = OrderNum;
+        }else {HDDOrder = OrderNum.substring(1);}
+        //IF BLANK DISABLE EVERYTHING ON THE TAB
+        if (OrderNum.equals("")){
+            SetRecordViewEmpty();
+        }else {
+            //lookup order, if order entered populate tab per user level if not ask if you would like to create order
+            try {
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                System.out.println("looking for order!" + OrderNum);
+                conn = DriverManager.getConnection(Myurl);
+                String SQL = "SELECT O.OID,O.InOrdNum, V.Vendor, Re.Rdate, Re.Fcost, Re.FPdate, Re.Adate AS RecDate, Re.Gross, A.LocName, Re.Sdate AS ShipDate,Re.DNum, S.BSHDDCount, S.BSdate,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"') AS SerialCount, P.DManDate, P.Pcount, P.Sdate,\n" +
+                    "T.PalletCount, T.HDcount, T.Tdate, T.SerialDate, N.Onotes, R.LName,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"' AND FailReason IN ('PASSED','Passed','passed'))) AS CountPASSED,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"' AND FailReason NOT IN ('PASSED','Passed','passed'))) AS CountFAILED,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"')-(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"')) AS ScanDelta,\n" +
+                    "T.ReportDate FROM [HDD_Records].[dbo].[Orders] AS O\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Vendors] AS V ON O.VID = V.VID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Recieving] AS Re ON O.OID = Re.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Addresses] AS A ON Re.LID = A.LID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Production] AS P ON O.OID = P.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Notes] AS N ON O.OID = N.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[Transfer] AS T ON O.OID = T.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[SortScan] AS S ON O.OID = S.OID\n" +
+                    "LEFT JOIN [HDD_Records].[dbo].[ReUseLocations] AS R ON T.LaneID = R.LaneID\n" +
+                    "WHERE O.InOrdNum LIKE '"+ OrderNum +"'";
+                System.out.println(SQL);
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(SQL);
+                try {
+                    if (rs.next()) {
+                        //If order found do as follows
+                        //load RVOrderTbl with the data
+                        DefaultTableModel OrderData = (DefaultTableModel)RVOrderDataTbl.getModel();
+                        OrderData.setRowCount(0);
+                        OrderData.addRow(new Object[]{"Vendor", rs.getString("Vendor"),""});
+                        OrderData.addRow(new Object[]{"Request Date", rs.getString("Rdate"),""});
+                        OrderData.addRow(new Object[]{"Freight Cost", "$" + rs.getString("Fcost"),""});
+                        OrderData.addRow(new Object[]{"Freight Paid Date", rs.getString("FPdate"),""});
+                        OrderData.addRow(new Object[]{"Ship Location", rs.getString("LocName"),""});
+                        OrderData.addRow(new Object[]{"Ship Date", rs.getString("ShipDate"),""});
+                        OrderData.addRow(new Object[]{"Delivery #(ADR)", rs.getString("DNum"),""});
+                        OrderData.addRow(new Object[]{"Inbound Order", rs.getString("InOrdNum"),""});
+                        OrderData.addRow(new Object[]{"Receive Date", rs.getString("RecDate"),""});
+                        OrderData.addRow(new Object[]{"Gross Weight", rs.getString("Gross"),""});
+                        
+                    }else {
+                        System.out.println("Nope!");
+                        SetRecordViewEmpty();
+                    }
+                } catch (Exception e) {e.printStackTrace();}
+            } catch (Exception e){
+                e.printStackTrace();
+                SetRecordViewEmpty();
+            }
+        }
+        try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //System.out.println("looking for order!" + OrderNum);
+            conn = DriverManager.getConnection(Myurl);
+            String SQL = "SELECT I.HDDCapacity, COUNT(I.HDDSerial)AS 'Scanned In', COUNT(O.HDDSerial) AS 'Scanned Out' FROM [HDD_Records].[dbo].[HDDCheckIn] AS I\n" +
+                "FULL JOIN [HDD_Records].[dbo].[HDDCheckOut] AS O ON I.HDDSerial = O.HDDSerial\n" +
+                "WHERE HDDIon LIKE '"+ HDDOrder +"'\n" +
+                "GROUP BY HDDCapacity";
+            //System.out.println(SQL);
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(SQL);
+            //clear table
+            RVOrderHDDTbl.removeAll();
+            //create new model for the HDDSize Table
+            DefaultTableModel model = (DefaultTableModel)RVOrderHDDTbl.getModel();
+            model.setRowCount(0);
+            while (rs.next()){
+                //fill table with result
+                Object RowData[] = {rs.getString("HDDCapacity"),rs.getString("Scanned In"),rs.getString("Scanned Out")};
+                model.addRow(RowData);
+            }
+            RVOrderHDDTbl.setModel(model);
+            //set new model to table
+        } catch (Exception e){e.printStackTrace();}
+    }//GEN-LAST:event_RVOrderLookupBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -3693,6 +3816,13 @@ private LocalDateTime myTimeStamp;
     //**************Record View*********************************************TAB4
     private void SetRecordViewEmpty(){
         //stub to clear and set empty Record View Tab
+        RVOrderNumTxt.setText("");
+        DefaultTableModel model = (DefaultTableModel)RVOrderDataTbl.getModel();
+        model.setRowCount(0);
+        RVOrderDataTbl.setModel(model);
+        DefaultTableModel leModel = (DefaultTableModel)RVOrderHDDTbl.getModel();
+        leModel.setRowCount(0);
+        RVOrderHDDTbl.setModel(leModel);
     }
     
     private void SetRecordViewLimited(){
@@ -3956,6 +4086,26 @@ private LocalDateTime myTimeStamp;
             }catch (Exception e) {e.printStackTrace();}
     }
     
+    //public function for converting jtable to cvs and exporting
+    public void toExcel(JTable table, File file){
+        try{
+            TableModel model = table.getModel();
+            FileWriter excel = new FileWriter(file);
+
+            for(int i = 0; i < model.getColumnCount(); i++){
+                excel.write(model.getColumnName(i) + ",");
+            }
+            excel.write("\n");
+            for(int i=0; i< model.getRowCount(); i++) {
+                for(int j=0; j < model.getColumnCount(); j++) {
+                    excel.write(model.getValueAt(i,j)+",");
+                    }
+                excel.write("\n");
+            }
+            excel.close();
+        }catch(IOException e){ System.out.println(e); }
+}
+    
     /***************************************************************************
      *              MAIN
      * 
@@ -4148,6 +4298,14 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JLabel PMVendorLbl;
     private javax.swing.JTextField PMVendorTxt;
     private javax.swing.JPanel ProductionManager;
+    private javax.swing.JLabel RVLbl;
+    private javax.swing.JScrollPane RVOrderDataScroll;
+    private javax.swing.JTable RVOrderDataTbl;
+    private javax.swing.JScrollPane RVOrderHDDScroll;
+    private javax.swing.JTable RVOrderHDDTbl;
+    private javax.swing.JButton RVOrderLookupBtn;
+    private javax.swing.JLabel RVOrderNumLbl;
+    private javax.swing.JTextField RVOrderNumTxt;
     private javax.swing.JButton RcvAdateBtn;
     private javax.swing.JLabel RcvAdateLbl;
     private org.jdesktop.swingx.JXDatePicker RcvAdatePc;
@@ -4186,31 +4344,24 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JPanel RecordView;
     private javax.swing.JLabel ResaleLbl;
     private javax.swing.JPanel ResaleTb;
+    private javax.swing.JFileChooser SaveAs;
     private javax.swing.JTabbedPane TabPanel;
     private javax.swing.JToolBar ToolBar;
     private javax.swing.JLabel UserLbl;
     private javax.swing.JPanel WipeReports;
     private javax.swing.JLabel WipeReportsLbl;
-    private javax.swing.JButton jButton24;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTextField jTextField34;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

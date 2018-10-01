@@ -397,6 +397,17 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JFileChooser" name="SaveAs">
+      <Properties>
+        <Property name="dialogType" type="int" value="1"/>
+        <Property name="currentDirectory" type="java.io.File" editor="org.netbeans.beaninfo.editors.FileEditor">
+          <SerializedValue value="-84,-19,0,5,115,114,0,12,106,97,118,97,46,105,111,46,70,105,108,101,4,45,-92,69,14,13,-28,-1,3,0,1,76,0,4,112,97,116,104,116,0,18,76,106,97,118,97,47,108,97,110,103,47,83,116,114,105,110,103,59,120,112,116,0,21,67,58,92,85,115,101,114,115,92,109,101,92,68,111,99,117,109,101,110,116,115,119,2,0,92,120"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveAsActionPerformed"/>
+      </Events>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -541,7 +552,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RcvTabTitleLbl" alignment="0" pref="800" max="32767" attributes="0"/>
+                          <Component id="RcvTabTitleLbl" alignment="0" pref="775" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="RcvOrdrLbl" alignment="0" max="32767" attributes="0"/>
@@ -984,7 +995,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" alignment="0" pref="820" max="32767" attributes="0"/>
+                  <Component id="jLabel3" alignment="0" pref="795" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1880,7 +1891,7 @@
                                   <Component id="HDDManRdateLbl" max="32767" attributes="0"/>
                                   <Component id="HDDManSOPLbl" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSOFLbl" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="267" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompLbl" alignment="1" pref="259" max="32767" attributes="0"/>
                                   <Component id="HDDManRecieveLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDLbl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCLbl" alignment="1" max="32767" attributes="0"/>
@@ -1900,7 +1911,7 @@
                                   <Component id="HDDManVendTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCTxt" max="32767" attributes="0"/>
-                                  <Component id="HDDManSerialCompPc" pref="173" max="32767" attributes="0"/>
+                                  <Component id="HDDManSerialCompPc" pref="164" max="32767" attributes="0"/>
                                   <Component id="HDDManDmanCPc" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManSentCTxt" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HDDManCompDPc" alignment="0" max="32767" attributes="0"/>
@@ -1925,7 +1936,7 @@
                                   </Group>
                                   <Component id="HDDManLanesPnl" max="32767" attributes="0"/>
                                   <Component id="HDDManOrderBtn" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="348" max="32767" attributes="0"/>
+                                  <Component id="HDDManRecieveCompBtn" alignment="0" pref="340" max="32767" attributes="0"/>
                                   <Component id="HDDManSerialCompBtn" max="32767" attributes="0"/>
                                   <Component id="HDDManRdateBtn" alignment="0" max="32767" attributes="0"/>
                               </Group>
@@ -2656,19 +2667,19 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel24" alignment="0" max="32767" attributes="0"/>
+                  <Component id="RVLbl" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
+                          <Component id="RVOrderDataScroll" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel60" pref="238" max="32767" attributes="0"/>
+                              <Component id="RVOrderNumLbl" pref="213" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField34" min="-2" pref="365" max="-2" attributes="0"/>
+                              <Component id="RVOrderNumTxt" min="-2" pref="365" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton24" min="-2" pref="187" max="-2" attributes="0"/>
+                              <Component id="RVOrderLookupBtn" min="-2" pref="187" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane8" alignment="1" max="32767" attributes="0"/>
+                          <Component id="RVOrderHDDScroll" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -2677,24 +2688,24 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                      <Component id="RVLbl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField34" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RVOrderNumLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RVOrderNumTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RVOrderLookupBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jScrollPane6" min="-2" pref="509" max="-2" attributes="0"/>
+                      <Component id="RVOrderDataScroll" min="-2" pref="509" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane8" min="-2" pref="171" max="-2" attributes="0"/>
+                      <Component id="RVOrderHDDScroll" min="-2" pref="171" max="-2" attributes="0"/>
                       <EmptySpace pref="438" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel24">
+            <Component class="javax.swing.JLabel" name="RVLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="sansserif" size="24" style="1"/>
@@ -2710,7 +2721,7 @@
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel60">
+            <Component class="javax.swing.JLabel" name="RVOrderNumLbl">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="1"/>
@@ -2722,22 +2733,25 @@
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField34">
+            <Component class="javax.swing.JTextField" name="RVOrderNumTxt">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton24">
+            <Component class="javax.swing.JButton" name="RVOrderLookupBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SansSerif" size="12" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Lookup"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RVOrderLookupBtnActionPerformed"/>
+              </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+            <Container class="javax.swing.JScrollPane" name="RVOrderDataScroll">
               <Properties>
                 <Property name="viewportBorder" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2751,7 +2765,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable3">
+                <Component class="javax.swing.JTable" name="RVOrderDataTbl">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="66" green="66" red="0" type="rgb"/>
@@ -2778,14 +2792,14 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane8">
+            <Container class="javax.swing.JScrollPane" name="RVOrderHDDScroll">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable5">
+                <Component class="javax.swing.JTable" name="RVOrderHDDTbl">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -2825,7 +2839,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel25" pref="820" max="32767" attributes="0"/>
+                  <Component id="jLabel25" pref="795" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2873,7 +2887,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="WipeReportsLbl" alignment="0" pref="820" max="32767" attributes="0"/>
+                  <Component id="WipeReportsLbl" alignment="0" pref="795" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2921,7 +2935,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ResaleLbl" alignment="0" pref="820" max="32767" attributes="0"/>
+                  <Component id="ResaleLbl" alignment="0" pref="795" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2992,7 +3006,7 @@
                           <Group type="102" attributes="0">
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="DashHDDRoomScroll" pref="504" max="32767" attributes="0"/>
+                              <Component id="DashHDDRoomScroll" pref="479" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -3181,6 +3195,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Export"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DashExportBtnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="DashPrintBtn">
               <Properties>
@@ -3250,7 +3267,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DashboardLbl1" pref="800" max="32767" attributes="0"/>
+                          <Component id="DashboardLbl1" pref="775" max="32767" attributes="0"/>
                           <Component id="jScrollPane9" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
