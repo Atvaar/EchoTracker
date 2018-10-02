@@ -3544,8 +3544,8 @@ private LocalDateTime myTimeStamp;
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 System.out.println("looking for order!" + OrderNum);
                 conn = DriverManager.getConnection(Myurl);
-                String SQL = "SELECT O.OID,O.InOrdNum, V.Vendor, Re.Rdate, Re.Fcost, Re.FPdate, Re.Adate AS RecDate, Re.Gross, A.LocName, Re.Sdate AS ShipDate,Re.DNum, S.BSHDDCount, S.BSdate,\n" +
-                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"') AS SerialCount, P.DManDate, P.Pcount, P.Sdate,\n" +
+                String SQL = "SELECT O.OID,O.InOrdNum, V.Vendor, Re.Rdate, Re.Fcost, Re.FPdate, Re.Adate AS RecDate, Re.Gross, A.LocName, Re.Sdate AS ShipDate,Re.DNum,S.Sheat, S.BSHDDCount, S.BSdate,\n" +
+                    "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"') AS SerialCount,P.Pheat, P.DManDate, P.Pcount, P.Sdate,\n" +
                     "T.PalletCount, T.HDcount, T.Tdate, T.SerialDate, N.Onotes, R.LName,\n" +
                     "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"' AND FailReason IN ('PASSED','Passed','passed'))) AS CountPASSED,\n" +
                     "(SELECT COUNT(HDDSerial) FROM [HDD_Records].[dbo].[HDDCheckOut] WHERE HDDSerial IN (SELECT HDDSerial FROM [HDD_Records].[dbo].[HDDCheckIn] WHERE HDDIon LIKE '"+ HDDOrder +"' AND FailReason NOT IN ('PASSED','Passed','passed'))) AS CountFAILED,\n" +
@@ -3579,7 +3579,18 @@ private LocalDateTime myTimeStamp;
                         OrderData.addRow(new Object[]{"Inbound Order", rs.getString("InOrdNum"),""});
                         OrderData.addRow(new Object[]{"Receive Date", rs.getString("RecDate"),""});
                         OrderData.addRow(new Object[]{"Gross Weight", rs.getString("Gross"),""});
-                        
+                        OrderData.addRow(new Object[]{"Sort Heat", rs.getString("Sheat"),""});
+                        OrderData.addRow(new Object[]{"Box Scan HDD Count", rs.getString("BSHDDCount"),""});
+                        OrderData.addRow(new Object[]{"Box Scan Complete Date", rs.getString("BSdate"),""});
+                        OrderData.addRow(new Object[]{"Production Heat Number", rs.getString("Pheat"),""});
+                        OrderData.addRow(new Object[]{"Dismantle Complete", rs.getString("DManDate"),""});
+                        OrderData.addRow(new Object[]{"HDD Count - Sent To Reuse", rs.getString("Pcount"),""});
+                        OrderData.addRow(new Object[]{"Completed Order HDD Delivery", rs.getString("Sdate"),""});
+                        OrderData.addRow(new Object[]{"Reuse Room HDD Received", rs.getString("HDCount"),""});
+                        OrderData.addRow(new Object[]{"HDD Received Complete Date", rs.getString("Tdate"),""});
+                        OrderData.addRow(new Object[]{"Serialization HDD Count", rs.getString("SerialCount"),""});
+                        OrderData.addRow(new Object[]{"Serialization Date", rs.getString("SerialDate"),""});
+                        //OrderData.addRow(new Object[]{"Processing Report", rs.getString("?"),""});======================ask Brian******************************************!?!?!?!?!?!?!?!?!            
                     }else {
                         System.out.println("Nope!");
                         SetRecordViewEmpty();
