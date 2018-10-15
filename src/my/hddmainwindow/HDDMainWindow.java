@@ -28,6 +28,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.awt.print.*;
+
 import org.jdesktop.swingx.JXDatePicker;
 
 public class HDDMainWindow extends javax.swing.JFrame {
@@ -252,6 +254,7 @@ private LocalDateTime myTimeStamp;
         RVOrderDataTbl = new javax.swing.JTable();
         RVOrderHDDScroll = new javax.swing.JScrollPane();
         RVOrderHDDTbl = new javax.swing.JTable();
+        RVOrderPrintBtn = new javax.swing.JButton();
         AdminTb = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         WipeReports = new javax.swing.JPanel();
@@ -1924,21 +1927,31 @@ private LocalDateTime myTimeStamp;
         ));
         RVOrderHDDScroll.setViewportView(RVOrderHDDTbl);
 
+        RVOrderPrintBtn.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        RVOrderPrintBtn.setText("Print");
+        RVOrderPrintBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RVOrderPrintBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RecordViewLayout = new javax.swing.GroupLayout(RecordView);
         RecordView.setLayout(RecordViewLayout);
         RecordViewLayout.setHorizontalGroup(
             RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RVLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RVLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
             .addGroup(RecordViewLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(RVOrderDataScroll)
                     .addGroup(RecordViewLayout.createSequentialGroup()
-                        .addComponent(RVOrderNumLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                        .addComponent(RVOrderNumLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RVOrderNumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RVOrderNumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(RVOrderLookupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RVOrderLookupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(RVOrderPrintBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(RVOrderHDDScroll, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -1950,7 +1963,8 @@ private LocalDateTime myTimeStamp;
                 .addGroup(RecordViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RVOrderNumLbl)
                     .addComponent(RVOrderNumTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RVOrderLookupBtn))
+                    .addComponent(RVOrderLookupBtn)
+                    .addComponent(RVOrderPrintBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(RVOrderDataScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2145,6 +2159,11 @@ private LocalDateTime myTimeStamp;
         });
 
         DashFilterBtn.setText("Filter");
+        DashFilterBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DashFilterBtnActionPerformed(evt);
+            }
+        });
 
         DashHDDRoomTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3626,6 +3645,40 @@ private LocalDateTime myTimeStamp;
             //set new model to table
         } catch (Exception e){e.printStackTrace();}
     }//GEN-LAST:event_RVOrderLookupBtnActionPerformed
+
+    //***************Print RecordView JPanel********************************Button
+    private void RVOrderPrintBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RVOrderPrintBtnActionPerformed
+        // Prints the RecordView Jpanel
+        PrinterJob pj = PrinterJob.getPrinterJob();
+        pj.setJobName("Print Record View");
+        pj.setPrintable (new Printable() {
+        @Override
+            public int print(Graphics pg, PageFormat pf, int pageNum){
+                if (pageNum > 0){
+                    return Printable.NO_SUCH_PAGE;
+                }
+                Graphics2D g2 = (Graphics2D) pg;
+                g2.translate(pf.getImageableX(), pf.getImageableY());
+                RecordView.paint(g2);
+                return Printable.PAGE_EXISTS;
+            }
+        });
+        if (pj.printDialog() == false)
+            return;
+        try {
+            pj.print();
+        } catch (PrinterException ex) {
+            // handle exception
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_RVOrderPrintBtnActionPerformed
+
+    private void DashFilterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashFilterBtnActionPerformed
+        //Filter results based on blanks filled in.
+        //if vendor where vendor like DashOrderVendorTxt.Text
+        //if From date only then all orders closed on - today and not closed
+        //if from and to closed between dates
+    }//GEN-LAST:event_DashFilterBtnActionPerformed
    
     //***************Recieving Tab******************************************TAB0
     private void SetRecieveEmpty(){/*This is for clearing data on the Recieving tab*/
@@ -4317,6 +4370,7 @@ private LocalDateTime myTimeStamp;
     private javax.swing.JButton RVOrderLookupBtn;
     private javax.swing.JLabel RVOrderNumLbl;
     private javax.swing.JTextField RVOrderNumTxt;
+    private javax.swing.JButton RVOrderPrintBtn;
     private javax.swing.JButton RcvAdateBtn;
     private javax.swing.JLabel RcvAdateLbl;
     private org.jdesktop.swingx.JXDatePicker RcvAdatePc;

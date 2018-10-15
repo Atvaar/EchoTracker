@@ -2667,17 +2667,19 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="RVLbl" alignment="0" max="32767" attributes="0"/>
+                  <Component id="RVLbl" alignment="0" pref="795" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="RVOrderDataScroll" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="RVOrderNumLbl" pref="213" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="RVOrderNumTxt" min="-2" pref="365" max="-2" attributes="0"/>
+                              <Component id="RVOrderNumLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="RVOrderNumTxt" min="-2" pref="214" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="RVOrderLookupBtn" min="-2" pref="187" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="RVOrderPrintBtn" max="32767" attributes="0"/>
                           </Group>
                           <Component id="RVOrderHDDScroll" alignment="1" max="32767" attributes="0"/>
                       </Group>
@@ -2694,6 +2696,7 @@
                           <Component id="RVOrderNumLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="RVOrderNumTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="RVOrderLookupBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RVOrderPrintBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="RVOrderDataScroll" min="-2" pref="509" max="-2" attributes="0"/>
@@ -2820,6 +2823,17 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="RVOrderPrintBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="SansSerif" size="12" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Print"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RVOrderPrintBtnActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="AdminTb">
@@ -3211,6 +3225,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Filter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DashFilterBtnActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="DashHDDRoomScroll">
               <AuxValues>
